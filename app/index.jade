@@ -26,8 +26,7 @@ html.no-js
         | to improve your experience.
     .container-fluid
       header.row
-        .logo.col-xs-2 Logo
-        nav.col-xs-10.col-md-4
+        nav.col-xs-12.col-md-4
           ul.list-inline
             li
               a(href='#/goals') GOALS
@@ -35,7 +34,7 @@ html.no-js
               a(href='#/resources') RESOURCES
             li
               a(href='#/assignments') ASSIGNMENTS
-        .user.col-xs-8.col-sm-10.col-md-4 User
+        .user.col-xs-8.col-sm-10.col-md-6 User
         .logout.col-xs-4.col-sm-2
           button logout
       section.filter-course.row
@@ -59,15 +58,16 @@ html.no-js
             button +
         .list-container
           ul
-            li.row
-              .col-xs-12.col-sm-8
-                p Goal Item
-              .col-xs-8.col-sm-2
-                p Insert Date
-              .col-xs-2.col-sm-1
-                button Edit
-              .col-xs-2.col-sm-1
-                button X
+            - for (var x = 0; x < 3; x++)
+              li.row
+                .col-xs-12.col-sm-8
+                  p Goal Item
+                .col-xs-8.col-sm-2
+                  p Insert Date
+                .col-xs-2.col-sm-1
+                  button Edit
+                .col-xs-2.col-sm-1
+                  button X
         .see-all
           a(href='#/goals') See All
       section.input-list-container
@@ -82,15 +82,17 @@ html.no-js
             button +
         .list-container
           ul
-            li.row
-              .col-xs-12.col-sm-8
-                p Resource Item
-              .col-xs-8.col-sm-2
-                p Insert Date
-              .col-xs-2.col-sm-1
-                button Edit
-              .col-xs-2.col-sm-1
-                button X
+            - for (var x = 0; x < 3; x++)
+              li.row
+                .col-xs-12.col-sm-8
+                  p Resource URL
+                  p Resource description
+                .col-xs-8.col-sm-2
+                  p Insert Date
+                .col-xs-2.col-sm-1
+                  button Edit
+                .col-xs-2.col-sm-1
+                  button X
         .see-all
           a(href='#/resources') See All
       section.input-list-container
@@ -104,15 +106,16 @@ html.no-js
             button +
         .list-container
           ul
-            li.row
-              .col-xs-12.col-sm-8
-                p Assignment Item
-              .col-xs-8.col-sm-2
-                p Insert Date
-              .col-xs-2.col-sm-1
-                button Edit
-              .col-xs-2.col-sm-1
-                button X
+            - for (var x = 0; x < 3; x++)
+              li.row
+                .col-xs-12.col-sm-8
+                  p Bacon ipsum dolor amet aute dolore t-bone, consequat in deserunt in occaecat tenderloin cillum. Consequat ullamco duis turkey prosciutto mollit. Consectetur corned beef capicola cillum, pork belly boudin proident quis sunt excepteur commodo ham hock bresaola. Dolor do boudin commodo kielbasa pork belly sirloin dolore pig shankle veniam lorem.
+                .col-xs-8.col-sm-2
+                  p Insert Date
+                .col-xs-2.col-sm-1
+                  button Edit
+                .col-xs-2.col-sm-1
+                  button X
         .see-all
           a(href='#/assignments') See All
       footer.row
@@ -152,4 +155,5 @@ html.no-js
     
     // build:js scripts/main.js 
     script(src='scripts/main.js')
+    script(src='scripts/jquery-collapser/jquery.collapser.js')
     // endbuild 

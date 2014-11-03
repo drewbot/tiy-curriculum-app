@@ -90,7 +90,7 @@ header {
 
 // ---------------------- input / list section ---------------- 
 
-section.input-list-container {
+.input-list-container {
 
     .input-container {
 
@@ -105,6 +105,10 @@ section.input-list-container {
 
     .list-container {
 
+        li {
+            border-bottom: 1px solid black;
+        }
+
         button {
             width: 100%;
         }
@@ -114,6 +118,10 @@ section.input-list-container {
         width: 100%;
         text-align: center;
     }   
+}
+
+.input-list-container:nth-child(odd) {
+    background-color: lightgrey;
 }
 
 
