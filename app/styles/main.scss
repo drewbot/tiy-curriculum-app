@@ -2,7 +2,17 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 
 // bower:scss
 @import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_normalize.scss";
 // endbower
+
+ol, ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
 
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
@@ -35,8 +45,9 @@ body {
     max-width: 1020px;
 }
 
-ol {
+ul {
     padding: none;
+    list-style: none;
 }
 
 // ------------------------ Header --------------------------
