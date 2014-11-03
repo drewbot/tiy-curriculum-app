@@ -53,10 +53,6 @@ ul {
 // ------------------------ Header --------------------------
 header {
 
-    div, nav {
-        display: inline-block;
-    }
-
     .logo {
 
     }
@@ -79,18 +75,14 @@ header {
 
 .filter-course {
 
-    div {
-        display: inline-block;
+    h4 {
+        text-align: center;
+        padding: 25px 0 25px 0;
+    }
 
-        h3 {
-            text-align: center;
-            padding: 25px 0 25px 0;
-        }
-
-        select {
-            width: 100%;
-            text-align: center;
-        }
+    select {
+        width: 100%;
+        text-align: center;
     }
 }
 
@@ -100,9 +92,9 @@ header {
 
 section.input-list-container {
 
-    .title-and-input {
+    .input-container {
 
-        input {
+        input, textarea {
             width: 100%;
         }
 
@@ -111,11 +103,7 @@ section.input-list-container {
         }
     }   
 
-    .goals-list {
-
-        div {
-            display: inline-block;
-        }
+    .list-container {
 
         button {
             width: 100%;
