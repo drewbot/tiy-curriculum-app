@@ -1,0 +1,131 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>tiy curriculum app</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:css styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+      <div class="container-fluid">
+        <header class="row">
+          <div class="logo col-xs-2">Logo</div>
+          <nav class="col-xs-10 col-md-4">
+            <ul class="list-inline">
+              <li>GOALS</li>
+              <li>RESOURCES</li>
+              <li>ASSIGNMENTS</li>
+            </ul>
+          </nav>
+          <div class="user col-xs-8 col-md-4">User</div>
+          <div class="logout col-xs-4 col-md-2">
+            <button>logout</button>
+          </div>
+        </header>
+
+        <section class="filter-course row">
+          <div class="course col-xs-4">
+            <h3>Course</h3>
+            <select>--</select>
+          </div>
+          <div class="timeline col-xs-4">
+            <h3>Timeline</h3>
+            <select>--</select>
+          </div>
+          <div class="week col-xs-4">
+            <h3>Week</h3>
+            <select>--</select>
+          </div>
+        </section>
+
+        <section class="input-list-container">
+          <div class="title-and-input row">
+            <div class="col-xs-10 col-sm-7">
+              <input type="text" placeholder="add a new goal">
+            </div>
+            <div class="col-xs-2 col-sm-1">
+              <button>+</button>
+            </div>
+          </div>
+          <div class="goals-list">
+            <ol>
+              <li class="row">
+                <div class="col-xs-12 col-md-8">
+                  <p>Goal Item</p>
+                </div>
+                <div class="col-xs-8 col-md-2">
+                  <p>Insert Date</p>
+                </div>
+                <div class="col-xs-2 col-md-1">
+                  <button>Edit</button>
+                </div>
+                <div class="col-xs-2 col-md-1">
+                  <button>X</button>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div class="see-all">
+            <a href="#/goals">See All</a>
+          </div>
+        </section>
+
+        
+
+
+      </div>
+
+      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+      <script>
+          (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+          function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+          e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+          e.src='//www.google-analytics.com/analytics.js';
+          r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+          ga('create','UA-XXXXX-X');ga('send','pageview');
+      </script>
+
+      <!-- build:js scripts/vendor.js -->
+      <!-- bower:js -->
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <!-- endbower -->
+      <!-- endbuild -->
+
+      <!-- build:js scripts/plugins.js -->
+      <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+      <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+      <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+      <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+      <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+      <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+      <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+      <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+      <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+      <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+      <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+      <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+      <!-- endbuild -->
+
+      <!-- build:js scripts/main.js -->
+      <script src="scripts/main.js"></script>
+      <!-- endbuild -->
+    </body>
+</html>
