@@ -24,103 +24,114 @@ html.no-js
         | browser. Please
         a(href='http://browsehappy.com/') upgrade your browser
         | to improve your experience.
-    .container-fluid
-      header.row
-        nav.col-xs-12.col-md-4
-          ul.list-inline
-            li
-              a(href='#/goals') GOALS
-            li
-              a(href='#/resources') RESOURCES
-            li
-              a(href='#/assignments') ASSIGNMENTS
-        .user.col-xs-8.col-sm-10.col-md-6 User
-        .logout.col-xs-4.col-sm-2
-          button logout
-      section.filter-course.row
-        .course.col-xs-4
-          h4 Course
-          select --
-        .timeline.col-xs-4
-          h4 Timeline
-          select --
-        .week.col-xs-4
-          h4 Week
-          select --
-      section.input-list-container
-        .input-container.row
+    .full-width.header-bg
+      .container-fluid
+        header.row
+          nav.col-xs-12.col-md-5
+            ul.list-inline
+              li
+                a(href='#/goals') GOALS
+              li
+                a(href='#/resources') RESOURCES
+              li
+                a(href='#/assignments') ASSIGNMENTS
+          .user.col-xs-8.col-sm-10.col-md-5 User
+          .logout.col-xs-4.col-sm-2
+            button logout
+    .full-width.filter-bg
+      .container-fluid
+        section.filter-course.row
+          .course.col-xs-4
+            h4 Course
+            select --
+          .timeline.col-xs-4
+            h4 Timeline
+            select --
+          .week.col-xs-4
+            h4 Week
+            select --
+    .full-width.goals-bg
+      .container-fluid
+        section.input-list-container
+          .input-container.row
+            .col-xs-12
+              h1 GOALS
+              p After this week students can:
+            .input-box.col-xs-10.col-sm-7
+              input(type='text', placeholder='add a new goal')
+            .button-box.col-xs-2.col-sm-1
+              button +
+          .list-container
+            ul
+              - for (var x = 0; x < 3; x++)
+                li.row
+                  .col-xs-12.col-sm-8
+                    p Goal Item
+                  .col-xs-8.col-sm-2
+                    p Insert Date
+                  .col-xs-2.col-sm-1
+                    button Edit
+                  .col-xs-2.col-sm-1
+                    button X
+          .see-all
+            a(href='#/goals') See All
+    .full-width.resources-bg
+      .container-fluid
+        section.input-list-container
+          .input-container.row
+            .col-xs-12
+              h1 RESOURCES
+              p These resources were helpful to students:
+            .input-box.col-xs-10.col-sm-7
+              input(type='text', placeholder='add a new url')
+              textarea(placeholder='description')
+            .button-box.col-xs-2.col-sm-1
+              button +
+          .list-container
+            ul
+              - for (var x = 0; x < 3; x++)
+                li.row
+                  .col-xs-12.col-sm-8
+                    p Resource URL
+                    p Resource description
+                  .col-xs-8.col-sm-2
+                    p Insert Date
+                  .col-xs-2.col-sm-1
+                    button Edit
+                  .col-xs-2.col-sm-1
+                    button X
+          .see-all
+            a(href='#/resources') See All
+    .full-width.assignments-bg
+      .container-fluid
+        section.input-list-container
+          .input-container.row
+            .col-xs-12
+              h1 ASSIGNMENTS
+              p Students were given:
+            .input-box.col-xs-10.col-sm-7
+              textarea(placeholder='add a new assignment')
+            .button-box.col-xs-2.col-sm-1
+              button +
+          .list-container
+            ul
+              - for (var x = 0; x < 3; x++)
+                li.row
+                  .col-xs-12.col-sm-8
+                    p Bacon ipsum dolor amet aute dolore t-bone, consequat in deserunt in occaecat tenderloin cillum. Consequat ullamco duis turkey prosciutto mollit. Consectetur corned beef capicola cillum, pork belly boudin proident quis sunt excepteur commodo ham hock bresaola. Dolor do boudin commodo kielbasa pork belly sirloin dolore pig shankle veniam lorem.
+                  .col-xs-8.col-sm-2
+                    p Insert Date
+                  .col-xs-2.col-sm-1
+                    button Edit
+                  .col-xs-2.col-sm-1
+                    button X
+          .see-all
+            a(href='#/assignments') See All
+    .full-width.footer-bg
+      .container-fluid
+        footer.row
           .col-xs-12
-            h1 GOALS
-            p After this week students can:
-          .col-xs-10.col-sm-7
-            input(type='text', placeholder='add a new goal')
-          .col-xs-2.col-sm-1
-            button +
-        .list-container
-          ul
-            - for (var x = 0; x < 3; x++)
-              li.row
-                .col-xs-12.col-sm-8
-                  p Goal Item
-                .col-xs-8.col-sm-2
-                  p Insert Date
-                .col-xs-2.col-sm-1
-                  button Edit
-                .col-xs-2.col-sm-1
-                  button X
-        .see-all
-          a(href='#/goals') See All
-      section.input-list-container
-        .input-container.row
-          .col-xs-12
-            h1 RESOURCES
-            p These resources were helpful to students:
-          .col-xs-10.col-sm-7
-            input(type='text', placeholder='add a new url')
-            textarea(placeholder='description')
-          .col-xs-2.col-sm-1
-            button +
-        .list-container
-          ul
-            - for (var x = 0; x < 3; x++)
-              li.row
-                .col-xs-12.col-sm-8
-                  p Resource URL
-                  p Resource description
-                .col-xs-8.col-sm-2
-                  p Insert Date
-                .col-xs-2.col-sm-1
-                  button Edit
-                .col-xs-2.col-sm-1
-                  button X
-        .see-all
-          a(href='#/resources') See All
-      section.input-list-container
-        .input-container.row
-          .col-xs-12
-            h1 ASSIGNMENTS
-            p Students were given:
-          .col-xs-10.col-sm-7
-            textarea(placeholder='add a new assignment')
-          .col-xs-2.col-sm-1
-            button +
-        .list-container
-          ul
-            - for (var x = 0; x < 3; x++)
-              li.row
-                .col-xs-12.col-sm-8
-                  p Bacon ipsum dolor amet aute dolore t-bone, consequat in deserunt in occaecat tenderloin cillum. Consequat ullamco duis turkey prosciutto mollit. Consectetur corned beef capicola cillum, pork belly boudin proident quis sunt excepteur commodo ham hock bresaola. Dolor do boudin commodo kielbasa pork belly sirloin dolore pig shankle veniam lorem.
-                .col-xs-8.col-sm-2
-                  p Insert Date
-                .col-xs-2.col-sm-1
-                  button Edit
-                .col-xs-2.col-sm-1
-                  button X
-        .see-all
-          a(href='#/assignments') See All
-      footer.row
-        .col-xs-12
-          p copyright 2014 The Iron Yard
+            p copyright 2014 The Iron Yard
 
     // Google Analytics: change UA-XXXXX-X to be your site's ID. 
     script

@@ -1,17 +1,28 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 
+@font-face {
+  font-family: "Open Sans";
+  src: url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,300,600,400");
+}
+
+@font-face {
+  font-family: "Fjalla One";
+  src: url("http://fonts.googleapis.com/css?family=Fjalla+One");
+}
+
 // bower:scss
 @import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 @import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_normalize.scss";
 // endbower
 
+// simple list reset
 ol, ul {
     margin: 0;
     padding: 0;
     border: 0;
     font-size: 100%;
     font: inherit;
-    vertical-align: baseline;
+    // vertical-align: baseline;
 }
 
 /* Extra small devices (phones, less than 768px) */
@@ -32,11 +43,82 @@ html {
   box-sizing: inherit;
 }
 
+// ------------------------ Variables ----------------------
+
+// ------- colors ---------
+
+$primary-bg-color: #FFFFFF;
+$section-bg-color: #F0F7F6;
+$header-footer-bg-color: #4C5763;
+
+$input-box-color: #C4F478;
+
+$input-button-color: #AFDA6B;
+$logout-delete-button-color: #E65C61;
+$edit-button-color: #4C5763;
+
+// ------- type ----------
+
+$primary-typeface: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$secondary-typeface: "Fjalla One", Arial, sans-serif;
+
+$primary-text-color: #4C5763;
+$secondary-text-color: #E65C61;
+$header-footer-text-color: #FFFFFF;
+
+$link-hover-color: #C4F478;
+
+@mixin primary-text($size, $weight, $style, $color) {
+  font-family: $primary-typeface;
+  font-size: $size;
+  font-weight: $weight;
+  font-style: $style;
+  color: $color;
+}
+
+@mixin secondary-text($size, $color) {
+  font-family: $secondary-typeface;
+  font-size: $size;
+  letter-spacing: 0.04em;
+  color: $color;
+}
+
+// ------------------- full width bg ---------------------
+
+.full-width {
+    width: 100%;
+}
+
+.header-bg {
+    background-color: $header-footer-bg-color;
+}
+
+.filter-bg {
+    background-color: $primary-bg-color;
+}
+
+.goals-bg{
+    background-color: $section-bg-color;
+}
+
+.resources-bg{
+    background-color: $primary-bg-color;
+}
+
+.assignments-bg{
+    background-color: $section-bg-color;
+}
+
+.footer-bg {
+    background-color: $header-footer-bg-color;
+}
+
 // --------------------- Global Styles -------------------
+
 body {
-    background: #fafafa;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
+    font-family: $primary-typeface;
+    font-size: 1.6em;
+    color: $primary-text-color;
     margin: 0;
 }
 
@@ -45,35 +127,64 @@ body {
     max-width: 1020px;
 }
 
+h1 {
+    @include secondary-text(1.9em, $secondary-text-color);
+}
+
+h4 {
+    @include primary-text(1.2em, 300, normal, $secondary-text-color);
+}
+
 ul {
     padding: none;
     list-style: none;
 }
 
+input, textarea {
+    padding: 10px;
+}
+
 // ------------------------ Header --------------------------
 header {
+    height: 100px;
 
     .logo {
 
     }
     
     nav {
+        padding: 40px 0 40px 0;
+        
+        a {
+            @include secondary-text(1.2em, $header-footer-text-color);
+            margin-right: 19px;
 
+            &:hover {
+                padding-bottom: 38px;
+                color: $link-hover-color;
+                text-decoration: none;
+                border-bottom: 4px solid $link-hover-color;
+            }
+        }
     }
 
     .user {
         text-align: right;
+        @include primary-text(1em, 300, normal, $header-footer-text-color);
     }
 
     .logout {
 
         button {
             width: 100%;
+            @include primary-text(1em, 300, normal, $header-footer-text-color);
         }
     }
 }
 
+// ------------------------ Filter --------------------------
 .filter-course {
+    height: 172px;
 
     h4 {
         text-align: center;
@@ -93,13 +204,29 @@ header {
 .input-list-container {
 
     .input-container {
+        height: 240px;
 
-        input, textarea {
-            width: 100%;
+        .input-box {
+            padding: 12px;
+            background-color: #C4F478;
+
+            input, textarea {
+                width: 100%;
+            }
+
+            textarea:nth-child(2) {
+                margin-top: 12px;
+            }
         }
 
-        button {
-            width: 100%;
+        .button-box {
+            padding: 12px 12px 12px 0;
+            background-color: #C4F478;
+
+            button {
+                height: 40px;
+                width: 100%;
+            }
         }
     }   
 
@@ -120,9 +247,29 @@ header {
     }   
 }
 
-.input-list-container:nth-child(odd) {
-    background-color: lightgrey;
+body .button-box:nth-child(2) {
+    background-color: #FFFFFF;
+
+    button {
+        margin-top: 73px;
+    }
 }
+
+// ------------------- footer -------------------------
+
+footer {
+    @include primary-text(1em, 300, normal, $header-footer-text-color);
+}
+
+
+
+
+
+
+
+
+
+
 
 
 /* Small devices (tablets, 768px and up) */
