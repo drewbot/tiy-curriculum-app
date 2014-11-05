@@ -24,9 +24,9 @@ html.no-js
         | browser. Please
         a(href='http://browsehappy.com/') upgrade your browser
         | to improve your experience.
-    .full-width.header-bg
+    header.full-width
       .container-fluid
-        header.row
+        .row
           nav.col-xs-12.col-md-5
             ul.list-inline
               li
@@ -38,9 +38,9 @@ html.no-js
           .user.col-xs-8.col-sm-10.col-md-5 User
           .logout.col-xs-4.col-sm-2
             button logout
-    .full-width.filter-bg
+    section.filter-bg.full-width
       .container-fluid
-        section.filter-course.row
+        .filter-course.row
           .course.col-xs-4
             h4 Course
             select --
@@ -50,34 +50,33 @@ html.no-js
           .week.col-xs-4
             h4 Week
             select --
-    .full-width.goals-bg
+    section.goals-bg.full-width
       .container-fluid
-        section.input-list-container
-          .input-container.row
-            .col-xs-12
-              h1 GOALS
-              p After this week students can:
-            .input-box.col-xs-10.col-sm-7
-              input(type='text', placeholder='add a new goal')
-            .button-box.col-xs-2.col-sm-1
-              button +
-          .list-container
-            ul
-              - for (var x = 0; x < 3; x++)
-                li.row
-                  .col-xs-12.col-sm-8
-                    p Goal Item
-                  .col-xs-8.col-sm-2
-                    p Insert Date
-                  .col-xs-2.col-sm-1
-                    button Edit
-                  .col-xs-2.col-sm-1
-                    button X
-          .see-all
-            a(href='#/goals') See All
-    .full-width.resources-bg
+        .input-container.row
+          .col-xs-12
+            h1 GOALS
+            p After this week students can:
+          .input-box.col-xs-10.col-sm-7
+            input(type='text', placeholder='add a new goal')
+          .button-box.col-xs-2.col-sm-1
+            button +
+        .list-container
+          ul
+            - for (var x = 0; x < 3; x++)
+              li.row
+                .col-xs-12.col-sm-8
+                  p Goal Item
+                .col-xs-8.col-sm-2
+                  p Insert Date
+                .col-xs-2.col-sm-1
+                  button Edit
+                .col-xs-2.col-sm-1
+                  button X
+        .see-all
+          a(href='#/goals') See All
+    section.resources-bg.full-width
       .container-fluid
-        section.input-list-container
+        .input-list-container
           .input-container.row
             .col-xs-12
               h1 RESOURCES
@@ -102,9 +101,9 @@ html.no-js
                     button X
           .see-all
             a(href='#/resources') See All
-    .full-width.assignments-bg
+    section.assignments-bg.full-width
       .container-fluid
-        section.input-list-container
+        .input-list-container
           .input-container.row
             .col-xs-12
               h1 ASSIGNMENTS
@@ -127,9 +126,9 @@ html.no-js
                     button X
           .see-all
             a(href='#/assignments') See All
-    .full-width.footer-bg
+    footer.full-width
       .container-fluid
-        footer.row
+        .row
           .col-xs-12
             p copyright 2014 The Iron Yard
 

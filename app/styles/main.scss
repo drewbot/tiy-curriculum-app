@@ -37,15 +37,15 @@ ol, ul {
 
 // ----------------------- Box Sizing border-box all -------------------
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 *, *:before, *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 // ------------------------ Variables ----------------------
 
-// ------- colors ---------
+// ------- bg colors ---------
 
 $primary-bg-color: #FFFFFF;
 $section-bg-color: #F0F7F6;
@@ -53,9 +53,57 @@ $header-footer-bg-color: #4C5763;
 
 $input-box-color: #C4F478;
 
-$input-button-color: #AFDA6B;
+// ------ button ---------
+
+$primary-button-color: #4C5763;
+$input-button-color: #A6E52C;
 $logout-delete-button-color: #E65C61;
-$edit-button-color: #4C5763;
+
+$primary-button-text-color: #FFFFFF;
+
+@mixin primary-button($bg-color, $color, $padding-t, $padding-b) {
+    padding: $padding-t 0 $padding-b 0;
+    height: 40px;
+    width: 100%;
+    background-color: $bg-color;
+    color: $color;
+    border: 1px solid darken($bg-color, 5%);
+    border-radius: 4px;
+    box-shadow: 0px 3px darken($bg-color, 19%);
+    outline: none;
+    transition: margin-top 0.3s ease, box-shadow 0.2s ease;
+    &:hover {
+        background-color: darken($bg-color, 5%);
+        border: 1px solid darken($bg-color, 8%);
+    }
+    &:active {
+        transition: margin-top 0.2s ease, box-shadow 0.3s ease;
+        margin-top: 3px;
+        box-shadow: none;
+    }
+}
+
+// @mixin primary-button($bg-color, $color, $padding-t, $padding-b) {
+//     padding: $padding-t 0 $padding-b 0;
+//     height: 40px;
+//     width: 100%;
+//     background-color: $bg-color;
+//     color: $color;
+//     border: 1px solid darken($bg-color, 15%);
+//     border-radius: 4px;
+//     box-shadow: inset 0px -3px darken($bg-color, 19%);
+//     outline: none;
+//     transition: all 0.2s ease;
+//     &:hover {
+//         background-color: darken($bg-color, 5%);
+//     }
+//     &:active {
+//         margin-top: 3px;
+//         height: 37px;
+//         box-shadow: none;
+//         transition: all 0.3s ease;
+//     }
+// }
 
 // ------- type ----------
 
@@ -69,18 +117,18 @@ $header-footer-text-color: #FFFFFF;
 $link-hover-color: #C4F478;
 
 @mixin primary-text($size, $weight, $style, $color) {
-  font-family: $primary-typeface;
-  font-size: $size;
-  font-weight: $weight;
-  font-style: $style;
-  color: $color;
+    font-family: $primary-typeface;
+    font-size: $size;
+    font-weight: $weight;
+    font-style: $style;
+    color: $color;
 }
 
 @mixin secondary-text($size, $color) {
-  font-family: $secondary-typeface;
-  font-size: $size;
-  letter-spacing: 0.04em;
-  color: $color;
+    font-family: $secondary-typeface;
+    font-size: $size;
+    letter-spacing: 0.03em;
+    color: $color;
 }
 
 // ------------------- full width bg ---------------------
@@ -89,7 +137,7 @@ $link-hover-color: #C4F478;
     width: 100%;
 }
 
-.header-bg {
+header {
     background-color: $header-footer-bg-color;
 }
 
@@ -109,7 +157,7 @@ $link-hover-color: #C4F478;
     background-color: $section-bg-color;
 }
 
-.footer-bg {
+footer {
     background-color: $header-footer-bg-color;
 }
 
@@ -128,7 +176,10 @@ body {
 }
 
 h1 {
+    display: inline-block;
     @include secondary-text(1.9em, $secondary-text-color);
+    border-bottom: 3px solid $secondary-text-color;
+    margin-bottom: 36px;
 }
 
 h4 {
@@ -140,8 +191,8 @@ ul {
     list-style: none;
 }
 
-input, textarea {
-    padding: 10px;
+select {
+
 }
 
 // ------------------------ Header --------------------------
@@ -153,31 +204,34 @@ header {
     }
     
     nav {
-        padding: 40px 0 40px 0;
+        padding: 37px 0 36px 0;
         
         a {
             @include secondary-text(1.2em, $header-footer-text-color);
             margin-right: 19px;
 
             &:hover {
-                padding-bottom: 38px;
+                padding-bottom: 35px;
                 color: $link-hover-color;
                 text-decoration: none;
-                border-bottom: 4px solid $link-hover-color;
+                border-bottom: 3px solid $link-hover-color;
             }
         }
     }
 
     .user {
+        padding: 39px 0 37px 0;
         text-align: right;
         @include primary-text(1em, 300, normal, $header-footer-text-color);
     }
 
     .logout {
+        padding-top: 30px;
+        padding-bottom: 30px;
 
         button {
-            width: 100%;
             @include primary-text(1em, 300, normal, $header-footer-text-color);
+            @include primary-button($logout-delete-button-color, $primary-button-text-color, 0px, 0px);
         }
     }
 }
@@ -201,59 +255,72 @@ header {
 
 // ---------------------- input / list section ---------------- 
 
-.input-list-container {
+.input-container {
+    padding: 36px 0 5px 0;
 
-    .input-container {
-        height: 240px;
+    .input-box {
+        padding: 18px 0 0 15px;
+        height: 71px;
+        background-color: #C4F478;
+        // border: 1px solid darken(#C4F478, 15%);
+        border-radius: 4px 0 0 4px;
+        box-shadow: 0px 4px darken(#C4F478, 19%);
 
-        .input-box {
-            padding: 12px;
-            background-color: #C4F478;
-
-            input, textarea {
-                width: 100%;
-            }
-
-            textarea:nth-child(2) {
-                margin-top: 12px;
-            }
+        input, textarea {
+            padding: 10px;
         }
 
-        .button-box {
-            padding: 12px 12px 12px 0;
-            background-color: #C4F478;
-
-            button {
-                height: 40px;
-                width: 100%;
-            }
+        input {
+            height: 40px;
+            width: 100%;
+            border: 1px solid darken(#C4F478, 15%);
+            border-radius: 4px;
+            box-shadow: 0px -3px darken(#C4F478, 19%);
+            outline: none;
         }
-    }   
 
-    .list-container {
-
-        li {
-            border-bottom: 1px solid black;
+        textarea:nth-child(2) {
+            margin-top: 12px;
         }
+    }
+
+    .button-box {
+        padding: 15px;
+        height: 71px;
+        background-color: #C4F478;
+        // border: 1px solid darken(#C4F478, 15%);
+        border-radius: 0 4px 4px 0;
+        box-shadow: 0px 4px darken(#C4F478, 19%);
 
         button {
-            width: 100%;
+            @include primary-button($input-button-color, $primary-button-text-color, 0px, 0px);
         }
     }
+}   
 
-    .see-all {
-        width: 100%;
-        text-align: center;
-    }   
-}
+.list-container {
 
-body .button-box:nth-child(2) {
-    background-color: #FFFFFF;
+    li {
+        border-bottom: 1px solid black;
+    }
 
     button {
-        margin-top: 73px;
+        width: 100%;
     }
 }
+
+.see-all {
+    width: 100%;
+    text-align: center;
+}   
+
+// body .button-box:nth-child(2) {
+//     background-color: #FFFFFF;
+
+//     button {
+//         margin-top: 73px;
+//     }
+// }
 
 // ------------------- footer -------------------------
 
