@@ -57,53 +57,34 @@ $input-box-color: #C4F478;
 
 $primary-button-color: #4C5763;
 $input-button-color: #A6E52C;
-$logout-delete-button-color: #E65C61;
+$logout-delete-button-color: #F4606B;
 
 $primary-button-text-color: #FFFFFF;
 
 @mixin primary-button($bg-color, $color, $padding-t, $padding-b) {
     padding: $padding-t 0 $padding-b 0;
-    height: 40px;
+    height: 36px;
     width: 100%;
     background-color: $bg-color;
     color: $color;
+    text-align: center;
     border: 1px solid darken($bg-color, 5%);
     border-radius: 4px;
-    box-shadow: 0px 3px darken($bg-color, 19%);
+    box-shadow: 0px 3px darken($bg-color, 20%);
     outline: none;
-    transition: margin-top 0.3s ease, box-shadow 0.2s ease;
+    transition: all 0.2s ease;
     &:hover {
-        background-color: darken($bg-color, 5%);
-        border: 1px solid darken($bg-color, 8%);
+        background-color: lighten($bg-color, 5%);
+        border: 1px solid darken($bg-color, 7%);
+        box-shadow: 0px 3px darken($bg-color, 22%);
+        transition: all 0.2s ease;
     }
     &:active {
-        transition: margin-top 0.2s ease, box-shadow 0.3s ease;
         margin-top: 3px;
         box-shadow: none;
+        transition: all 0.2s ease;
     }
 }
-
-// @mixin primary-button($bg-color, $color, $padding-t, $padding-b) {
-//     padding: $padding-t 0 $padding-b 0;
-//     height: 40px;
-//     width: 100%;
-//     background-color: $bg-color;
-//     color: $color;
-//     border: 1px solid darken($bg-color, 15%);
-//     border-radius: 4px;
-//     box-shadow: inset 0px -3px darken($bg-color, 19%);
-//     outline: none;
-//     transition: all 0.2s ease;
-//     &:hover {
-//         background-color: darken($bg-color, 5%);
-//     }
-//     &:active {
-//         margin-top: 3px;
-//         height: 37px;
-//         box-shadow: none;
-//         transition: all 0.3s ease;
-//     }
-// }
 
 // ------- type ----------
 
@@ -139,26 +120,59 @@ $link-hover-color: #C4F478;
 
 header {
     background-color: $header-footer-bg-color;
+    padding: 0 15px 0 15px;
 }
 
 .filter-bg {
     background-color: $primary-bg-color;
+    padding: 0 15px 0 15px;
 }
 
-.goals-bg{
+.goals-bg {
     background-color: $section-bg-color;
+    padding: 0 15px 0 15px;
 }
 
-.resources-bg{
+.resources-bg {
     background-color: $primary-bg-color;
+    padding: 0 15px 0 15px;
+
+    .section-head {
+        textarea {
+            margin-top: 15px;
+        }
+
+        .input-box {
+            height: 160px;
+        }
+
+        .button-box {
+            padding: 106px 15px 15px 15px;
+            height: 160px;
+        }
+    }
 }
 
-.assignments-bg{
+.assignments-bg {
     background-color: $section-bg-color;
+    padding: 0 15px 0 15px;
+
+    .section-head {
+
+        .input-box {
+            height: 107px;
+        }
+
+        .button-box {
+            padding: 53px 15px 15px 15px;
+            height: 107px;
+        }
+    }
 }
 
 footer {
     background-color: $header-footer-bg-color;
+    padding: 0 15px 0 15px;
 }
 
 // --------------------- Global Styles -------------------
@@ -179,7 +193,7 @@ h1 {
     display: inline-block;
     @include secondary-text(1.9em, $secondary-text-color);
     border-bottom: 3px solid $secondary-text-color;
-    margin-bottom: 36px;
+    margin-bottom: 30px;
 }
 
 h4 {
@@ -207,8 +221,9 @@ header {
         padding: 37px 0 36px 0;
         
         a {
-            @include secondary-text(1.2em, $header-footer-text-color);
             margin-right: 19px;
+            height: 100px;
+            @include secondary-text(1.2em, $header-footer-text-color);
 
             &:hover {
                 padding-bottom: 35px;
@@ -246,85 +261,120 @@ header {
     }
 
     select {
-        width: 100%;
-        text-align: center;
+        @include primary-button($primary-button-color, $primary-button-text-color, 0px, 0px);
     }
 }
 
 
 
-// ---------------------- input / list section ---------------- 
+// ---------------------- input ---------------- 
 
-.input-container {
-    padding: 36px 0 5px 0;
+.section-head {
+    padding: 30px 0 5px 0;
+
+    .section-title {
+        padding-bottom: 20px;
+    }
 
     .input-box {
-        padding: 18px 0 0 15px;
-        height: 71px;
-        background-color: #C4F478;
-        // border: 1px solid darken(#C4F478, 15%);
+        padding: 16px 0 0 15px;
+        height: 70px;
+        background-color: $input-box-color;
+        border: 1px solid darken(#C4F478, 7%);
+        border-width: 1px 0 1px 1px;
         border-radius: 4px 0 0 4px;
-        box-shadow: 0px 4px darken(#C4F478, 19%);
+        box-shadow: 0px 3px darken(#C4F478, 23%);
 
         input, textarea {
             padding: 10px;
         }
 
         input {
-            height: 40px;
+            height: 38px;
             width: 100%;
-            border: 1px solid darken(#C4F478, 15%);
+            border: 1px solid darken(#C4F478, 7%);
             border-radius: 4px;
-            box-shadow: 0px -3px darken(#C4F478, 19%);
+            box-shadow: 0px -2px darken(#C4F478, 23%);
             outline: none;
         }
 
-        textarea:nth-child(2) {
-            margin-top: 12px;
+        textarea {
+            height: 76px;
+            width: 100%;
+            border: 1px solid darken(#C4F478, 7%);
+            border-radius: 4px;
+            box-shadow: 0px -2px darken(#C4F478, 23%);
+            outline: none;
         }
     }
 
     .button-box {
         padding: 15px;
-        height: 71px;
-        background-color: #C4F478;
-        // border: 1px solid darken(#C4F478, 15%);
+        height: 70px;
+        background-color: $input-box-color;
+        border: 1px solid darken(#C4F478, 7%);
+        border-width: 1px 1px 1px 0;
         border-radius: 0 4px 4px 0;
-        box-shadow: 0px 4px darken(#C4F478, 19%);
+        box-shadow: 0px 3px darken(#C4F478, 23%);
 
         button {
             @include primary-button($input-button-color, $primary-button-text-color, 0px, 0px);
         }
     }
-}   
+} 
+
+// ------------- list section -------------
 
 .list-container {
 
     li {
-        border-bottom: 1px solid black;
-    }
+        padding: 20px 0 20px 0;
+        border-bottom: 1px solid $primary-text-color;
 
-    button {
-        width: 100%;
+        .item-container {
+            padding: 8px 15px 0 15px;
+            @include primary-text(1em, 300, normal, $primary-text-color);
+
+            a {
+                @include primary-text(1em, 400, italic, $primary-text-color);
+            }
+        }
+
+        .date-container {
+            padding: 8px 15px 0 15px;
+            @include primary-text(.8em, 300, italic, $primary-text-color);
+        }
+
+        .edit-button-container {
+
+            button {
+                @include primary-button($primary-button-color, $primary-button-text-color, 0px, 0px);
+            }
+        }
+
+        .delete-button-container {
+
+            button {
+                @include primary-button($logout-delete-button-color, $primary-button-text-color, 0px, 0px);
+            }
+        }
     }
 }
 
 .see-all {
+    padding: 28px 0 28px 0;
     width: 100%;
-    text-align: center;
+
+    a {
+        @include primary-text(1em, 400, italic, $primary-text-color);
+    }
+    
 }   
-
-// body .button-box:nth-child(2) {
-//     background-color: #FFFFFF;
-
-//     button {
-//         margin-top: 73px;
-//     }
-// }
 
 // ------------------- footer -------------------------
 
 footer {
+    padding: 35px 0 28px 0;
     @include primary-text(1em, 300, normal, $header-footer-text-color);
 }
 

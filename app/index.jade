@@ -27,7 +27,7 @@ html.no-js
     header.full-width
       .container-fluid
         .row
-          nav.col-xs-12.col-md-5
+          nav.col-xs-12.col-sm-6.col-md-5
             ul.list-inline
               li
                 a(href='#/goals') GOALS
@@ -35,8 +35,10 @@ html.no-js
                 a(href='#/resources') RESOURCES
               li
                 a(href='#/assignments') ASSIGNMENTS
-          .user.col-xs-8.col-sm-10.col-md-5 User
-          .logout.col-xs-4.col-sm-2
+          .user.col-xs-9.col-sm-4.col-md-5 
+            p Hello, 
+              span User Name
+          .logout.col-xs-3.col-sm-2
             button logout
     section.filter-bg.full-width
       .container-fluid
@@ -52,80 +54,78 @@ html.no-js
             select --
     section.goals-bg.full-width
       .container-fluid
-        .input-container.row
-          .col-xs-12
+        .section-head.row
+          .section-title.col-xs-12
             h1 GOALS
             p After this week students can:
-          .input-box.col-xs-10.col-sm-7
+          .input-box.col-xs-9.col-sm-7
             input(type='text', placeholder='add a new goal')
-          .button-box.col-xs-2.col-sm-1
+          .button-box.col-xs-3.col-sm-1
             button +
         .list-container
           ul
             - for (var x = 0; x < 3; x++)
               li.row
-                .col-xs-12.col-sm-8
+                .item-container.col-xs-12.col-sm-8
                   p Goal Item
-                .col-xs-8.col-sm-2
+                .date-container.col-xs-6.col-sm-2
                   p Insert Date
-                .col-xs-2.col-sm-1
+                .edit-button-container.col-xs-3.col-sm-1
                   button Edit
-                .col-xs-2.col-sm-1
+                .delete-button-container.col-xs-3.col-sm-1
                   button X
         .see-all
           a(href='#/goals') See All
     section.resources-bg.full-width
       .container-fluid
-        .input-list-container
-          .input-container.row
-            .col-xs-12
-              h1 RESOURCES
-              p These resources were helpful to students:
-            .input-box.col-xs-10.col-sm-7
-              input(type='text', placeholder='add a new url')
-              textarea(placeholder='description')
-            .button-box.col-xs-2.col-sm-1
-              button +
-          .list-container
-            ul
-              - for (var x = 0; x < 3; x++)
-                li.row
-                  .col-xs-12.col-sm-8
-                    p Resource URL
-                    p Resource description
-                  .col-xs-8.col-sm-2
-                    p Insert Date
-                  .col-xs-2.col-sm-1
-                    button Edit
-                  .col-xs-2.col-sm-1
-                    button X
-          .see-all
-            a(href='#/resources') See All
+        .section-head.row
+          .section-title.col-xs-12
+            h1 RESOURCES
+            p These resources were helpful to students:
+          .input-box.col-xs-9.col-sm-7
+            input(type='text', placeholder='add a new url')
+            textarea(placeholder='description')
+          .button-box.col-xs-3.col-sm-1
+            button +
+        .list-container
+          ul
+            - for (var x = 0; x < 3; x++)
+              li.row
+                .item-container.col-xs-12.col-sm-8
+                  p Resource URL
+                  p Resource description
+                .date-container.col-xs-6.col-sm-2
+                  p Insert Date
+                .edit-button-container.col-xs-3.col-sm-1
+                  button Edit
+                .delete-button-container.col-xs-3.col-sm-1
+                  button X
+        .see-all
+          a(href='#/resources') See All
     section.assignments-bg.full-width
       .container-fluid
-        .input-list-container
-          .input-container.row
-            .col-xs-12
-              h1 ASSIGNMENTS
-              p Students were given:
-            .input-box.col-xs-10.col-sm-7
-              textarea(placeholder='add a new assignment')
-            .button-box.col-xs-2.col-sm-1
-              button +
-          .list-container
-            ul
-              - for (var x = 0; x < 3; x++)
-                li.row
-                  .col-xs-12.col-sm-8
-                    p Bacon ipsum dolor amet aute dolore t-bone, consequat in deserunt in occaecat tenderloin cillum. Consequat ullamco duis turkey prosciutto mollit. Consectetur corned beef capicola cillum, pork belly boudin proident quis sunt excepteur commodo ham hock bresaola. Dolor do boudin commodo kielbasa pork belly sirloin dolore pig shankle veniam lorem.
-                  .col-xs-8.col-sm-2
-                    p Insert Date
-                  .col-xs-2.col-sm-1
-                    button Edit
-                  .col-xs-2.col-sm-1
-                    button X
-          .see-all
-            a(href='#/assignments') See All
+        .section-head.row
+          .section-title.col-xs-12
+            h1 ASSIGNMENTS
+            p Students were given:
+          .input-box.col-xs-9.col-sm-7
+            textarea(placeholder='add a new assignment')
+          .button-box.col-xs-3.col-sm-1
+            button +
+        .list-container
+          ul
+            - for (var x = 0; x < 3; x++)
+              li.row
+                .item-container.col-xs-12.col-sm-8
+                  p Bacon ipsum dolor amet aute dolore t-bone, consequat in deserunt in occaecat tenderloin cillum. Consequat ullamco duis turkey prosciutto mollit. Consectetur corned beef capicola cillum, pork belly boudin proident quis sunt excepteur commodo ham hock bresaola. Dolor do boudin commodo kielbasa pork belly sirloin dolore pig shankle veniam lorem.
+                .date-container.col-xs-6.col-sm-2
+                  p Insert Date
+                .edit-button-container.col-xs-3.col-sm-1
+                  button Edit
+                .delete-button-container.col-xs-3.col-sm-1
+                  button X
+        .see-all
+          a(href='#/assignments') See All
     footer.full-width
       .container-fluid
         .row
