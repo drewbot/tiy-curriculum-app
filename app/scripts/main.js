@@ -1,8 +1,10 @@
 
 $(document).ready(function(){
 	$('.list-container p').collapser({
-		mode: 'chars',
-		truncate: 140,
-		speed: 'fast'
+		mode: 'lines',
+		truncate: 2,
+		speed: 'fast',
+		effect: 'fade',
+		hideText: ' Hide text'
 	});	
 });

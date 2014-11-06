@@ -267,8 +267,6 @@ header {
     }
 }
 
-
-
 // ---------------------- input ---------------- 
 
 .section-head {
@@ -334,50 +332,55 @@ header {
 
 .list-container {
 
-    li {
-        padding: 20px 0 20px 0;
-        border-bottom: 1px solid $primary-text-color;
+    ol {
+        list-style-position: inside;
+        list-style-type: decimal;
 
         .item-container {
-            padding: 8px 15px 0 15px;
-            @include primary-text(1em, 300, normal, $primary-text-color);
+            padding: 20px 0 20px 0;
+            border-bottom: 1px solid $primary-text-color;
 
-            a {
-                @include primary-text(1em, 400, italic, $primary-text-color);
+            li {
+                padding: 8px 15px 0 15px;
+                @include primary-text(1em, 300, normal, $primary-text-color);
+
+                a {
+                    @include primary-text(1em, 400, italic, $primary-text-color);
+                }
             }
-        }
 
-        .date-container {
-            padding: 8px 15px 0 15px;
-            @include primary-text(.8em, 300, italic, $primary-text-color);
-        }
+            .date-container {
+                padding: 8px 15px 0 15px;
+                @include primary-text(.8em, 300, italic, $primary-text-color);
+            }
 
-        .edit-button-container {
+            .edit-button-container {
 
-            button {
-                @include primary-button($primary-button-color, $primary-button-text-color, 0px, 0px);
-                
-                span {
-                    // font-family: "Glyphicons Halflings";
-                    padding-top: 2px;
-                    font-size: 1.2em;
+                button {
+                    @include primary-button($primary-button-color, $primary-button-text-color, 0px, 0px);
+                    
+                    span {
+                        // font-family: "Glyphicons Halflings";
+                        padding-top: 2px;
+                        font-size: 1.2em;
+                    }
+                }
+            }
+
+            .delete-button-container {
+
+                button {
+                    @include primary-button($logout-delete-button-color, $primary-button-text-color, 0px, 0px);
+
+                    span {
+                        // font-family: "Glyphicons Halflings";
+                        padding-top: 2px;
+                        font-size: 1.1em;
+                    }
                 }
             }
         }
-
-        .delete-button-container {
-
-            button {
-                @include primary-button($logout-delete-button-color, $primary-button-text-color, 0px, 0px);
-
-                span {
-                    // font-family: "Glyphicons Halflings";
-                    padding-top: 2px;
-                    font-size: 1.1em;
-                }
-            }
-        }
-    }
+    }    
 }
 
 .see-all {
