@@ -1,4 +1,34 @@
-$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+
+// bower:scss
+@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_normalize.scss";
+// endbower
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+// ------------------------ Variables and Mixins ----------------------
+
+// ------- bg color variables ---------
+
+$primary-bg-color: #FFFFFF;
+$section-bg-color: #F0F7F6;
+$header-footer-bg-color: #4C5763;
+
+$input-box-color: #C4F478;
+
+// ----------- Type ----------------
+
+// $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+
+@font-face {
+    font-family: "Glyphicons Halflings";
+    src: url("../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf");
+}
 
 @font-face {
   font-family: "Open Sans";
@@ -10,84 +40,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
   src: url("http://fonts.googleapis.com/css?family=Fjalla+One");
 }
 
-// bower:scss
-@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
-@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_normalize.scss";
-// endbower
-
-// simple list reset
-ol, ul {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    // vertical-align: baseline;
-}
-
-/* Extra small devices (phones, less than 768px) */
-/* No media query since this is the default in Bootstrap */
-
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-// ----------------------- Box Sizing border-box all -------------------
-html {
-    box-sizing: border-box;
-}
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-
-// ------------------------ Variables ----------------------
-
-// ------- bg colors ---------
-
-$primary-bg-color: #FFFFFF;
-$section-bg-color: #F0F7F6;
-$header-footer-bg-color: #4C5763;
-
-$input-box-color: #C4F478;
-
-// ------ button ---------
-
-$primary-button-color: #4C5763;
-$input-button-color: #A6E52C;
-$logout-delete-button-color: #F4606B;
-
-$primary-button-text-color: #FFFFFF;
-
-@mixin primary-button($bg-color, $color, $padding-t, $padding-b) {
-    padding: $padding-t 0 $padding-b 0;
-    height: 36px;
-    width: 100%;
-    background-color: $bg-color;
-    color: $color;
-    text-align: center;
-    border: 1px solid darken($bg-color, 5%);
-    border-radius: 4px;
-    box-shadow: 0px 3px darken($bg-color, 20%);
-    outline: none;
-    transition: all 0.2s ease;
-    &:hover {
-        background-color: lighten($bg-color, 5%);
-        border: 1px solid darken($bg-color, 7%);
-        box-shadow: 0px 3px darken($bg-color, 22%);
-        transition: all 0.2s ease;
-    }
-    &:active {
-        margin-top: 3px;
-        box-shadow: none;
-        transition: all 0.2s ease;
-    }
-}
-
-// ------- type ----------
-
 $primary-typeface: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $secondary-typeface: "Fjalla One", Arial, sans-serif;
 
@@ -97,6 +49,7 @@ $header-footer-text-color: #FFFFFF;
 
 $link-hover-color: #C4F478;
 
+// type mixins
 @mixin primary-text($size, $weight, $style, $color) {
     font-family: $primary-typeface;
     font-size: $size;
@@ -112,7 +65,88 @@ $link-hover-color: #C4F478;
     color: $color;
 }
 
-// ------------------- full width bg ---------------------
+// ------ Buttons ------------------
+// button variables
+
+$primary-button-color: #4C5763;
+$input-button-color: #A6E52C;
+$logout-delete-button-color: #F4606B;
+
+$primary-button-text-color: #FFFFFF;
+
+// button Mixin
+@mixin primary-button($bg-color, $color, $padding-t, $padding-b) {
+    padding: $padding-t 0 $padding-b 0;
+    height: 36px;
+    width: 100%;
+    background-color: $bg-color;
+    color: $color;
+    text-align: center;
+    border: 1px solid darken($bg-color, 5%);
+    border-radius: 4px;
+    box-shadow: 0px 3px darken($bg-color, 20%);
+    outline: none;
+    transition: all 80ms ease-in;
+    &:hover {
+        background-color: lighten($bg-color, 5%);
+        border: 1px solid darken($bg-color, 7%);
+        box-shadow: 0px 3px darken($bg-color, 22%);
+    }
+    &:active {
+        margin-top: 3px;
+        box-shadow: none;
+    }
+}
+
+// --------------------- Global Styles -------------------
+
+// Box Sizing border-box all
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+// simple list reset
+ol, ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    list-style: none;
+    vertical-align: baseline;
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+body {
+    font-family: $primary-typeface;
+    font-size: 1.6em;
+    color: $primary-text-color;
+    margin: 0;
+}
+
+.container-fluid {
+    margin: 0 auto;
+    max-width: 1020px;
+}
+
+h1 {
+    display: inline-block;
+    @include secondary-text(1.9em, $secondary-text-color);
+    border-bottom: 3px solid $secondary-text-color;
+    margin-bottom: 30px;
+}
+
+select {
+
+}
+
+// ------------------- full width bg's ---------------------
 
 .full-width {
     width: 100%;
@@ -175,50 +209,12 @@ footer {
     padding: 0 15px 0 15px;
 }
 
-// --------------------- Global Styles -------------------
-
-body {
-    font-family: $primary-typeface;
-    font-size: 1.6em;
-    color: $primary-text-color;
-    margin: 0;
-}
-
-.container-fluid {
-    margin: 0 auto;
-    max-width: 1020px;
-}
-
-h1 {
-    display: inline-block;
-    @include secondary-text(1.9em, $secondary-text-color);
-    border-bottom: 3px solid $secondary-text-color;
-    margin-bottom: 30px;
-}
-
-h4 {
-    @include primary-text(1.2em, 300, normal, $secondary-text-color);
-}
-
-ul {
-    padding: none;
-    list-style: none;
-}
-
-select {
-
-}
-
 // ------------------------ Header --------------------------
 header {
-    height: 100px;
-
-    .logo {
-
-    }
     
     nav {
         padding: 37px 0 36px 0;
+        height: 100px;
         
         a {
             margin-right: 19px;
@@ -236,12 +232,14 @@ header {
 
     .user {
         padding: 39px 0 37px 0;
+        height: 100px;
         text-align: right;
         @include primary-text(1em, 300, normal, $header-footer-text-color);
     }
 
     .logout {
         padding-top: 30px;
+        height: 100px;
         padding-bottom: 30px;
 
         button {
@@ -256,12 +254,16 @@ header {
     height: 172px;
 
     h4 {
-        text-align: center;
         padding: 25px 0 25px 0;
+        width: 100%;
+        text-align: center;
+        @include primary-text(1.2em, 300, normal, $secondary-text-color);
     }
 
-    select {
+    button {
         @include primary-button($primary-button-color, $primary-button-text-color, 0px, 0px);
+        font-weight: 300;
+        font-size: 1.1em;
     }
 }
 
@@ -319,6 +321,11 @@ header {
 
         button {
             @include primary-button($input-button-color, $primary-button-text-color, 0px, 0px);
+
+            span {
+                // font-family: "Glyphicons Halflings";
+                font-size: 1em;
+            }
         }
     }
 } 
@@ -349,6 +356,12 @@ header {
 
             button {
                 @include primary-button($primary-button-color, $primary-button-text-color, 0px, 0px);
+                
+                span {
+                    // font-family: "Glyphicons Halflings";
+                    padding-top: 2px;
+                    font-size: 1.2em;
+                }
             }
         }
 
@@ -356,6 +369,12 @@ header {
 
             button {
                 @include primary-button($logout-delete-button-color, $primary-button-text-color, 0px, 0px);
+
+                span {
+                    // font-family: "Glyphicons Halflings";
+                    padding-top: 2px;
+                    font-size: 1.1em;
+                }
             }
         }
     }

@@ -44,14 +44,50 @@ html.no-js
       .container-fluid
         .filter-course.row
           .course.col-xs-4
-            h4 Course
-            select --
+            .dropdown
+              h4 Course
+              button#dropdownMenu1.dropdown-toggle(type='button', data-toggle='dropdown')
+                  | choose
+                  span.caret
+                ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu1')
+                  li(role='presentation')
+                    a(role='menuitem', tabindex='-1', href='#') Action
+                  li(role='presentation')
+                    a(role='menuitem', tabindex='-1', href='#') Another action
+                  li(role='presentation')
+                    a(role='menuitem', tabindex='-1', href='#') Something else here boom shakka lakka!
+                  li(role='presentation')
+                    a(role='menuitem', tabindex='-1', href='#') Separated link
           .timeline.col-xs-4
-            h4 Timeline
-            select --
+            .dropdown
+              h4 Timeline
+              button#dropdownMenu1.dropdown-toggle(type='button', data-toggle='dropdown')
+                  | choose
+                  span.caret
+                ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu1')
+                  li(role='presentation')
+                    a(role='menuitem', tabindex='-1', href='#') Action
+                  li(role='presentation')
+                    a(role='menuitem', tabindex='-1', href='#') Another action
+                  li(role='presentation')
+                    a(role='menuitem', tabindex='-1', href='#') Something else here boom shakka lakka!
+                  li(role='presentation')
+                    a(role='menuitem', tabindex='-1', href='#') Separated link
           .week.col-xs-4
-            h4 Week
-            select --
+            .dropdown
+              h4 Week
+              button#dropdownMenu1.dropdown-toggle(type='button', data-toggle='dropdown')
+                  | choose
+                  span.caret
+                ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu1')
+                  li(role='presentation')
+                    a(role='menuitem', tabindex='-1', href='#') Action
+                  li(role='presentation')
+                    a(role='menuitem', tabindex='-1', href='#') Another action
+                  li(role='presentation')
+                    a(role='menuitem', tabindex='-1', href='#') Something else here boom shakka lakka!
+                  li(role='presentation')
+                    a(role='menuitem', tabindex='-1', href='#') Separated link
     section.goals-bg.full-width
       .container-fluid
         .section-head.row
@@ -61,7 +97,8 @@ html.no-js
           .input-box.col-xs-9.col-sm-7
             input(type='text', placeholder='add a new goal')
           .button-box.col-xs-3.col-sm-1
-            button +
+            button
+              span.glyphicon.glyphicon-plus
         .list-container
           ul
             - for (var x = 0; x < 3; x++)
@@ -71,9 +108,11 @@ html.no-js
                 .date-container.col-xs-6.col-sm-2
                   p Insert Date
                 .edit-button-container.col-xs-3.col-sm-1
-                  button Edit
+                  button
+                    span.glyphicon.glyphicon-pencil
                 .delete-button-container.col-xs-3.col-sm-1
-                  button X
+                  button
+                    span.glyphicon.glyphicon-remove 
         .see-all
           a(href='#/goals') See All
     section.resources-bg.full-width
@@ -86,7 +125,8 @@ html.no-js
             input(type='text', placeholder='add a new url')
             textarea(placeholder='description')
           .button-box.col-xs-3.col-sm-1
-            button +
+            button
+              span.glyphicon.glyphicon-plus
         .list-container
           ul
             - for (var x = 0; x < 3; x++)
@@ -97,9 +137,11 @@ html.no-js
                 .date-container.col-xs-6.col-sm-2
                   p Insert Date
                 .edit-button-container.col-xs-3.col-sm-1
-                  button Edit
+                  button
+                    span.glyphicon.glyphicon-pencil
                 .delete-button-container.col-xs-3.col-sm-1
-                  button X
+                  button
+                    span.glyphicon.glyphicon-remove
         .see-all
           a(href='#/resources') See All
     section.assignments-bg.full-width
@@ -111,7 +153,8 @@ html.no-js
           .input-box.col-xs-9.col-sm-7
             textarea(placeholder='add a new assignment')
           .button-box.col-xs-3.col-sm-1
-            button +
+            button
+              span.glyphicon.glyphicon-plus
         .list-container
           ul
             - for (var x = 0; x < 3; x++)
@@ -121,9 +164,11 @@ html.no-js
                 .date-container.col-xs-6.col-sm-2
                   p Insert Date
                 .edit-button-container.col-xs-3.col-sm-1
-                  button Edit
+                  button
+                    span.glyphicon.glyphicon-pencil
                 .delete-button-container.col-xs-3.col-sm-1
-                  button X
+                  button
+                    span.glyphicon.glyphicon-remove
         .see-all
           a(href='#/assignments') See All
     footer.full-width
