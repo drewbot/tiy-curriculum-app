@@ -108,12 +108,17 @@ $input-box-color: #C4F478;
     padding: 10px;
     width: 100%;
     font-weight: 300;
-    @include placeholder($primary-text-color);
+    @include placeholder(lighten($primary-text-color, 18%));
     color: $primary-text-color;
-    border: 1px solid darken(#C4F478, 7%);
+    border: 1px solid darken($input-box-color, 7%);
     border-radius: 4px;
-    @include box-shadow( 0px -2px darken(#C4F478, 17%));
+    @include box-shadow( 0px -2px darken($input-box-color, 17%));
     outline: none;
+    &:hover {
+        border: 1px solid darken($input-box-color, 20%);
+        @include box-shadow( 0px -2px darken($input-box-color, 25%));
+        @include placeholder(darken($primary-text-color, 5%));
+    }
 }
 
 // --------------------- Global Styles -------------------
@@ -196,16 +201,13 @@ header {
 .resources-bg {
     background-color: $primary-bg-color;
     padding: 0 15px 0 15px;
-
     .section-head {
         textarea {
             margin-top: 15px;
         }
-
         .input-box {
             height: 160px;
         }
-
         .button-box {
             padding: 106px 15px 15px 15px;
             height: 160px;
@@ -216,13 +218,10 @@ header {
 .assignments-bg {
     background-color: $section-bg-color;
     padding: 0 15px 0 15px;
-
     .section-head {
-
         .input-box {
             height: 107px;
         }
-
         .button-box {
             padding: 53px 15px 15px 15px;
             height: 107px;
@@ -237,16 +236,13 @@ footer {
 
 // ------------------------ Header --------------------------
 header {
-    
     nav {
         padding: 37px 0 36px 0;
         height: 100px;
-        
         a {
             margin-right: 19px;
             height: 100px;
             @include secondary-text(1.2em, $header-footer-text-color);
-
             &:hover {
                 padding-bottom: 35px;
                 color: $link-hover-color;
@@ -255,19 +251,16 @@ header {
             }
         }
     }
-
     .user {
         padding: 39px 0 37px 0;
         height: 100px;
         text-align: right;
         @include primary-text(1em, 300, normal, $header-footer-text-color);
     }
-
     .logout {
         padding-top: 30px;
         height: 100px;
         padding-bottom: 30px;
-
         button {
             @include primary-text(1em, 300, normal, $header-footer-text-color);
             @include primary-button($logout-delete-button-color, $primary-button-text-color, 0px, 0px);
@@ -278,14 +271,12 @@ header {
 // ------------------------ Filter --------------------------
 .filter-course {
     height: 172px;
-
     h4 {
         padding: 25px 0 25px 0;
         width: 100%;
         text-align: center;
         @include primary-text(1.2em, 300, normal, $secondary-text-color);
     }
-
     button {
         @include primary-button($primary-button-color, $primary-button-text-color, 0px, 0px);
         font-weight: 300;
@@ -297,11 +288,9 @@ header {
 
 .section-head {
     padding: 30px 0 5px 0;
-
     .section-title {
         padding-bottom: 20px;
     }
-
     .input-box {
         padding: 16px 0 0 15px;
         height: 70px;
@@ -311,7 +300,6 @@ header {
         border-radius: 4px 0 0 4px;
         box-shadow: 0px 3px darken(#C4F478, 17%);
     }
-
     .button-box {
         padding: 15px;
         height: 70px;
@@ -320,7 +308,6 @@ header {
         border-width: 1px 1px 1px 0;
         border-radius: 0 4px 4px 0;
         box-shadow: 0px 3px darken(#C4F478, 17%);
-
         button {
             @include primary-button($input-button-color, $primary-button-text-color, 0px, 0px);
 
@@ -335,34 +322,26 @@ header {
 // ------------- list section -------------
 
 .list-container {
-
     ol {
         list-style-position: inside;
         list-style-type: decimal;
-
         .item-container {
             padding: 20px 0 20px 0;
             border-bottom: 1px solid $primary-text-color;
-
             li {
                 padding: 8px 15px 0 15px;
                 @include primary-text(1em, 300, normal, $primary-text-color);
-
                 a {
                     @include primary-text(1em, 400, italic, $primary-text-color);
                 }
             }
-
             .date-container {
                 padding: 8px 15px 0 15px;
                 @include primary-text(.8em, 300, italic, $primary-text-color);
             }
-
             .edit-button-container {
-
                 button {
                     @include primary-button($primary-button-color, $primary-button-text-color, 0px, 0px);
-                    
                     span {
                         // font-family: "Glyphicons Halflings";
                         padding-top: 2px;
@@ -370,12 +349,9 @@ header {
                     }
                 }
             }
-
             .delete-button-container {
-
                 button {
                     @include primary-button($logout-delete-button-color, $primary-button-text-color, 0px, 0px);
-
                     span {
                         // font-family: "Glyphicons Halflings";
                         padding-top: 2px;
@@ -390,11 +366,9 @@ header {
 .see-all {
     padding: 28px 0 28px 0;
     width: 100%;
-
     a {
         @include primary-text(1em, 400, italic, $primary-text-color);
     }
-    
 }   
 
 // ------------------- footer -------------------------
@@ -403,16 +377,6 @@ footer {
     padding: 35px 0 28px 0;
     @include primary-text(1em, 300, normal, $header-footer-text-color);
 }
-
-
-
-
-
-
-
-
-
-
 
 
 /* Small devices (tablets, 768px and up) */
