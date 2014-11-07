@@ -132,7 +132,7 @@ html.no-js
             - for (var x = 0; x < 3; x++)
               .item-container.row
                 li.col-xs-12.col-sm-8
-                  p Resource URL
+                  a(href='#') Resource URL
                   p Resource description
                 .date-container.col-xs-6.col-sm-2
                   p Insert Date
@@ -190,6 +190,8 @@ html.no-js
     // build:js scripts/vendor.js 
     // bower:js 
     script(src='bower_components/jquery/dist/jquery.js')
+    script(src='bower_components/underscore/underscore.js')
+    script(src='bower_components/backbone/backbone.js')
     // endbower 
     // endbuild 
     
@@ -208,7 +210,11 @@ html.no-js
     script(src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js')
     // endbuild 
     
-    // build:js scripts/main.js 
-    script(src='scripts/main.js')
+    // build:js scripts/main.js
     script(src='scripts/jquery-collapser/jquery.collapser.js')
+    script(src='scripts/model.js')
+    script(src='scripts/collection.js')
+    script(src='scripts/view.js')
+    script(src='scripts/main.js')
+    script(src='scripts/main.js')
     // endbuild 
