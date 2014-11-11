@@ -1,0 +1,61 @@
+@import "variables_mixins";
+
+// bower:scss
+@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+// endbower
+
+// --------------------- Global Styles -------------------
+
+// Box Sizing border-box all
+html {
+    @include box-sizing(border-box);
+}
+
+*, *:before, *:after {
+    @include box-sizing(border-box);
+}
+
+// simple list reset
+ol, ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    list-style: none;
+    vertical-align: baseline;
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+body {
+    font-family: $primary-typeface;
+    font-size: 1.6em;
+    color: $primary-text-color;
+    margin: 0;
+}
+
+.container-fluid {
+    margin: 0 auto;
+    max-width: 1020px;
+}
+
+h1 {
+    display: inline-block;
+    @include secondary-text(1.9em, $secondary-text-color);
+    border-bottom: 3px solid $secondary-text-color;
+    margin-bottom: 30px;
+}
+
+input, textarea {
+    @include primary-input();
+}
+
+input {
+    height: 39px;
+}
+
+textarea {
+    height: 76px;
+}

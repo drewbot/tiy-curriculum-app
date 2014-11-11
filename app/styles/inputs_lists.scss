@@ -1,0 +1,134 @@
+
+@import "variables_mixins";
+
+// bower:scss
+@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+// endbower
+
+// ------------------- full width bg's ---------------------
+
+.goals-bg {
+    @include full-width();
+    background-color: $section-bg-color;
+    padding: 0 15px 0 15px;
+}
+
+.resources-bg {
+    @include full-width();
+    background-color: $primary-bg-color;
+    padding: 0 15px 0 15px;
+    .section-head {
+        textarea {
+            margin-top: 15px;
+        }
+        .input-box {
+            height: 160px;
+        }
+        .button-box {
+            padding: 106px 15px 15px 15px;
+            height: 160px;
+        }
+    }
+}
+
+.assignments-bg {
+    @include full-width();
+    background-color: $section-bg-color;
+    padding: 0 15px 0 15px;
+    .section-head {
+        .input-box {
+            height: 107px;
+        }
+        .button-box {
+            padding: 53px 15px 15px 15px;
+            height: 107px;
+        }
+    }
+}
+
+// ---------------------- input ---------------- 
+
+.section-head {
+    padding: 30px 0 5px 0;
+    .section-title {
+        padding-bottom: 20px;
+    }
+    .input-box {
+        padding: 16px 0 0 15px;
+        height: 70px;
+        background-color: $input-box-color;
+        border: 1px solid darken(#C4F478, 7%);
+        border-width: 1px 0 1px 1px;
+        border-radius: 4px 0 0 4px;
+        box-shadow: 0px 3px darken(#C4F478, 17%);
+    }
+    .button-box {
+        padding: 15px;
+        height: 70px;
+        background-color: $input-box-color;
+        border: 1px solid darken(#C4F478, 7%);
+        border-width: 1px 1px 1px 0;
+        border-radius: 0 4px 4px 0;
+        box-shadow: 0px 3px darken(#C4F478, 17%);
+        button {
+            @include primary-button($input-button-color, $primary-button-text-color, 0px, 0px);
+
+            span {
+                // font-family: "Glyphicons Halflings";
+                font-size: 1em;
+            }
+        }
+    }
+} 
+
+// ------------- list section -------------
+
+.list {
+    ol {
+        list-style-position: inside;
+        list-style-type: decimal;
+        .item {
+            padding: 20px 0 20px 0;
+            border-bottom: 1px solid $primary-text-color;
+            li {
+                padding: 8px 15px 0 15px;
+                @include primary-text(1em, 300, normal, $primary-text-color);
+                a {
+                    @include primary-text(1em, 400, italic, $primary-text-color);
+                }
+            }
+            .date {
+                padding: 8px 15px 0 15px;
+                @include primary-text(.8em, 300, italic, $primary-text-color);
+            }
+            .edit-button {
+                button {
+                    @include primary-button($primary-button-color, $primary-button-text-color, 0px, 0px);
+                    span {
+                        // font-family: "Glyphicons Halflings";
+                        padding-top: 2px;
+                        font-size: 1.2em;
+                    }
+                }
+            }
+            .delete-button {
+                button {
+                    @include primary-button($logout-delete-button-color, $primary-button-text-color, 0px, 0px);
+                    span {
+                        // font-family: "Glyphicons Halflings";
+                        padding-top: 2px;
+                        font-size: 1.1em;
+                    }
+                }
+            }
+        }
+    }    
+}
+
+.see-all {
+    padding: 28px 0 28px 0;
+    width: 100%;
+    a {
+        @include primary-text(1em, 400, italic, $primary-text-color);
+    }
+}   

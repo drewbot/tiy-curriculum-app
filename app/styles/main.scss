@@ -1,4 +1,9 @@
 
+// @import "variables_mixins";
+// @import "global";
+// @import "app";
+// @import "inputs_lists";
+
 // bower:scss
 @import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 @import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_normalize.scss";
@@ -10,20 +15,6 @@
     color: #000;
     padding: 0.2em 0;
 }
-
-// ------------------------ Variables and Mixins ----------------------
-
-// ------- bg color variables ---------
-
-$primary-bg-color: #FFFFFF;
-$section-bg-color: #F0F7F6;
-$header-footer-bg-color: #4C5763;
-
-$input-box-color: #C4F478;
-
-// ----------- Type ----------------
-
-// $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 
 @font-face {
     font-family: "Glyphicons Halflings";
@@ -39,6 +30,20 @@ $input-box-color: #C4F478;
   font-family: "Fjalla One";
   src: url("http://fonts.googleapis.com/css?family=Fjalla+One");
 }
+
+// ------------------------ Variables and Mixins ----------------------
+
+// ------- bg color variables ---------
+
+$primary-bg-color: #FFFFFF;
+$section-bg-color: #F0F7F6;
+$header-footer-bg-color: #4C5763;
+
+$input-box-color: #C4F478;
+
+// ----------- Type ----------------
+
+// $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 
 $primary-typeface: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $secondary-typeface: "Fjalla One", Arial, sans-serif;
@@ -115,6 +120,7 @@ $input-box-color: #C4F478;
     border-radius: 4px;
     @include box-shadow( 0px -2px darken($input-box-color, 17%));
     outline: none;
+    @include transition(all 80ms ease-in);
     &:hover {
         background-color: #FFFFFF;
         border: 1px solid darken($input-box-color, 20%);

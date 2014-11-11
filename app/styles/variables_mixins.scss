@@ -1,0 +1,124 @@
+
+// bower:scss
+@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_normalize.scss";
+// endbower
+
+// ------------------------ Variables and Mixins ----------------------
+
+// ------- bg color variables ---------
+
+$primary-bg-color: #FFFFFF;
+$section-bg-color: #F0F7F6;
+$header-footer-bg-color: #4C5763;
+
+$input-box-color: #C4F478;
+
+// ----------- Type ----------------
+
+// $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+
+@font-face {
+    font-family: "Glyphicons Halflings";
+    src: url("../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,300,600,400");
+}
+
+@font-face {
+  font-family: "Fjalla One";
+  src: url("http://fonts.googleapis.com/css?family=Fjalla+One");
+}
+
+$primary-typeface: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$secondary-typeface: "Fjalla One", Arial, sans-serif;
+
+$primary-text-color: #4C5763;
+$secondary-text-color: #E65C61;
+$header-footer-text-color: #FFFFFF;
+
+$link-hover-color: #C4F478;
+
+// type mixins
+@mixin primary-text($size, $weight, $style, $color) {
+    font-family: $primary-typeface;
+    font-size: $size;
+    font-weight: $weight;
+    font-style: $style;
+    color: $color;
+}
+
+@mixin secondary-text($size, $color) {
+    font-family: $secondary-typeface;
+    font-size: $size;
+    letter-spacing: 0.03em;
+    color: $color;
+}
+
+// ------ Buttons ------------------
+// button variables
+
+$primary-button-color: #4C5763;
+$input-button-color: #A6E52C;
+$logout-delete-button-color: #F4606B;
+
+$primary-button-text-color: #FFFFFF;
+
+// button Mixin
+@mixin primary-button($bg-color, $color, $padding-t, $padding-b) {
+    padding: $padding-t 0 $padding-b 0;
+    height: 40px;
+    width: 100%;
+    background-color: $bg-color;
+    color: $color;
+    text-align: center;
+    border: 1px solid darken($bg-color, 5%);
+    border-bottom: 3px solid darken($bg-color, 10%);
+    border-radius: 4px;
+    outline: none;
+    @include transition(all 80ms ease-in);
+    &:hover {
+        background-color: lighten($bg-color, 5%);
+        border-color: darken($bg-color, 10%);
+        border-bottom-color: darken($bg-color, 15%);
+    }
+    &:active {
+        margin-top: 2px;
+        border-width: 1px;
+        height: 38px;
+    }
+}
+
+// --------------- Input Field ------------------------------
+// input field variables
+$input-box-color: #C4F478;
+
+// input mixin
+@mixin primary-input() {
+    padding: 10px;
+    width: 100%;
+    background-color: darken(#FFFFFF, 1%);
+    font-weight: 300;
+    @include placeholder(lighten($primary-text-color, 18%));
+    color: $primary-text-color;
+    border: 1px solid darken($input-box-color, 7%);
+    border-radius: 4px;
+    @include box-shadow( 0px -2px darken($input-box-color, 17%));
+    outline: none;
+    @include transition(all 80ms ease-in);
+    &:hover {
+        background-color: #FFFFFF;
+        border: 1px solid darken($input-box-color, 20%);
+        @include box-shadow( 0px -2px darken($input-box-color, 25%));
+        @include placeholder(darken($primary-text-color, 5%));
+    }
+}
+
+// Full width
+
+@mixin full-width(){
+    width: 100%;
+}

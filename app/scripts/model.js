@@ -12,14 +12,14 @@ Demi.Models.Week = Backbone.Model.extend({
 	idAttribute: "_id"
 });
 
-Demi.Models.Goals = Backbone.Model.extend({
+Demi.Models.Goal = Backbone.Model.extend({
 	idAttribute: "_id"
 });
 
-Demi.Models.Resources = Backbone.Model.extend({
+Demi.Models.Resource = Backbone.Model.extend({
 	idAttribute: "_id"
 });
 
-Demi.Models.Assignments = Backbone.Model.extend({
+Demi.Models.Assignment = Backbone.Model.extend({
 	idAttribute: "_id"
 });

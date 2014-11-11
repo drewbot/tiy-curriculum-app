@@ -24,7 +24,7 @@ html.no-js
         | browser. Please
         a(href='http://browsehappy.com/') upgrade your browser
         | to improve your experience.
-    header.full-width
+    header
       .container-fluid
         .row
           nav.col-xs-12.col-sm-6.col-md-5
@@ -40,7 +40,7 @@ html.no-js
               span User Name
           .logout.col-xs-3.col-sm-2
             button logout
-    section.filter-bg.full-width
+    section.filter-bg
       .container-fluid
         .filter-course.row
           .course.col-xs-4
@@ -88,16 +88,16 @@ html.no-js
                     a(role='menuitem', tabindex='-1', href='#') Something else here boom shakka lakka!
                   li(role='presentation')
                     a(role='menuitem', tabindex='-1', href='#') Separated link
-    section.goals-bg.full-width
+    section.goals-bg
       .container-fluid
         .section-head.row
           .section-title.col-xs-12
             h1 GOALS
             p After this week students can:
           .input-box.col-xs-9.col-sm-7
-            input(type='text', placeholder='add a new goal')
+            input(type='text', placeholder='add a new goal', class='input-goal')
           .button-box.col-xs-3.col-sm-1
-            button
+            button.save-goal
               span.glyphicon.glyphicon-plus
         .list
           ol
@@ -115,17 +115,17 @@ html.no-js
                     span.glyphicon.glyphicon-remove 
         .see-all
           a(href='#/goals') See All
-    section.resources-bg.full-width
+    section.resources-bg
       .container-fluid
         .section-head.row
           .section-title.col-xs-12
             h1 RESOURCES
             p These resources were helpful to students:
           .input-box.col-xs-9.col-sm-7
-            input(type='text', placeholder='add a new url')
-            textarea(placeholder='description')
+            input(type='text', placeholder='add a new url', class='input-resource-url')
+            textarea(placeholder='description', class='input-resource-description')
           .button-box.col-xs-3.col-sm-1
-            button
+            button.save-resource
               span.glyphicon.glyphicon-plus
         .list
           ol
@@ -144,16 +144,16 @@ html.no-js
                     span.glyphicon.glyphicon-remove
         .see-all
           a(href='#/resources') See All
-    section.assignments-bg.full-width
+    section.assignments-bg
       .container-fluid
         .section-head.row
           .section-title.col-xs-12
             h1 ASSIGNMENTS
             p Students were given:
           .input-box.col-xs-9.col-sm-7
-            textarea(placeholder='add a new assignment')
+            textarea(placeholder='add a new assignment', class='input-assignment')
           .button-box.col-xs-3.col-sm-1
-            button
+            button.save-assignment
               span.glyphicon.glyphicon-plus
         .list
           ol
@@ -171,7 +171,7 @@ html.no-js
                     span.glyphicon.glyphicon-remove
         .see-all
           a(href='#/assignments') See All
-    footer.full-width
+    footer
       .container-fluid
         .row
           .col-xs-12
@@ -217,4 +217,5 @@ html.no-js
     script(src='scripts/collection.js')
     script(src='scripts/view.js')
     script(src='scripts/main.js')
+    script(src='scripts/app.js')
     // endbuild 
