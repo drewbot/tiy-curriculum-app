@@ -101,18 +101,7 @@ html.no-js
               span.glyphicon.glyphicon-plus
         .list
           ol
-            - for (var x = 0; x < 3; x++)
-              .item.row
-                li.col-xs-12.col-sm-8
-                  p Goal Item
-                .date.col-xs-6.col-sm-2
-                  p Insert Date
-                .edit-button.col-xs-3.col-sm-1
-                  button
-                    span.glyphicon.glyphicon-pencil
-                .delete-button.col-xs-3.col-sm-1
-                  button
-                    span.glyphicon.glyphicon-remove 
+            .item.goal-item.row      
         .see-all
           a(href='#/goals') See All
     section.resources-bg
@@ -129,19 +118,7 @@ html.no-js
               span.glyphicon.glyphicon-plus
         .list
           ol
-            - for (var x = 0; x < 3; x++)
-              .item.row
-                li.col-xs-12.col-sm-8
-                  a(href='#') Resource URL
-                  p Resource description
-                .date.col-xs-6.col-sm-2
-                  p Insert Date
-                .edit-button.col-xs-3.col-sm-1
-                  button
-                    span.glyphicon.glyphicon-pencil
-                .delete-button.col-xs-3.col-sm-1
-                  button
-                    span.glyphicon.glyphicon-remove
+            .item.resource-item.row  
         .see-all
           a(href='#/resources') See All
     section.assignments-bg
@@ -157,18 +134,7 @@ html.no-js
               span.glyphicon.glyphicon-plus
         .list
           ol
-            - for (var x = 0; x < 3; x++)
-              .item.row
-                li.col-xs-12.col-sm-8
-                  p Bacon ipsum dolor amet aute dolore t-bone, consequat in deserunt in occaecat tenderloin cillum. Consequat ullamco duis turkey prosciutto mollit. Consectetur corned beef capicola cillum, pork belly boudin proident quis sunt excepteur commodo ham hock bresaola. Dolor do boudin commodo kielbasa pork belly sirloin dolore pig shankle veniam lorem.
-                .date.col-xs-6.col-sm-2
-                  p Insert Date
-                .edit-button.col-xs-3.col-sm-1
-                  button
-                    span.glyphicon.glyphicon-pencil
-                .delete-button.col-xs-3.col-sm-1
-                  button
-                    span.glyphicon.glyphicon-remove
+            .item.assignment-item.row
         .see-all
           a(href='#/assignments') See All
     footer
@@ -176,6 +142,44 @@ html.no-js
         .row
           .col-xs-12
             p copyright 2014 The Iron Yard
+
+    // templates
+    script.goal-template(type='text/template')
+      li.col-xs-12.col-sm-8
+        p Goal Item
+      .date.col-xs-6.col-sm-2
+        p Insert Date
+      .edit-button.col-xs-3.col-sm-1
+        button
+          span.glyphicon.glyphicon-pencil
+      .delete-button.col-xs-3.col-sm-1
+        button
+          span.glyphicon.glyphicon-remove
+    
+    script.resource-template(type='text/template')
+      li.col-xs-12.col-sm-8
+        a(href='#') Resource URL
+        p Resource description
+      .date.col-xs-6.col-sm-2
+        p Insert Date
+      .edit-button.col-xs-3.col-sm-1
+        button
+          span.glyphicon.glyphicon-pencil
+      .delete-button.col-xs-3.col-sm-1
+        button
+          span.glyphicon.glyphicon-remove
+
+    script.assignment-template(type='text/template')
+      li.col-xs-12.col-sm-8
+        p Bacon ipsum dolor amet aute dolore t-bone, consequat in deserunt in occaecat tenderloin cillum. Consequat ullamco duis turkey prosciutto mollit. Consectetur corned beef capicola cillum, pork belly boudin proident quis sunt excepteur commodo ham hock bresaola. Dolor do boudin commodo kielbasa pork belly sirloin dolore pig shankle veniam lorem.
+      .date.col-xs-6.col-sm-2
+        p Insert Date
+      .edit-button.col-xs-3.col-sm-1
+        button
+          span.glyphicon.glyphicon-pencil
+      .delete-button.col-xs-3.col-sm-1
+        button
+          span.glyphicon.glyphicon-remove
 
     // Google Analytics: change UA-XXXXX-X to be your site's ID. 
     script

@@ -12,7 +12,7 @@ $('.save-goal').click( function() {
 		// clear input
 		$('.input-goal').val('');
 	// If no input value is present show alert
-	else {
+	} else {
 		alert("You must add a new list item before saving");
 	}
 });
@@ -32,7 +32,7 @@ $('.save-resource').click( function() {
 		$('.input-resource-url').val('');
 		$('.input-resource-description').val('');
 	// If no input value is present show alert
-	else {
+	} else {
 		alert("You must add a new list item before saving");
 	}
 });
@@ -49,7 +49,7 @@ $('.save-assignment').click( function() {
 		// clear input
 		$('.input-assignment').val('');
 	// If no input value is present show alert
-	else {
+	} else {
 		alert("You must add a new list item before saving");
 	}
 });

@@ -20,9 +20,9 @@ var Demi = {
 	},
 	Views: {
 		WeekView: {},
-		GoalsView: {},
-		ResourcesView: {},
-		AssignmentsView: {},
+		GoalView: {},
+		ResourceView: {},
+		AssignmentView: {},
 		AppView: {},
 	},
 	Routers: {
@@ -46,9 +46,9 @@ var Demi = {
 	},
 	views: {
 		weekView: {},
-		goalsView: {},
-		resourcesView: {},
-		assignmentsView: {},
+		goalView: {},
+		resourceView: {},
+		assignmentView: {},
 		appView: {},
 	},
 	routers: {
