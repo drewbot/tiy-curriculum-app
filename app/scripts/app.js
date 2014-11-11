@@ -6,9 +6,9 @@ $('.save-goal').click( function() {
 		// the saved value will be equal to whatever is entered in the text box
 		var text = $('.input-goal').val();
 		//Create a new model instance, passing in JSON object for item with input value as text
-		var createItem = new Mover.Models.Goal({'item': text});
+		var createItem = new Demi.Models.Goal({'item': text});
 		// add the new model instance to goals collection
-		Mover.collections.goalsCollection.add(createItem);
+		Demi.collections.goalsCollection.add(createItem);
 		// clear input
 		$('.input-goal').val('');
 	// If no input value is present show alert
@@ -25,9 +25,9 @@ $('.save-resource').click( function() {
 		var text = $('.input-resource-description').val();
 		//Create a new model instance, passing in JSON object for item with input value as text
 		// and url input for the url
-		var createItem = new Mover.Models.Resource({'item-url': url, 'item': text});
+		var createItem = new Demi.Models.Resource({'itemUrl': url, 'item': text});
 		// add the new model instance to resources collection
-		Mover.collections.resourcesCollection.add(createItem);
+		Demi.collections.resourcesCollection.add(createItem);
 		// clear inputs
 		$('.input-resource-url').val('');
 		$('.input-resource-description').val('');
@@ -43,9 +43,9 @@ $('.save-assignment').click( function() {
 		// the saved value will be equal to whatever is entered in the text box
 		var text = $('.input-assignment').val();
 		//Create a new model instance, passing in JSON object for item with input value as text
-		var createItem = new Mover.Models.Assignment({'item': text});
+		var createItem = new Demi.Models.Assignment({'item': text});
 		// add the new model instance to assignments collection
-		Mover.collections.assignmentsCollection.add(createItem);
+		Demi.collections.assignmentsCollection.add(createItem);
 		// clear input
 		$('.input-assignment').val('');
 	// If no input value is present show alert

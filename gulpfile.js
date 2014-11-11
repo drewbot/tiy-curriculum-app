@@ -1,26 +1,21 @@
 'use strict';
-// generated on 2014-11-03 using generator-gulp-webapp 0.1.0
+// generated on 2014-11-11 using generator-gulp-webapp 0.1.0
 
 var gulp = require('gulp');
+
 // load plugins
 var $ = require('gulp-load-plugins')();
 
-
-gulp.task('templates', function() {
-  gulp.src('app/**/*.jade')
-    .pipe($.jade())
-    .pipe(gulp.dest('.tmp'))
-});
-
-
 gulp.task('styles', function () {
     return gulp.src('app/styles/main.scss')
-        .pipe($.sass())
+        .pipe($.rubySass({
+            style: 'expanded',
+            precision: 10
+        }))
         .pipe($.autoprefixer('last 1 version'))
         .pipe(gulp.dest('.tmp/styles'))
         .pipe($.size());
 });
-
 
 gulp.task('scripts', function () {
     return gulp.src('app/scripts/**/*.js')
@@ -29,11 +24,11 @@ gulp.task('scripts', function () {
         .pipe($.size());
 });
 
-gulp.task('html', ['styles', 'scripts', 'templates'], function () {
+gulp.task('html', ['styles', 'scripts'], function () {
     var jsFilter = $.filter('**/*.js');
     var cssFilter = $.filter('**/*.css');
 
-    return gulp.src(['app/*.html', '.tmp/*.html'])
+    return gulp.src('app/*.html')
         .pipe($.useref.assets({searchPath: '{.tmp,app}'}))
         .pipe(jsFilter)
         .pipe($.uglify())
@@ -96,7 +91,7 @@ gulp.task('connect', function () {
         });
 });
 
-gulp.task('serve', ['connect', 'templates', 'styles'], function () {
+gulp.task('serve', ['connect', 'styles'], function () {
     require('opn')('http://localhost:9000');
 });
 
@@ -124,7 +119,6 @@ gulp.task('watch', ['connect', 'serve'], function () {
     // watch for changes
 
     gulp.watch([
-        'app/**/*.jade',
         'app/*.html',
         '.tmp/styles/**/*.css',
         'app/scripts/**/*.js',
@@ -133,7 +127,6 @@ gulp.task('watch', ['connect', 'serve'], function () {
         server.changed(file.path);
     });
 
-    gulp.watch('app/**/*.jade', ['templates']);
     gulp.watch('app/styles/**/*.scss', ['styles']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);
     gulp.watch('app/images/**/*', ['images']);

@@ -1,12 +1,6 @@
 
-// @import "variables_mixins";
-// @import "global";
-// @import "app";
-// @import "inputs_lists";
-
 // bower:scss
 @import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
-@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_normalize.scss";
 // endbower
 
 .browsehappy {
@@ -16,20 +10,10 @@
     padding: 0.2em 0;
 }
 
-@font-face {
-    font-family: "Glyphicons Halflings";
-    src: url("../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf");
-}
-
-@font-face {
-  font-family: "Open Sans";
-  src: url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,300,600,400");
-}
-
-@font-face {
-  font-family: "Fjalla One";
-  src: url("http://fonts.googleapis.com/css?family=Fjalla+One");
-}
+// @font-face {
+//     font-family: "Glyphicons Halflings";
+//     src: url("../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf");
+// }
 
 // ------------------------ Variables and Mixins ----------------------
 
