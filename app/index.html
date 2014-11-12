@@ -263,6 +263,7 @@
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="scripts/jquery-collapser/jquery.collapser.js"></script>
   <script src="bower_components/underscore/underscore.js"></script>
   <script src="bower_components/backbone/backbone.js"></script>
   <!-- endbower -->
@@ -281,13 +282,24 @@
   <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
   <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
   <!-- endbuild -->
+
   <!-- build:js scripts/main.js-->
-  <script src="scripts/jquery-collapser/jquery.collapser.js"></script>
   <script src="scripts/var-global.js"></script>
-  <script src="scripts/model.js"></script>
-  <script src="scripts/collection.js"></script>
-  <script src="scripts/view.js"></script>
-  <script src="scripts/main.js"></script>
+
+  <!-- models -->
+  <script src="scripts/models/assignment.js"></script>
+  <script src="scripts/models/course.js"></script>
+  <script src="scripts/models/goal.js"></script>
+  <script src="scripts/models/resource.js"></script>
+  <script src="scripts/models/timeline.js"></script>
+  <script src="scripts/models/week.js"></script>
+
+  <!-- views -->
+  <script src="scripts/views/assignment.js"></script>
+  <script src="scripts/views/goal.js"></script>
+  <script src="scripts/views/resource.js"></script>
+
+  <!-- weird -->
   <script src="scripts/app.js"></script>
   <!-- endbuild -->
 </body>
