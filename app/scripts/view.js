@@ -119,7 +119,7 @@ Demi.Views.AppView = Backbone.View.extend({
 		Demi.collections.goalsCollection = new Demi.Collections.GoalsCollection();
 		Demi.collections.resourcesCollection = new Demi.Collections.ResourcesCollection();
 		Demi.collections.assignmentsCollection = new Demi.Collections.AssignmentsCollection();
-		// fetch em
+		// fetch them
 		Demi.collections.coursesCollection.fetch();
 		Demi.collections.timelinesCollection.fetch();
 		Demi.collections.weeksCollection.fetch();
