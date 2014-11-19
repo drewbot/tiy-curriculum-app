@@ -1,245 +1,224 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class='no-js'>
  
 <head>
-  <meta charset="utf-8">
+  <meta charset='utf-8'>
   <title>tiy curriculum app</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name='description' content=''>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel='stylesheet' href='styles/main.css'>
   <!-- endbuild -->
   <!-- build:js scripts/vendor/modernizr.js -->
-  <script src="bower_components/modernizr/modernizr.js"></script>
+  <script src='bower_components/modernizr/modernizr.js'></script>
   <!-- endbuild -->
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600|Fjalla+One" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600|Fjalla+One' rel='stylesheet' type='text/css'>
 </head>
  
 <body>
-  <!-- [if lt IE 7]> <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> <![endif]-->
+  <!-- [if lt IE 7]> <p class='browsehappy'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p> <![endif]-->
   <header>
-    <div class="container-fluid">
-      <div class="row">
-        <nav class="col-xs-12 col-sm-6 col-md-5">
-          <ul class="list-inline">
-            <li><a href="#/goals">GOALS</a>
+    <div class='container-fluid'>
+      <div class='row'>
+        <nav class='col-xs-12 col-sm-6 col-md-5'>
+          <ul class='list-inline'>
+            <li><a href='#/goals'>GOALS</a>
             </li>
-            <li><a href="#/resources">RESOURCES</a>
+            <li><a href='#/resources'>RESOURCES</a>
             </li>
-            <li><a href="#/assignments">ASSIGNMENTS</a>
+            <li><a href='#/assignments'>ASSIGNMENTS</a>
             </li>
           </ul>
         </nav>
-        <div class="user col-xs-9 col-sm-4 col-md-5">
+        <div class='user col-xs-9 col-sm-4 col-md-5'>
           <p>Hello,
             <span>User Name</span>
           </p>
         </div>
-        <div class="logout col-xs-3 col-sm-2">
+        <div class='logout col-xs-3 col-sm-2'>
           <button>logout</button>
         </div>
       </div>
     </div>
   </header>
-  <section class="filter-bg">
-    <div class="container-fluid">
-      <div class="filter-course row">
-        <div class="course col-xs-4">
-          <div class="dropdown">
+  <section class='filter-bg'>
+    <div class='container-fluid'>
+      <div class='filter-course row'>
+        <div class='course col-xs-4'>
+          <div class='dropdown'>
             <h4>Course</h4>
-            <button id="dropdownMenu1" type="button" data-toggle="dropdown" class="dropdown-toggle">choose
-              <span class="caret"></span>
+            <button id='dropdownMenu1' type='button' data-toggle='dropdown' class='dropdown-toggle'>
+              <span class='button-text'>choose</span>
+              <span class='caret'></span>
             </button>
-            <ul role="menu" aria-labelledby="dropdownMenu1" class="dropdown-menu">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a>
-              </li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a>
-              </li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here boom shakka lakka!</a>
-              </li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a>
-              </li>
+            <ul role='menu' aria-labelledby='dropdownMenu1' class='dropdown-menu' id='course-list-dropdown'>
             </ul>
           </div>
         </div>
-        <div class="timeline col-xs-4">
-          <div class="dropdown">
+        <div class='timeline col-xs-4'>
+          <div class='dropdown'>
             <h4>Timeline</h4>
-            <button id="dropdownMenu1" type="button" data-toggle="dropdown" class="dropdown-toggle">choose
-              <span class="caret"></span>
+            <button id='dropdownMenu1' type='button' data-toggle='dropdown' class='dropdown-toggle'>
+              <span class='button-text'>choose</span>
+              <span class='caret'></span>
             </button>
-            <ul role="menu" aria-labelledby="dropdownMenu1" class="dropdown-menu">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a>
-              </li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a>
-              </li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here boom shakka lakka!</a>
-              </li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a>
-              </li>
+            <ul role='menu' aria-labelledby='dropdownMenu1' class='dropdown-menu' id='timeline-list-dropdown'>
             </ul>
           </div>
         </div>
-        <div class="week col-xs-4">
-          <div class="dropdown">
+        <div class='week col-xs-4'>
+          <div class='dropdown'>
             <h4>Week</h4>
-            <button id="dropdownMenu1" type="button" data-toggle="dropdown" class="dropdown-toggle">choose
-              <span class="caret"></span>
+            <button id='dropdownMenu1' type='button' data-toggle='dropdown' class='dropdown-toggle'>
+              <span class='button-text'>choose</span>
+              <span class='caret'></span>
             </button>
-            <ul role="menu" aria-labelledby="dropdownMenu1" class="dropdown-menu">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a>
-              </li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a>
-              </li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here boom shakka lakka!</a>
-              </li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a>
-              </li>
+            <ul role='menu' aria-labelledby='dropdownMenu1' class='dropdown-menu' id='week-list-dropdown'>
             </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="goals-bg">
-    <div class="container-fluid">
-      <div class="section-head row">
-        <div class="section-title col-xs-12">
+  <section class='goals-bg'>
+    <div class='container-fluid'>
+      <div class='section-head row'>
+        <div class='section-title col-xs-12'>
           <h1>GOALS</h1>
           <p>After this week students can:</p>
         </div>
-        <div class="input-box col-xs-9 col-sm-7">
-          <input type="text" placeholder="add a new goal" class="input-goal">
+        <div class='input-box col-xs-9 col-sm-7'>
+          <input type='text' placeholder='add a new goal' class='input-goal'>
         </div>
-        <div class="button-box col-xs-3 col-sm-1">
-          <button class="save-goal">
-            <span class="glyphicon glyphicon-plus"></span>
+        <div class='button-box col-xs-3 col-sm-1'>
+          <button class='save-goal'>
+            <span class='glyphicon glyphicon-plus'></span>
           </button>
         </div>
       </div>
-      <div class="list">
+      <div class='list'>
         <ol>
-          <div class="item goal-item row"></div>
+          <div class='item goal-item row'></div>
         </ol>
       </div>
-      <div class="see-all"><a href="#/goals">See All</a>
+      <div class='see-all'><a href='#/goals'>See All</a>
       </div>
     </div>
   </section>
-  <section class="resources-bg">
-    <div class="container-fluid">
-      <div class="section-head row">
-        <div class="section-title col-xs-12">
+  <section class='resources-bg'>
+    <div class='container-fluid'>
+      <div class='section-head row'>
+        <div class='section-title col-xs-12'>
           <h1>RESOURCES</h1>
           <p>These resources were helpful to students:</p>
         </div>
-        <div class="input-box col-xs-9 col-sm-7">
-          <input type="text" placeholder="add a new url" class="input-resource-url">
-          <textarea placeholder="description" class="input-resource-description"></textarea>
+        <div class='input-box col-xs-9 col-sm-7'>
+          <input type='text' placeholder='add a new url' class='input-resource-url'>
+          <textarea placeholder='description' class='input-resource-description'></textarea>
         </div>
-        <div class="button-box col-xs-3 col-sm-1">
-          <button class="save-resource">
-            <span class="glyphicon glyphicon-plus"></span>
+        <div class='button-box col-xs-3 col-sm-1'>
+          <button class='save-resource'>
+            <span class='glyphicon glyphicon-plus'></span>
           </button>
         </div>
       </div>
-      <div class="list">
+      <div class='list'>
         <ol>
-          <div class="item resource-item row"></div>
+          <div class='item resource-item row'></div>
         </ol>
       </div>
-      <div class="see-all"><a href="#/resources">See All</a>
+      <div class='see-all'><a href='#/resources'>See All</a>
       </div>
     </div>
   </section>
-  <section class="assignments-bg">
-    <div class="container-fluid">
-      <div class="section-head row">
-        <div class="section-title col-xs-12">
+  <section class='assignments-bg'>
+    <div class='container-fluid'>
+      <div class='section-head row'>
+        <div class='section-title col-xs-12'>
           <h1>ASSIGNMENTS</h1>
           <p>Students were given:</p>
         </div>
-        <div class="input-box col-xs-9 col-sm-7">
-          <textarea placeholder="add a new assignment" class="input-assignment"></textarea>
+        <div class='input-box col-xs-9 col-sm-7'>
+          <textarea placeholder='add a new assignment' class='input-assignment'></textarea>
         </div>
-        <div class="button-box col-xs-3 col-sm-1">
-          <button class="save-assignment">
-            <span class="glyphicon glyphicon-plus"></span>
+        <div class='button-box col-xs-3 col-sm-1'>
+          <button class='save-assignment'>
+            <span class='glyphicon glyphicon-plus'></span>
           </button>
         </div>
       </div>
-      <div class="list">
+      <div class='list'>
         <ol>
-          <div class="item assignment-item row"></div>
+          <div class='item assignment-item row'></div>
         </ol>
       </div>
-      <div class="see-all"><a href="#/assignments">See All</a>
+      <div class='see-all'><a href='#/assignments'>See All</a>
       </div>
     </div>
   </section>
   <footer>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-12">
+    <div class='container-fluid'>
+      <div class='row'>
+        <div class='col-xs-12'>
           <p>copyright 2014 The Iron Yard</p>
         </div>
       </div>
     </div>
   </footer>
   <!-- templates-->
-  <script type="text/template" class="goal-template">
-    <li class="col-xs-12 col-sm-8">
+  <script type='text/template' class='goal-template'>
+    <li class='col-xs-12 col-sm-8'>
       <p><%=item%></p>
     </li>
-    <div class="date col-xs-6 col-sm-2">
+    <div class='date col-xs-6 col-sm-2'>
       <p><%=time%></p>
     </div>
-    <div class="edit-button col-xs-3 col-sm-1">
+    <div class='edit-button col-xs-3 col-sm-1'>
       <button>
-        <span class="glyphicon glyphicon-pencil"></span>
+        <span class='glyphicon glyphicon-pencil'></span>
       </button>
     </div>
-    <div class="delete-button col-xs-3 col-sm-1">
+    <div class='delete-button col-xs-3 col-sm-1'>
       <button>
-        <span class="glyphicon glyphicon-remove"></span>
+        <span class='glyphicon glyphicon-remove'></span>
       </button>
     </div>
   </script>
-  <script type="text/template" class="resource-template">
-    <li class="col-xs-12 col-sm-8">
-      <a href="#"><%=itemUrl%></a>
+  <script type='text/template' class='resource-template'>
+    <li class='col-xs-12 col-sm-8'>
+      <a href='#'><%=itemUrl%></a>
       <p><%=item%></p>
     </li>
-    <div class="date col-xs-6 col-sm-2">
+    <div class='date col-xs-6 col-sm-2'>
       <p><%=time%></p>
     </div>
-    <div class="edit-button col-xs-3 col-sm-1">
+    <div class='edit-button col-xs-3 col-sm-1'>
       <button>
-        <span class="glyphicon glyphicon-pencil"></span>
+        <span class='glyphicon glyphicon-pencil'></span>
       </button>
     </div>
-    <div class="delete-button col-xs-3 col-sm-1">
+    <div class='delete-button col-xs-3 col-sm-1'>
       <button>
-        <span class="glyphicon glyphicon-remove"></span>
+        <span class='glyphicon glyphicon-remove'></span>
       </button>
     </div>
   </script>
-  <script type="text/template" class="assignment-template">
-    <li class="col-xs-12 col-sm-8">
+  <script type='text/template' class='assignment-template'>
+    <li class='col-xs-12 col-sm-8'>
       <p><%=item%></p>
     </li>
-    <div class="date col-xs-6 col-sm-2">
+    <div class='date col-xs-6 col-sm-2'>
       <p><%=time%></p>
     </div>
-    <div class="edit-button col-xs-3 col-sm-1">
+    <div class='edit-button col-xs-3 col-sm-1'>
       <button>
-        <span class="glyphicon glyphicon-pencil"></span>
+        <span class='glyphicon glyphicon-pencil'></span>
       </button>
     </div>
-    <div class="delete-button col-xs-3 col-sm-1">
+    <div class='delete-button col-xs-3 col-sm-1'>
       <button>
-        <span class="glyphicon glyphicon-remove"></span>
+        <span class='glyphicon glyphicon-remove'></span>
       </button>
     </div>
   </script>
@@ -263,44 +242,48 @@
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="scripts/jquery-collapser/jquery.collapser.js"></script>
   <script src="bower_components/underscore/underscore.js"></script>
   <script src="bower_components/backbone/backbone.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:js scripts/plugins.js -->
-  <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-  <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-  <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-  <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-  <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-  <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-  <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-  <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-  <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-  <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-  <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-  <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+  <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js'></script>
+  <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js'></script>
+  <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js'></script>
+  <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js'></script>
+  <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js'></script>
+  <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js'></script>
+  <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js'></script>
+  <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js'></script>
+  <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js'></script>
+  <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js'></script>
+  <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js'></script>
+  <script src='bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js'></script>
   <!-- endbuild -->
 
   <!-- build:js scripts/main.js-->
-  <script src="scripts/var-global.js"></script>
+  <script src='scripts/var-global.js'></script>
 
   <!-- models -->
-  <script src="scripts/models/assignment.js"></script>
-  <script src="scripts/models/course.js"></script>
-  <script src="scripts/models/goal.js"></script>
-  <script src="scripts/models/resource.js"></script>
-  <script src="scripts/models/timeline.js"></script>
-  <script src="scripts/models/week.js"></script>
+  <script src='scripts/models/assignment.js'></script>
+  <script src='scripts/models/course.js'></script>
+  <script src='scripts/models/goal.js'></script>
+  <script src='scripts/models/resource.js'></script>
+  <script src='scripts/models/timeline.js'></script>
+  <script src='scripts/models/week.js'></script>
 
   <!-- views -->
-  <script src="scripts/views/assignment.js"></script>
-  <script src="scripts/views/goal.js"></script>
-  <script src="scripts/views/resource.js"></script>
+  <script src='scripts/views/dropdown-item.js'></script>
+  <script src='scripts/views/assignment.js'></script>
+  <script src='scripts/views/goal.js'></script>
+  <script src='scripts/views/resource.js'></script>
+
+  <!-- router -->
+  <script src='scripts/routers/app-router.js'></script>
+
 
   <!-- weird -->
-  <script src="scripts/app.js"></script>
+  <script src='scripts/app.js'></script>
   <!-- endbuild -->
 </body>
  

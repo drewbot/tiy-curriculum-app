@@ -1,10 +1,14 @@
 "use strict";
 
 Demi.Models.Course = Backbone.Model.extend({
-  idAttribute: "_id"
+  type: 'course',
+
+  generateURI: function () {
+    return '#/courses/' + this.id
+  }
 });
 
-Demi.Collections.CoursesCollection = Backbone.Collection.extend({
+Demi.Collections.courses = Backbone.Collection.extend({
   model: Demi.Models.Course,
   url: 'http://normalizer.herokuapp.com/courses'
 });

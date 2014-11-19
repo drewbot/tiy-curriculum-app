@@ -1,7 +1,6 @@
 "use strict";
 
 Demi.Models.Assignment = Backbone.Model.extend({
-  idAttribute: "_id"
 });
 
 Demi.Collections.AssignmentsCollection = Backbone.Collection.extend({

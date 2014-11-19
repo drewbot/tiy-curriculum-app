@@ -1,7 +1,6 @@
 "use strict";
 
 Demi.Models.Resource = Backbone.Model.extend({
-  idAttribute: "_id"
 });
 
 Demi.Collections.ResourcesCollection = Backbone.Collection.extend({
