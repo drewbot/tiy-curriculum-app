@@ -16,11 +16,16 @@ Demi.Routers.AppRouter = Backbone.Router.extend({
   },
 
   initialize: function () {
+    new Demi.Views.Week();
 
     // Initialize the courses, timelines, and weeks collection
     Demi.collections.courses = new Demi.Collections.courses();
     Demi.collections.timelines = new Demi.Collections.timelines();
     Demi.collections.weeks = new Demi.Collections.weeks();
+
+    Demi.collections.goals = new Demi.Collections.Goals();
+    Demi.collections.resources = new Demi.Collections.Resources();
+    Demi.collections.assignments = new Demi.Collections.Assignments();
 
 
     // Each collection should send newly added model instances to a
@@ -35,6 +40,18 @@ Demi.Routers.AppRouter = Backbone.Router.extend({
 
     this.listenTo(Demi.collections.weeks, 'add', function (week) {
       new Demi.Views.DropdownItem({model: week});
+    });
+
+    this.listenTo(Demi.collections.goals, 'add', function (goal) {
+      new Demi.Views.Goal({model: goal})
+    });
+
+    this.listenTo(Demi.collections.resources, 'add', function (resource) {
+      new Demi.Views.Resource({model: resource})
+    });
+
+    this.listenTo(Demi.collections.assignments, 'add', function (assignment) {
+      new Demi.Views.Assignment({model: assignment})
     });
     
     // We'll always need the courses collection, so let's just go ahead
@@ -114,18 +131,20 @@ Demi.Routers.AppRouter = Backbone.Router.extend({
       // Iterate over the current week's resources and create views and models.
       // Note: these should probably be in a collection?
       _.each(Demi.current.week.get('resources'), function(resource){
-        new Demi.Views.Resource({model: new Demi.Models.Resource(resource)})
+        Demi.collections.resources.add({resource: resource})
       })
 
       // This is silly, but yeah, we're iterating over the string goals/assignments and
       // making a new view and "model" with each. We need the API to return
       // actual goal and assignment models, not just strings :/
       _.each(Demi.current.week.get('goals'), function(goalString){
-        new Demi.Views.Goal({model: new Demi.Models.Goal({description: goalString})})
+
+        var abc = Demi.collections.goals.add({goal: {description: goalString}});
+        console.log('abc is',abc)
       })
 
       _.each(Demi.current.week.get('assignments'), function(assignmentString){
-        new Demi.Views.Assignment({model: new Demi.Models.Assignment({description: assignmentString})})
+        Demi.collections.assignments.add({assignment: {description: assignmentString}})
       })
 
     }.bind(this));

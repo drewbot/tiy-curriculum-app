@@ -73,6 +73,11 @@
                 resource.js
               </a>
             
+              
+              <a class="source" href="week.html">
+                week.js
+              </a>
+            
           </div>
         </li>
       </ul>
@@ -102,13 +107,22 @@ Demi.Views.Assignment = Backbone.View.extend({
 
   template: _.template($(<span class="hljs-string">'.assignment-template'</span>).text()),
 
+  events: {
+    <span class="hljs-string">'click .delete-button'</span>: <span class="hljs-string">'destroy'</span>
+  },
+
   initialize: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
     $(<span class="hljs-string">'.assignment-items ol'</span>).append(<span class="hljs-keyword">this</span>.el);
     <span class="hljs-keyword">this</span>.render();
   },
 
   render: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">this</span>.$el.html(<span class="hljs-keyword">this</span>.template({assignment: <span class="hljs-keyword">this</span>.model}))
+    <span class="hljs-keyword">this</span>.$el.html(<span class="hljs-keyword">this</span>.template(<span class="hljs-keyword">this</span>.model.attributes))
+  },
+
+  destroy: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    Demi.collections.assignments.get(<span class="hljs-keyword">this</span>.model.id).destroy();
+    <span class="hljs-keyword">this</span>.remove()
   }
 
 })</pre></div></div>

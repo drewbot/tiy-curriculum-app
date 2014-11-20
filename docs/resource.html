@@ -73,6 +73,11 @@
                 resource.js
               </a>
             
+              
+              <a class="source" href="week.html">
+                week.js
+              </a>
+            
           </div>
         </li>
       </ul>
@@ -107,8 +112,17 @@ Demi.Views.Resource = Backbone.View.extend({
     <span class="hljs-keyword">this</span>.render();
   },
 
+  events: {
+    <span class="hljs-string">'click .delete-button'</span>: <span class="hljs-string">'destroy'</span>
+  },
+
   render: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">this</span>.$el.html(<span class="hljs-keyword">this</span>.template({resource: <span class="hljs-keyword">this</span>.model}))
+    <span class="hljs-keyword">this</span>.$el.html(<span class="hljs-keyword">this</span>.template(<span class="hljs-keyword">this</span>.model.attributes))
+  },
+
+  destroy: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    Demi.collections.resources.get(<span class="hljs-keyword">this</span>.model.id).destroy();
+    <span class="hljs-keyword">this</span>.remove()
   }
 
 })</pre></div></div>

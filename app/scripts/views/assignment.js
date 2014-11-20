@@ -4,13 +4,22 @@ Demi.Views.Assignment = Backbone.View.extend({
 
   template: _.template($('.assignment-template').text()),
 
+  events: {
+    'click .delete-button': 'destroy'
+  },
+
   initialize: function () {
     $('.assignment-items ol').append(this.el);
     this.render();
   },
 
   render: function () {
-    this.$el.html(this.template({assignment: this.model}))
+    this.$el.html(this.template(this.model.attributes))
+  },
+
+  destroy: function () {
+    Demi.collections.assignments.get(this.model.id).destroy();
+    this.remove()
   }
 
 })

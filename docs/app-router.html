@@ -73,6 +73,11 @@
                 resource.js
               </a>
             
+              
+              <a class="source" href="week.html">
+                week.js
+              </a>
+            
           </div>
         </li>
       </ul>
@@ -124,7 +129,8 @@ based on separate API endpoints.</p>
     <span class="hljs-string">'courses/:courseId/timelines/:timelineId/weeks/:weekNumber'</span> : <span class="hljs-string">'loadWeek'</span>,
   },
 
-  initialize: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{</pre></div></div>
+  initialize: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">new</span> Demi.Views.Week();</pre></div></div>
             
         </li>
         
@@ -141,7 +147,11 @@ based on separate API endpoints.</p>
             
             <div class="content"><div class='highlight'><pre>    Demi.collections.courses = <span class="hljs-keyword">new</span> Demi.Collections.courses();
     Demi.collections.timelines = <span class="hljs-keyword">new</span> Demi.Collections.timelines();
-    Demi.collections.weeks = <span class="hljs-keyword">new</span> Demi.Collections.weeks();</pre></div></div>
+    Demi.collections.weeks = <span class="hljs-keyword">new</span> Demi.Collections.weeks();
+
+    Demi.collections.goals = <span class="hljs-keyword">new</span> Demi.Collections.Goals();
+    Demi.collections.resources = <span class="hljs-keyword">new</span> Demi.Collections.Resources();
+    Demi.collections.assignments = <span class="hljs-keyword">new</span> Demi.Collections.Assignments();</pre></div></div>
             
         </li>
         
@@ -167,6 +177,18 @@ based on separate API endpoints.</p>
 
     <span class="hljs-keyword">this</span>.listenTo(Demi.collections.weeks, <span class="hljs-string">'add'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(week)</span> </span>{
       <span class="hljs-keyword">new</span> Demi.Views.DropdownItem({model: week});
+    });
+
+    <span class="hljs-keyword">this</span>.listenTo(Demi.collections.goals, <span class="hljs-string">'add'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(goal)</span> </span>{
+      <span class="hljs-keyword">new</span> Demi.Views.Goal({model: goal})
+    });
+
+    <span class="hljs-keyword">this</span>.listenTo(Demi.collections.resources, <span class="hljs-string">'add'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(resource)</span> </span>{
+      <span class="hljs-keyword">new</span> Demi.Views.Resource({model: resource})
+    });
+
+    <span class="hljs-keyword">this</span>.listenTo(Demi.collections.assignments, <span class="hljs-string">'add'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(assignment)</span> </span>{
+      <span class="hljs-keyword">new</span> Demi.Views.Assignment({model: assignment})
     });</pre></div></div>
             
         </li>
@@ -340,7 +362,7 @@ Note: these should probably be in a collection?</p>
             </div>
             
             <div class="content"><div class='highlight'><pre>      _.each(Demi.current.week.get(<span class="hljs-string">'resources'</span>), <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resource)</span></span>{
-        <span class="hljs-keyword">new</span> Demi.Views.Resource({model: <span class="hljs-keyword">new</span> Demi.Models.Resource(resource)})
+        Demi.collections.resources.add({resource: resource})
       })</pre></div></div>
             
         </li>
@@ -359,11 +381,13 @@ actual goal and assignment models, not just strings :/</p>
             </div>
             
             <div class="content"><div class='highlight'><pre>      _.each(Demi.current.week.get(<span class="hljs-string">'goals'</span>), <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(goalString)</span></span>{
-        <span class="hljs-keyword">new</span> Demi.Views.Goal({model: <span class="hljs-keyword">new</span> Demi.Models.Goal({description: goalString})})
+
+        <span class="hljs-keyword">var</span> abc = Demi.collections.goals.add({goal: {description: goalString}});
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'abc is'</span>,abc)
       })
 
       _.each(Demi.current.week.get(<span class="hljs-string">'assignments'</span>), <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(assignmentString)</span></span>{
-        <span class="hljs-keyword">new</span> Demi.Views.Assignment({model: <span class="hljs-keyword">new</span> Demi.Models.Assignment({description: assignmentString})})
+        Demi.collections.assignments.add({assignment: {description: assignmentString}})
       })
 
     }.bind(<span class="hljs-keyword">this</span>));

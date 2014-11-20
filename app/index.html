@@ -82,85 +82,8 @@
     </div>
   </section>
 
-
-  <section class='goals-bg'>
-    <div class='container-fluid'>
-      <div class='section-head row'>
-        <div class='section-title col-xs-12'>
-          <h1>GOALS</h1>
-          <p>After this week students can:</p>
-        </div>
-        <div class='input-box col-xs-9 col-sm-7'>
-          <input type='text' placeholder='add a new goal' class='input-goal'>
-        </div>
-
-
-        <div class='button-box col-xs-3 col-sm-1'>
-          <button class='save-goal'>
-            <span class='glyphicon glyphicon-plus'></span>
-          </button>
-        </div>
-      </div>
-      <div class='list goal-items row'>
-        <ol>
-        </ol>
-      </div>
-      <div class='see-all'><a href='#/goals'>See All</a>
-      </div>
-    </div>
-  </section>
-
-
-  <section class='resources-bg'>
-    <div class='container-fluid'>
-      <div class='section-head row'>
-        <div class='section-title col-xs-12'>
-          <h1>RESOURCES</h1>
-          <p>These resources were helpful to students:</p>
-        </div>
-        <div class='input-box col-xs-9 col-sm-7'>
-          <input type='text' placeholder='add a new url' class='input-resource-url'>
-          <textarea placeholder='description' class='input-resource-description'></textarea>
-        </div>
-        <div class='button-box col-xs-3 col-sm-1'>
-          <button class='save-resource'>
-            <span class='glyphicon glyphicon-plus'></span>
-          </button>
-        </div>
-      </div>
-      <div class='list resource-items row'>
-        <ol>
-        </ol>
-      </div>
-      <div class='see-all'><a href='#/resources'>See All</a>
-      </div>
-    </div>
-  </section>
-
-  <section class='assignments-bg'>
-    <div class='container-fluid'>
-      <div class='section-head row'>
-        <div class='section-title col-xs-12'>
-          <h1>ASSIGNMENTS</h1>
-          <p>Students were given:</p>
-        </div>
-        <div class='input-box col-xs-9 col-sm-7'>
-          <textarea placeholder='add a new assignment' class='input-assignment'></textarea>
-        </div>
-        <div class='button-box col-xs-3 col-sm-1'>
-          <button class='save-assignment'>
-            <span class='glyphicon glyphicon-plus'></span>
-          </button>
-        </div>
-      </div>
-      <div class='list assignment-items row'>
-        <ol>
-        </ol>
-      </div>
-      <div class='see-all'><a href='#/assignments'>See All</a>
-      </div>
-    </div>
-  </section>
+  <div class="week-container"></div>
+  
   <footer>
     <div class='container-fluid'>
       <div class='row'>
@@ -175,10 +98,91 @@
 
   <!-- templates-->
 
+  <script type='text/template' class='week-template'>
+    <section class='goals-bg'>
+      <div class='container-fluid'>
+        <div class='section-head row'>
+          <div class='section-title col-xs-12'>
+            <h1>GOALS</h1>
+            <p>After this week students can:</p>
+          </div>
+          <div class='input-box col-xs-9 col-sm-7'>
+            <input type='text' placeholder='add a new goal' class='input-goal'>
+          </div>
+
+
+          <div class='button-box col-xs-3 col-sm-1'>
+            <button class='save-goal'>
+              <span class='glyphicon glyphicon-plus'></span>
+            </button>
+          </div>
+        </div>
+        <div class='list goal-items row'>
+          <ol>
+          </ol>
+        </div>
+        <div class='see-all'><a href='#/goals'>See All</a>
+        </div>
+      </div>
+    </section>
+
+
+    <section class='resources-bg'>
+      <div class='container-fluid'>
+        <div class='section-head row'>
+          <div class='section-title col-xs-12'>
+            <h1>RESOURCES</h1>
+            <p>These resources were helpful to students:</p>
+          </div>
+          <div class='input-box col-xs-9 col-sm-7'>
+            <input type='text' placeholder='add a new url' class='input-resource-url'>
+            <textarea placeholder='description' class='input-resource-description'></textarea>
+          </div>
+          <div class='button-box col-xs-3 col-sm-1'>
+            <button class='save-resource'>
+              <span class='glyphicon glyphicon-plus'></span>
+            </button>
+          </div>
+        </div>
+        <div class='list resource-items row'>
+          <ol>
+          </ol>
+        </div>
+        <div class='see-all'><a href='#/resources'>See All</a>
+        </div>
+      </div>
+    </section>
+
+    <section class='assignments-bg'>
+      <div class='container-fluid'>
+        <div class='section-head row'>
+          <div class='section-title col-xs-12'>
+            <h1>ASSIGNMENTS</h1>
+            <p>Students were given:</p>
+          </div>
+          <div class='input-box col-xs-9 col-sm-7'>
+            <textarea placeholder='add a new assignment' class='input-assignment'></textarea>
+          </div>
+          <div class='button-box col-xs-3 col-sm-1'>
+            <button class='save-assignment'>
+              <span class='glyphicon glyphicon-plus'></span>
+            </button>
+          </div>
+        </div>
+        <div class='list assignment-items row'>
+          <ol>
+          </ol>
+        </div>
+        <div class='see-all'><a href='#/assignments'>See All</a>
+        </div>
+      </div>
+    </section>
+  </script>
+
 
   <script type='text/template' class='goal-template'>
     <li class='col-xs-12 col-sm-8'>
-      <p><%= goal.get('description')%></p>
+      <p><%= goal.description %></p>
     </li>
     <div class='date col-xs-6 col-sm-2'>
       <p><%= Date.now() %></p>
@@ -198,8 +202,8 @@
 
   <script type='text/template' class='resource-template'>
     <li class='col-xs-12 col-sm-8'>
-      <a href='<%= resource.get('url') %>' target="_blank"><%= resource.get('url') %></a>
-      <p><%= resource.get('description') %></p>
+      <a href='<%= resource.url %>' target="_blank"><%= resource.url %></a>
+      <p><%= resource.description %></p>
     </li>
     <div class='date col-xs-6 col-sm-2'>
       <p><%= Date.now() %></p>
@@ -220,7 +224,7 @@
 
   <script type='text/template' class='assignment-template'>
     <li class='col-xs-12 col-sm-8'>
-      <p><%= assignment.get('description') %></p>
+      <p><%= assignment.description %></p>
     </li>
     <div class='date col-xs-6 col-sm-2'>
       <p><%= Date.now() %></p>
@@ -292,6 +296,7 @@
   <script src='scripts/views/assignment.js'></script>
   <script src='scripts/views/goal.js'></script>
   <script src='scripts/views/resource.js'></script>
+  <script src='scripts/views/week.js'></script>
 
   <!-- router -->
   <script src='scripts/routers/app-router.js'></script>

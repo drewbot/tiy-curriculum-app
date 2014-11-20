@@ -9,8 +9,17 @@ Demi.Views.Resource = Backbone.View.extend({
     this.render();
   },
 
+  events: {
+    'click .delete-button': 'destroy'
+  },
+
   render: function () {
-    this.$el.html(this.template({resource: this.model}))
+    this.$el.html(this.template(this.model.attributes))
+  },
+
+  destroy: function () {
+    Demi.collections.resources.get(this.model.id).destroy();
+    this.remove()
   }
 
 })

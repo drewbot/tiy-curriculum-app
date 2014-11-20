@@ -3,7 +3,12 @@
 Demi.Models.Assignment = Backbone.Model.extend({
 });
 
-Demi.Collections.AssignmentsCollection = Backbone.Collection.extend({
+Demi.Collections.Assignments = Backbone.Collection.extend({
   model: Demi.Models.Assignment,
-  url: 'http://normalizer.herokuapp.com/assignments'
-});
+  url: function(){
+    return 'http://normalizer.herokuapp.com/timelines/' +
+            Demi.current.timeline.id +
+            '/weeks/' +
+            Demi.current.week.id +
+            '/assignments' 
+  }});

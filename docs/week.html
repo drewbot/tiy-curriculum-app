@@ -73,6 +73,11 @@
                 resource.js
               </a>
             
+              
+              <a class="source" href="week.html">
+                week.js
+              </a>
+            
           </div>
         </li>
       </ul>
@@ -98,30 +103,41 @@
             
             <div class="content"><div class='highlight'><pre><span class="hljs-pi">"use strict"</span>;
 
-Demi.Models.Week = Backbone.Model.extend({
-  type: <span class="hljs-string">'week'</span>,
+Demi.Views.Week = Backbone.View.extend({
 
-  idAttribute: <span class="hljs-string">'number'</span>,
-
-  initialize: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'name'</span>, <span class="hljs-string">'Week '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'number'</span>));
+  events: {
+    <span class="hljs-string">'click .save-assignment'</span>  : <span class="hljs-string">'saveAssignment'</span>,
+    <span class="hljs-string">'click .save-resource'</span>    : <span class="hljs-string">'saveResource'</span>,
+    <span class="hljs-string">'click .save-goal'</span>        : <span class="hljs-string">'saveGoal'</span>,
   },
 
-  generateURI: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-string">'#/courses/'</span> + Demi.current.course.id + <span class="hljs-string">'/timelines/'</span> + Demi.current.timeline.id + <span class="hljs-string">'/weeks/'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'number'</span>)
-  }
-});
+  template: _.template($(<span class="hljs-string">'.week-template'</span>).text()),
 
-Demi.Collections.weeks = Backbone.Collection.extend({
-  model: Demi.Models.Week,
-  url: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-string">'http://normalizer.herokuapp.com/timelines/'</span> + Demi.current.timeline.id
+  initialize: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    $(<span class="hljs-string">'.week-container'</span>).append(<span class="hljs-keyword">this</span>.el);
+    <span class="hljs-keyword">this</span>.render();
   },
 
-  parse: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span> </span>{
-    <span class="hljs-keyword">return</span> data.weeks
-  }
-});</pre></div></div>
+  render: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">this</span>.$el.html(<span class="hljs-keyword">this</span>.template())
+  },
+
+  saveAssignment: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    Demi.collections.assignments.add({assignment: {description: $(<span class="hljs-string">'.input-assignment'</span>).val()}}).save()
+  },
+
+  saveResource: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    Demi.collections.resources.add({resource: {
+      description: $(<span class="hljs-string">'.input-resource-url'</span>).val(),
+      url:         $(<span class="hljs-string">'.input-resource-description'</span>).val()
+    }}).save()
+  },
+
+  saveGoal: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    Demi.collections.goals.add({goal: {description: $(<span class="hljs-string">'.input-goal'</span>).val()}}).save()
+  },
+
+})</pre></div></div>
             
         </li>
         
