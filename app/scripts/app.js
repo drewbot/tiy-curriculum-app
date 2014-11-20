@@ -1,5 +1,6 @@
 "use strict";
 
+// Monkey-patch
 Backbone._sync = Backbone.sync;
 
 Backbone.sync = function(method, model, options) {
@@ -57,7 +58,7 @@ new Demi.Views.AppView();
 
 
 
-
+// Save new model instances
 
 $('.save-goal').click( function() {
 	// checks for a value in input field
@@ -113,8 +114,8 @@ $('.save-assignment').click( function() {
 	}
 });
 
-
-
+// jQuery Collapser 
+// when document is ready apply the collapser method to item copy and pass in parameters
 $(document).ready(function(){
 	$('.list p').collapser({
 		mode: 'lines',
