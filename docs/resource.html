@@ -73,11 +73,6 @@
                 resource.js
               </a>
             
-              
-              <a class="source" href="week.html">
-                week.js
-              </a>
-            
           </div>
         </li>
       </ul>
@@ -103,93 +98,20 @@
             
             <div class="content"><div class='highlight'><pre><span class="hljs-pi">"use strict"</span>;
 
-Demi.Views.ResourceView = Backbone.View.extend({
-  template: _.template($(<span class="hljs-string">'.resource-template'</span>).html()),</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-2">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-2">&#182;</a>
-              </div>
-              <p>className: ‘collection-one-item’,</p>
+Demi.Views.Resource = Backbone.View.extend({
 
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>
-  events: {
-    <span class="hljs-string">'click .delete-button button'</span> : <span class="hljs-string">'destroy'</span>,
-    <span class="hljs-string">'click .edit-button button'</span> : <span class="hljs-string">'editResource'</span>,
+  template: _.template($(<span class="hljs-string">'.resource-template'</span>).text()),
+
+  initialize: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    $(<span class="hljs-string">'.resource-items ol'</span>).append(<span class="hljs-keyword">this</span>.el);
+    <span class="hljs-keyword">this</span>.render();
   },
 
-  initialize: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-3">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-3">&#182;</a>
-              </div>
-              <p>listen to the model (constantly runs) if it hears a destroy remove the view</p>
+  render: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">this</span>.$el.html(<span class="hljs-keyword">this</span>.template({resource: <span class="hljs-keyword">this</span>.model}))
+  }
 
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>.model, <span class="hljs-string">'destroy'</span>, <span class="hljs-keyword">this</span>.remove);
-    $(<span class="hljs-string">'.resource-item'</span>).append(<span class="hljs-keyword">this</span>.el);
-    <span class="hljs-keyword">this</span>.render();</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-4">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-4">&#182;</a>
-              </div>
-              <p>if the model doesn’t have an ID, it’s been added via the new item input,
-first add a time element for sorting and save it to the server. this save will trigger
-the same rendering.</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.model.isNew()){
-      <span class="hljs-keyword">this</span>.model.set({<span class="hljs-string">'time'</span>: <span class="hljs-built_in">Date</span>.now()});
-      <span class="hljs-keyword">this</span>.model.save();
-    }
-  },</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-5">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-5">&#182;</a>
-              </div>
-              <p>while the view is listening above, 
-if it hears a change to the model or a new model is saved for this view,
-save the model attributes and pass them through this.$el.html method</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>  render: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">var</span> renderedTemplate = <span class="hljs-keyword">this</span>.template(<span class="hljs-keyword">this</span>.model.attributes);
-    <span class="hljs-keyword">this</span>.$el.html(renderedTemplate);
-  },
-
-  destroy: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">this</span>.model.destroy();
-  },
-
-});</pre></div></div>
+})</pre></div></div>
             
         </li>
         

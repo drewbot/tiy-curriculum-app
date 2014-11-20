@@ -106,9 +106,30 @@ Demi.Routers.AppRouter = Backbone.Router.extend({
   // When routes match `courses/:courseId/timelines/:timelineId/weeks/:weekNumber`, 
   // wait for the first three promises resolve, and erase the timelines and weeks  
   // collections, and their respective dropdowns.
-  loadWeek: function () {
-    this.loadCourses().loadTimelines().loadWeeks();
-    this.promises(3).done(this.setDropdowns);
+  loadWeek: function (erase) {
+    $('.assignment-items ol, .resource-items ol, .goal-items ol').html('');
+    this.promises(3).done(function(){
+      this.setDropdowns();
+
+      // Iterate over the current week's resources and create views and models.
+      // Note: these should probably be in a collection?
+      _.each(Demi.current.week.get('resources'), function(resource){
+        new Demi.Views.Resource({model: new Demi.Models.Resource(resource)})
+      })
+
+      // This is silly, but yeah, we're iterating over the string goals/assignments and
+      // making a new view and "model" with each. We need the API to return
+      // actual goal and assignment models, not just strings :/
+      _.each(Demi.current.week.get('goals'), function(goalString){
+        new Demi.Views.Goal({model: new Demi.Models.Goal({description: goalString})})
+      })
+
+      _.each(Demi.current.week.get('assignments'), function(assignmentString){
+        new Demi.Views.Assignment({model: new Demi.Models.Assignment({description: assignmentString})})
+      })
+
+    }.bind(this));
+
     return this;
   },
 
@@ -116,11 +137,16 @@ Demi.Routers.AppRouter = Backbone.Router.extend({
   // this is generally called when you've change the courses or
   // timelines dropdowns, and need to reset the dropdowns to
   // the right (the dependent collections).
+  // 
+  // This now clears out the existing views below the nav. That part
+  // of this method should move elsewhere.
   erase: function (collections) {
     console.log('erasing', collections);
     _.each(collections, function(collection){
       Demi.collections[collection].reset();
     });
+    // clear the <ol>s for the week.
+    $('.assignment-items ol, .resource-items ol, .goal-items ol').html('');
     this.setDropdowns();
   },
 

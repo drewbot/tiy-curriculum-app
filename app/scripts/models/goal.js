@@ -1,6 +1,7 @@
 "use strict";
 
 Demi.Models.Goal = Backbone.Model.extend({
+  
 });
 
 Demi.Collections.GoalsCollection = Backbone.Collection.extend({

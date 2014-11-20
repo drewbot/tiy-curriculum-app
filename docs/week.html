@@ -73,11 +73,6 @@
                 resource.js
               </a>
             
-              
-              <a class="source" href="week.html">
-                week.js
-              </a>
-            
           </div>
         </li>
       </ul>
@@ -101,15 +96,32 @@
               
             </div>
             
-            <div class="content"><div class='highlight'><pre>Demi.Views.DropdownItem = Backbone.View.extend({
+            <div class="content"><div class='highlight'><pre><span class="hljs-pi">"use strict"</span>;
 
-  template: $(<span class="hljs-string">'.goal-template'</span>).text(),
+Demi.Models.Week = Backbone.Model.extend({
+  type: <span class="hljs-string">'week'</span>,
 
-  initialize: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'cool'</span>)
+  idAttribute: <span class="hljs-string">'number'</span>,
+
+  initialize: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'name'</span>, <span class="hljs-string">'Week '</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'number'</span>));
+  },
+
+  generateURI: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'#/courses/'</span> + Demi.current.course.id + <span class="hljs-string">'/timelines/'</span> + Demi.current.timeline.id + <span class="hljs-string">'/weeks/'</span> + <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'number'</span>)
   }
+});
 
-})</pre></div></div>
+Demi.Collections.weeks = Backbone.Collection.extend({
+  model: Demi.Models.Week,
+  url: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'http://normalizer.herokuapp.com/timelines/'</span> + Demi.current.timeline.id
+  },
+
+  parse: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span> </span>{
+    <span class="hljs-keyword">return</span> data.weeks
+  }
+});</pre></div></div>
             
         </li>
         

@@ -81,6 +81,8 @@
       </div>
     </div>
   </section>
+
+
   <section class='goals-bg'>
     <div class='container-fluid'>
       <div class='section-head row'>
@@ -91,21 +93,24 @@
         <div class='input-box col-xs-9 col-sm-7'>
           <input type='text' placeholder='add a new goal' class='input-goal'>
         </div>
+
+
         <div class='button-box col-xs-3 col-sm-1'>
           <button class='save-goal'>
             <span class='glyphicon glyphicon-plus'></span>
           </button>
         </div>
       </div>
-      <div class='list'>
+      <div class='list goal-items row'>
         <ol>
-          <div class='item goal-item row'></div>
         </ol>
       </div>
       <div class='see-all'><a href='#/goals'>See All</a>
       </div>
     </div>
   </section>
+
+
   <section class='resources-bg'>
     <div class='container-fluid'>
       <div class='section-head row'>
@@ -123,15 +128,15 @@
           </button>
         </div>
       </div>
-      <div class='list'>
+      <div class='list resource-items row'>
         <ol>
-          <div class='item resource-item row'></div>
         </ol>
       </div>
       <div class='see-all'><a href='#/resources'>See All</a>
       </div>
     </div>
   </section>
+
   <section class='assignments-bg'>
     <div class='container-fluid'>
       <div class='section-head row'>
@@ -148,9 +153,8 @@
           </button>
         </div>
       </div>
-      <div class='list'>
+      <div class='list assignment-items row'>
         <ol>
-          <div class='item assignment-item row'></div>
         </ol>
       </div>
       <div class='see-all'><a href='#/assignments'>See All</a>
@@ -166,13 +170,18 @@
       </div>
     </div>
   </footer>
+  
+
+
   <!-- templates-->
+
+
   <script type='text/template' class='goal-template'>
     <li class='col-xs-12 col-sm-8'>
-      <p><%=item%></p>
+      <p><%= goal.get('description')%></p>
     </li>
     <div class='date col-xs-6 col-sm-2'>
-      <p><%=time%></p>
+      <p><%= Date.now() %></p>
     </div>
     <div class='edit-button col-xs-3 col-sm-1'>
       <button>
@@ -185,13 +194,15 @@
       </button>
     </div>
   </script>
+
+
   <script type='text/template' class='resource-template'>
     <li class='col-xs-12 col-sm-8'>
-      <a href='#'><%=itemUrl%></a>
-      <p><%=item%></p>
+      <a href='<%= resource.get('url') %>' target="_blank"><%= resource.get('url') %></a>
+      <p><%= resource.get('description') %></p>
     </li>
     <div class='date col-xs-6 col-sm-2'>
-      <p><%=time%></p>
+      <p><%= Date.now() %></p>
     </div>
     <div class='edit-button col-xs-3 col-sm-1'>
       <button>
@@ -204,12 +215,15 @@
       </button>
     </div>
   </script>
+
+
+
   <script type='text/template' class='assignment-template'>
     <li class='col-xs-12 col-sm-8'>
-      <p><%=item%></p>
+      <p><%= assignment.get('description') %></p>
     </li>
     <div class='date col-xs-6 col-sm-2'>
-      <p><%=time%></p>
+      <p><%= Date.now() %></p>
     </div>
     <div class='edit-button col-xs-3 col-sm-1'>
       <button>
@@ -222,6 +236,7 @@
       </button>
     </div>
   </script>
+
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
   <script>
   (function(b, o, i, l, e, r) {

@@ -3,6 +3,8 @@
 Demi.Models.Week = Backbone.Model.extend({
   type: 'week',
 
+  idAttribute: 'number',
+
   initialize: function() {
     this.set('name', 'Week ' + this.get('number'));
   },
