@@ -18,7 +18,7 @@ Demi.Views.Assignment = Backbone.View.extend({
   },
 
   destroy: function () {
-    Demi.collections.assignments.get(this.model.id).destroy();
+    this.model.destroy();
     this.remove()
   }
 

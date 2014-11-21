@@ -362,32 +362,15 @@ Note: these should probably be in a collection?</p>
             </div>
             
             <div class="content"><div class='highlight'><pre>      _.each(Demi.current.week.get(<span class="hljs-string">'resources'</span>), <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resource)</span></span>{
-        Demi.collections.resources.add({resource: resource})
-      })</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-13">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-13">&#182;</a>
-              </div>
-              <p>This is silly, but yeah, we’re iterating over the string goals/assignments and
-making a new view and “model” with each. We need the API to return
-actual goal and assignment models, not just strings :/</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>      _.each(Demi.current.week.get(<span class="hljs-string">'goals'</span>), <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(goalString)</span></span>{
-
-        <span class="hljs-keyword">var</span> abc = Demi.collections.goals.add({goal: {description: goalString}});
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'abc is'</span>,abc)
+        Demi.collections.resources.add(resource);
       })
 
-      _.each(Demi.current.week.get(<span class="hljs-string">'assignments'</span>), <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(assignmentString)</span></span>{
-        Demi.collections.assignments.add({assignment: {description: assignmentString}})
+      _.each(Demi.current.week.get(<span class="hljs-string">'goals'</span>), <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(goal)</span></span>{
+        Demi.collections.goals.add(goal);
+      })
+
+      _.each(Demi.current.week.get(<span class="hljs-string">'assignments'</span>), <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(assignment)</span></span>{
+        Demi.collections.assignments.add(assignment);
       })
 
     }.bind(<span class="hljs-keyword">this</span>));
@@ -398,11 +381,11 @@ actual goal and assignment models, not just strings :/</p>
         </li>
         
         
-        <li id="section-14">
+        <li id="section-13">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-14">&#182;</a>
+                <a class="pilcrow" href="#section-13">&#182;</a>
               </div>
               <p>a quick utitlity for resetting multiple collections at once
 this is generally called when you’ve change the courses or
@@ -422,11 +405,11 @@ of this method should move elsewhere.</p>
         </li>
         
         
-        <li id="section-15">
+        <li id="section-14">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-15">&#182;</a>
+                <a class="pilcrow" href="#section-14">&#182;</a>
               </div>
               <p>clear the <ol>s for the week.</p>
 
@@ -439,11 +422,11 @@ of this method should move elsewhere.</p>
         </li>
         
         
-        <li id="section-16">
+        <li id="section-15">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-16">&#182;</a>
+                <a class="pilcrow" href="#section-15">&#182;</a>
               </div>
               <p>Reports the index of the id/slug of the segment you’re requesting.
 The <code>hash</code> argument should be the return value of <code>location.hash.split(&#39;/&#39;)</code></p>
@@ -457,11 +440,11 @@ The <code>hash</code> argument should be the return value of <code>location.hash
         </li>
         
         
-        <li id="section-17">
+        <li id="section-16">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-17">&#182;</a>
+                <a class="pilcrow" href="#section-16">&#182;</a>
               </div>
               <p>Sets the dropdowns text to match the selected item, or “choose” if it’s
 been reset.</p>
@@ -481,11 +464,11 @@ been reset.</p>
         </li>
         
         
-        <li id="section-18">
+        <li id="section-17">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-18">&#182;</a>
+                <a class="pilcrow" href="#section-17">&#182;</a>
               </div>
               <p>This strange little function will let you know when one or more promises
 have been resolved. The <code>howMany</code> argument should how many you want from

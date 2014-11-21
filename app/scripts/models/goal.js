@@ -1,7 +1,13 @@
 "use strict";
 
 Demi.Models.Goal = Backbone.Model.extend({
+  url: function(){
+    return 'http://normalizer.herokuapp.com/goals/' + this.id
+  },
 
+  toJSON: function () {
+    return JSON.stringify({goal: this.attributes})
+  }
 });
 
 Demi.Collections.Goals = Backbone.Collection.extend({

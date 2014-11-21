@@ -16,8 +16,7 @@ Demi.Views.Goal = Backbone.View.extend({
   },
 
   destroy: function () {
-    // this won't work until we get IDs for goals, resources, and assignments
-    Demi.collections.goals.get(this.model.id).destroy();
+    this.model.destroy();
     this.remove()
   }
 

@@ -182,7 +182,7 @@
 
   <script type='text/template' class='goal-template'>
     <li class='col-xs-12 col-sm-8'>
-      <p><%= goal.description %></p>
+      <p><%= description %></p>
     </li>
     <div class='date col-xs-6 col-sm-2'>
       <p><%= Date.now() %></p>
@@ -202,8 +202,8 @@
 
   <script type='text/template' class='resource-template'>
     <li class='col-xs-12 col-sm-8'>
-      <a href='<%= resource.url %>' target="_blank"><%= resource.url %></a>
-      <p><%= resource.description %></p>
+      <a href='<%= url %>' target="_blank"><%= url %></a>
+      <p><%= description %></p>
     </li>
     <div class='date col-xs-6 col-sm-2'>
       <p><%= Date.now() %></p>
@@ -224,7 +224,7 @@
 
   <script type='text/template' class='assignment-template'>
     <li class='col-xs-12 col-sm-8'>
-      <p><%= assignment.description %></p>
+      <p><%= description %></p>
     </li>
     <div class='date col-xs-6 col-sm-2'>
       <p><%= Date.now() %></p>

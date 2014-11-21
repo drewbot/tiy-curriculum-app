@@ -18,7 +18,7 @@ Demi.Views.Resource = Backbone.View.extend({
   },
 
   destroy: function () {
-    Demi.collections.resources.get(this.model.id).destroy();
+    this.model.destroy();
     this.remove()
   }
 

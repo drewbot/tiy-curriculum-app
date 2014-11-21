@@ -131,20 +131,15 @@ Demi.Routers.AppRouter = Backbone.Router.extend({
       // Iterate over the current week's resources and create views and models.
       // Note: these should probably be in a collection?
       _.each(Demi.current.week.get('resources'), function(resource){
-        Demi.collections.resources.add({resource: resource})
+        Demi.collections.resources.add(resource);
       })
 
-      // This is silly, but yeah, we're iterating over the string goals/assignments and
-      // making a new view and "model" with each. We need the API to return
-      // actual goal and assignment models, not just strings :/
-      _.each(Demi.current.week.get('goals'), function(goalString){
-
-        var abc = Demi.collections.goals.add({goal: {description: goalString}});
-        console.log('abc is',abc)
+      _.each(Demi.current.week.get('goals'), function(goal){
+        Demi.collections.goals.add(goal);
       })
 
-      _.each(Demi.current.week.get('assignments'), function(assignmentString){
-        Demi.collections.assignments.add({assignment: {description: assignmentString}})
+      _.each(Demi.current.week.get('assignments'), function(assignment){
+        Demi.collections.assignments.add(assignment);
       })
 
     }.bind(this));
