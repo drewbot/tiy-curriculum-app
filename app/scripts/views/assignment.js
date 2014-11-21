@@ -2,6 +2,9 @@
 
 Demi.Views.Assignment = Backbone.View.extend({
 
+  tagName: 'li',
+  className: 'item row',
+
   template: _.template($('.assignment-template').text()),
 
   events: {

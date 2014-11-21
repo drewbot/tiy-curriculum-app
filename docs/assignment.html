@@ -105,6 +105,9 @@
 
 Demi.Views.Assignment = Backbone.View.extend({
 
+  tagName: <span class="hljs-string">'li'</span>,
+  className: <span class="hljs-string">'item row'</span>,
+
   template: _.template($(<span class="hljs-string">'.assignment-template'</span>).text()),
 
   events: {

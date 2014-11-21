@@ -2,6 +2,9 @@
 
 Demi.Views.Resource = Backbone.View.extend({
 
+  tagName: 'li',
+  className: 'item row',
+
   template: _.template($('.resource-template').text()),
 
   initialize: function () {

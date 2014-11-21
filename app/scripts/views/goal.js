@@ -1,5 +1,8 @@
 Demi.Views.Goal = Backbone.View.extend({
 
+  tagName: 'li',
+  className: 'item row',
+
   template: _.template($('.goal-template').text()),
 
   initialize: function () {

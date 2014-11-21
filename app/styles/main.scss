@@ -312,11 +312,12 @@ header {
     ol {
         list-style-position: inside;
         list-style-type: decimal;
+        padding: 0 20px 0 20px;
         .item {
             padding: 20px 0 20px 0;
             border-bottom: 1px solid $primary-text-color;
             li {
-                padding: 8px 15px 0 15px;
+                padding: 0 15px 0 15px;
                 @include primary-text(1em, 300, normal, $primary-text-color);
                 a {
                     @include primary-text(1em, 400, italic, $primary-text-color);
