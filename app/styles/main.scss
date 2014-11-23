@@ -118,15 +118,15 @@ html {
 }
 
 // simple list reset
-ol, ul {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    list-style: none;
-    vertical-align: baseline;
-}
+// ol, ul {
+//     margin: 0;
+//     padding: 0;
+//     border: 0;
+//     font-size: 100%;
+//     font: inherit;
+//     list-style: none;
+//     vertical-align: baseline;
+// }
 
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
@@ -148,6 +148,40 @@ h1 {
     @include secondary-text(1.9em, $secondary-text-color);
     border-bottom: 3px solid $secondary-text-color;
     margin-bottom: 30px;
+}
+
+ol {
+    counter-reset: li; /* Initiate a counter */
+    list-style: none; /* Remove default numbering */
+    *list-style: decimal; /* Keep using default numbering for IE6/7 */
+    list-style-position: inside;
+    padding: 0 20px 0 20px;
+    margin-bottom: 4em;
+
+    li {
+        position: relative;
+        padding: 0 15px 0 15px;
+    }
+
+    .item:before{
+        content: counter(li);
+        counter-increment: li;
+        position: absolute; 
+        // left: -1.3em;
+        top: 50%;
+        margin-top: -1em;
+        background: $secondary-text-color;
+        height: 24px;
+        width: 24px;
+        color: #FFFFFF;
+        line-height: 24px;
+        text-align: center;
+        border-radius: 24px;
+    }
+
+    .description {
+        padding: 5px 0 0 40px;
+    }
 }
 
 input, textarea {
@@ -308,14 +342,13 @@ header {
 
 .list {
     ol {
-        list-style-position: inside;
-        list-style-type: decimal;
-        padding: 0 20px 0 20px;
+        // list-style-position: inside;
+        // list-style-type: decimal;
+        // padding: 0 20px 0 20px;
         .item {
             padding: 20px 0 20px 0;
             border-bottom: 1px solid $primary-text-color;
             li {
-                padding: 0 15px 0 15px;
                 @include primary-text(1em, 300, normal, $primary-text-color);
                 a {
                     @include primary-text(1em, 400, italic, $primary-text-color);
