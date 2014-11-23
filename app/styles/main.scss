@@ -91,7 +91,7 @@ $input-box-color: #C4F478;
     width: 100%;
     background-color: darken(#FFFFFF, 1%);
     font-weight: 300;
-    @include placeholder(lighten($primary-text-color, 18%));
+    @include placeholder(lighten($primary-text-color, 10%));
     color: $primary-text-color;
     border: 1px solid darken($input-box-color, 7%);
     border-radius: 4px;
@@ -278,6 +278,7 @@ header {
                     @include primary-text(1.2em, 300, normal, $primary-text-color);
                     width: 100%;
                     height: 100%;
+                    outline: none;
 
                     &:hover {
                         // text-decoration: none;
@@ -305,6 +306,9 @@ header {
     padding: 30px 0 5px 0;
     .section-title {
         padding-bottom: 20px;
+        p {
+            @include primary-text(1em, 300, normal, $primary-text-color);
+        }
     }
     .input-box {
         padding: 16px 0 0 15px;
