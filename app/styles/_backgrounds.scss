@@ -1,0 +1,52 @@
+// ------------------- full width bg's ---------------------
+
+header {
+    background-color: $header-footer-bg-color;
+    padding: 0 15px 0 15px;
+}
+
+.filter-bg {
+    background-color: $primary-bg-color;
+    padding: 0 15px 0 15px;
+}
+
+.goals-bg {
+    background-color: $section-bg-color;
+    padding: 0 15px 0 15px;
+}
+
+.resources-bg {
+    background-color: $primary-bg-color;
+    padding: 0 15px 0 15px;
+    .section-head {
+        textarea {
+            margin-top: 15px;
+        }
+        .input-box {
+            height: 160px;
+        }
+        .button-box {
+            padding: 106px 15px 15px 15px;
+            height: 160px;
+        }
+    }
+}
+
+.assignments-bg {
+    background-color: $section-bg-color;
+    padding: 0 15px 0 15px;
+    .section-head {
+        .input-box {
+            height: 107px;
+        }
+        .button-box {
+            padding: 53px 15px 15px 15px;
+            height: 107px;
+        }
+    }
+}
+
+footer {
+    background-color: $header-footer-bg-color;
+    padding: 0 15px 0 15px;
+}
