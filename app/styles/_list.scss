@@ -57,7 +57,7 @@
             }
             .edit-button {
                 button {
-                    @include primary-button($primary-button-color, $primary-button-text-color, 0px, 0px);
+                    @include primary-button($edit-button-color, $primary-button-text-color, 0px, 0px);
                     span {
                         padding-top: 2px;
                         font-size: 1.2em;
