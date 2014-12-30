@@ -5,24 +5,27 @@ header {
     height: 110px;
   nav {
     ul {
-        margin-bottom: 0;
-        padding: 10px 0 0 0;
-        a {
-          padding: 46px 10px 37px 10px;
-          @include secondary-text(1.2em, $white);
-          transition: all 100ms ease-in;
-          &:hover {
-            background-color: darken($blue, 12%);
-          color: $bluegreen;
-          text-decoration: none;
-          border-bottom: 3px solid $bluegreen;
-          }
+      margin-bottom: 0;
+      padding: 10px 0 0 0;
+      a {
+        padding: 46px 10px 37px 10px;
+        @include secondary-text(1.2em, $white);
+        transition: all 100ms ease-in;
+        &:hover {
+        background-color: darken($blue, 12%);
+        color: $bluegreen;
+        text-decoration: none;
+        border-bottom: 3px solid $bluegreen;
         }
       }
+      .active {
+        border-bottom: 3px solid $white;
+      }
+    }
   }
   .logout {
     button {
-      @include primary-text(1.2em, 300, normal, $white);
+      @include primary-text(1.1em, 200, normal, $white);
       @include primary-button(lighten($blue, 2%) , $white, 0px, 0px);
       span {
         padding-top: 2px;

@@ -7,7 +7,7 @@
             padding: 25px 0 25px 0;
             width: 100%;
             text-align: center;
-            @include primary-text(1.2em, 300, normal, $secondary-text-color);
+            @include primary-text(1.2em, 300, normal, $primary-text-color);
         }
 
         ul {

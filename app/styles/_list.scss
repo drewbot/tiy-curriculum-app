@@ -17,8 +17,7 @@
                 content: counter(li);
                 counter-increment: li;
                 position: absolute; 
-                // top: 50%;
-                margin-top: -0.05em;
+                margin-left: -0.1em;
                 background: $primary-button-color;
                 height: 24px;
                 width: 24px;
