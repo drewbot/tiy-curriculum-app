@@ -9,8 +9,7 @@
         padding: 0 20px 0 20px;
         .item {
             position: relative;
-            padding: 0 15px 0 15px;
-            padding: 20px 0 20px 0;
+            padding: 20px 0 0 0;
             border-bottom: 1px solid $primary-text-color;
             @include primary-text(1em, 300, normal, $primary-text-color);
             &:before{
@@ -33,7 +32,7 @@
             .description {
                 padding: 0 0 0 40px;
                 p {
-                    margin-bottom: 0;
+                    margin-bottom: 15px;
                 }
                 a {
                     font-weight: 600;
@@ -56,6 +55,7 @@
                 }
             }
             .edit-button {
+                margin-bottom: 20px;
                 button {
                     @include primary-button($edit-button-color, $primary-button-text-color, 0px, 0px);
                     span {
@@ -65,6 +65,7 @@
                 }
             }
             .delete-button {
+                margin-bottom: 20px;
                 button {
                     @include primary-button($logout-delete-button-color, $primary-button-text-color, 0px, 0px);
                     span {

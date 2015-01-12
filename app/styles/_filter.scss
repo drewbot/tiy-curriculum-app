@@ -32,6 +32,9 @@
                 &:hover {
                     background-color: $bluegreen;
                     // cursor: pointer;
+                    a {
+                        color: $white;
+                    }
                 }
             }
         }
