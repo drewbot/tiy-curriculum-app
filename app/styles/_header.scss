@@ -24,7 +24,7 @@ header {
           &:hover {
             color: $bluegreen;
             text-decoration: none;
-            border-bottom: 3px solid $bluegreen;
+            background-color: $blue;
           }
           &:active {
             background-color: darken($blue, 12%);
@@ -63,10 +63,6 @@ header {
   }
 }
 
-.show-nav {
-  display: inline-block;
-}
-
 @media only screen and (min-width: $screen-xs-min) {
   header {
     .menu-button {
@@ -88,10 +84,10 @@ header {
     nav {
       display: inline-block;
       height: 113px;
-      padding-top: 0;
+      padding: 0;
       background-color: $blue;
       ul {
-        padding: 0 0 0 0;
+        padding: 0 0 0 15px;
         li {
           display: inline-block;
           width: 108px;
@@ -99,7 +95,8 @@ header {
           a {
             padding: 46px 10px 36px 10px;
             &:hover {
-              background-color: darken($blue, 12%);
+              background-color: $darkblue;
+              border-bottom: 3px solid $bluegreen;
             } 
           }
           .active {

@@ -19,7 +19,7 @@ var router = new Demi.Routers.AppRouter()
 Backbone.history.start()
 
 $('.menu-button').click(function(){
-	$('nav').toggleClass('show-nav');
+	$('nav').animate({height: 'toggle'}, 400, function() {});
 })
 
 

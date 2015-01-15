@@ -52,7 +52,7 @@
     outline: none;
     @include transition(all 100ms ease-in);
     &:hover {
-        background-color: darken($bg-color, 15%);
+        background-color: $darkblue;
         color: $bluegreen;
         border-bottom: 3px solid $bluegreen;
     }
