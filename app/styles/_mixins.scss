@@ -40,6 +40,30 @@
     }
 }
 
+// Header button
+@mixin header-button($bg-color, $color) {
+    padding: 36px 10px 36px 10px;
+    height: 110px;
+    // width: 100%;
+    background-color: $bg-color;
+    @include secondary-text(1.1em, $color);
+    text-align: center;
+    border: none;
+    outline: none;
+    @include transition(all 100ms ease-in);
+    &:hover {
+        background-color: darken($bg-color, 15%);
+        color: $bluegreen;
+        border-bottom: 3px solid $bluegreen;
+    }
+    &:active {
+
+    }
+    span {
+        margin-right: 10px;
+    }
+}
+
 // input mixin
 @mixin primary-input() {
     padding: 10px;
@@ -47,6 +71,7 @@
     background-color: darken(#FFFFFF, 1%);
     font-weight: 300;
     @include placeholder(lighten($primary-text-color, 10%));
+    font-size: 1.2em;
     color: $primary-text-color;
     border: 1px solid darken($input-box-color, 4%);
     @include box-shadow( 0px -2px darken($input-box-color, 10%));

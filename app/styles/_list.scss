@@ -1,87 +1,87 @@
 // ------------- list section -------------
 
 .list {
-    ol {
-        counter-reset: li; /* Initiate a counter */
-        list-style: none; /* Remove default numbering */
-        *list-style: decimal; /* Keep using default numbering for IE6/7 */
-        list-style-position: inside;
-        padding: 0 20px 0 20px;
-        .item {
-            position: relative;
-            padding: 20px 0 0 0;
-            border-bottom: 1px solid $primary-text-color;
-            @include primary-text(1em, 300, normal, $primary-text-color);
-            &:before{
-                content: counter(li);
-                counter-increment: li;
-                position: absolute; 
-                margin-left: -0.1em;
-                background: $primary-button-color;
-                height: 24px;
-                width: 24px;
-                color: #FFFFFF;
-                font-weight: 300;
-                line-height: 24px;
-                text-align: center;
-                border-radius: 24px;
-            }
-            a {
-                @include primary-text(1em, 400, italic, $primary-text-color);
-            }
-            .description {
-                padding: 0 0 0 40px;
-                p {
-                    margin-bottom: 15px;
-                }
-                a {
-                    font-weight: 600;
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-            }
-            .date {
-                padding: 0 15px 0 15px;
-                position: relative;
-                @include primary-text(.8em, 300, italic, $primary-text-color);
-                p {
-                    position: absolute;
-                    top: 2px;
-
-                    &:nth-of-type(2n) {
-                        top: 22px;
-                    }
-                }
-            }
-            .edit-button {
-                margin-bottom: 20px;
-                button {
-                    @include primary-button($edit-button-color, $primary-button-text-color, 0px, 0px);
-                    span {
-                        padding-top: 2px;
-                        font-size: 1.2em;
-                    }
-                }
-            }
-            .delete-button {
-                margin-bottom: 20px;
-                button {
-                    @include primary-button($logout-delete-button-color, $primary-button-text-color, 0px, 0px);
-                    span {
-                        padding-top: 2px;
-                        font-size: 1.1em;
-                    }
-                }
-            }
+  ol {
+    counter-reset: li; /* Initiate a counter */
+    list-style: none; /* Remove default numbering */
+    *list-style: decimal; /* Keep using default numbering for IE6/7 */
+    list-style-position: inside;
+    padding: 0 20px 0 20px;
+    .item {
+      position: relative;
+      padding: 20px 0 0 0;
+      border-bottom: 1px solid $primary-text-color;
+      @include primary-text(1.2em, 300, normal, $primary-text-color);
+      &:before{
+        content: counter(li);
+        counter-increment: li;
+        position: absolute; 
+        margin-left: -0.1em;
+        background: $primary-button-color;
+        height: 24px;
+        width: 24px;
+        color: #FFFFFF;
+        font-weight: 300;
+        line-height: 24px;
+        text-align: center;
+        border-radius: 24px;
+      }
+      a {
+        @include primary-text(1em, 400, italic, $primary-text-color);
+      }
+      .description {
+        padding: 0 0 0 40px;
+        p {
+          margin-bottom: 15px;
         }
-    }    
+        a {
+          font-weight: 600;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      .date {
+        padding: 0 15px 0 15px;
+        position: relative;
+        @include primary-text(.8em, 300, italic, $primary-text-color);
+        p {
+          position: absolute;
+          top: 2px;
+
+          &:nth-of-type(2n) {
+            top: 22px;
+          }
+        }
+      }
+      .edit-button {
+        margin-bottom: 20px;
+        button {
+          @include primary-button($edit-button-color, $primary-button-text-color, 0px, 0px);
+          span {
+            padding-top: 2px;
+            font-size: 1.2em;
+          }
+        }
+      }
+      .delete-button {
+        margin-bottom: 20px;
+        button {
+          @include primary-button($logout-delete-button-color, $primary-button-text-color, 0px, 0px);
+          span {
+            padding-top: 2px;
+            font-size: 1.1em;
+          }
+        }
+      }
+    }
+  }  
 }
 
 .see-all {
-    padding: 28px 0 28px 0;
-    width: 100%;
-    a {
-        @include primary-text(1em, 400, italic, $primary-text-color);
-    }
+  padding: 28px 0 28px 0;
+  width: 100%;
+  a {
+    @include primary-text(1.2em, 400, italic, $primary-text-color);
+  }
 }  

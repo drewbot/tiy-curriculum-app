@@ -5,7 +5,7 @@
     .section-title {
         padding-bottom: 20px;
         p {
-            @include primary-text(1em, 300, normal, $primary-text-color);
+            @include primary-text(1.2em, 300, normal, $primary-text-color);
         }
     }
     .input-box {
@@ -28,7 +28,7 @@
 
             span {
                 // font-family: "Glyphicons Halflings";
-                font-size: 1em;
+                font-size: 1.2em;
             }
         }
     }

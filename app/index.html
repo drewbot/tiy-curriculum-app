@@ -21,12 +21,12 @@
   <!-- [if lt IE 7]> <p class='browsehappy'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p> <![endif]-->
   <header>
     <div class='container-fluid'>
-      <div class='row'>
-        <nav class='col-xs-12 col-sm-10'>
+      <div class='row clearfix'>
+        <nav class='hidden-xs col-xs-12 col-sm-8'>
           <ul class='list-inline'>
-            <li><a href='#/'>DASHBOARD</a>
+            <li><a href='#/' class="active">DASHBOARD</a>
             </li>
-            <li><a href='#/' class="active">COLLECTOR</a>
+            <li><a href='#/'>COLLECTOR</a>
             </li>
             <li><a href='#/'>PLANNER</a>
             </li>
@@ -34,11 +34,18 @@
             </li>
           </ul>
         </nav>
-        <div class='logout visible-xs-inline-block col-xs-2'>
-          <button><span class="glyphicon glyphicon-user"></span></button>
+        <div class="menu-button visible-xs-inline-block col-xs-4">
+          <button><span class="glyphicon glyphicon-th-list"></span>MENU</button>
         </div>
-        <div class='logout hidden-xs col-sm-2'>
-          <button>logout</button>
+        <div class='logout pull-right col-xs-8 col-sm-4'>
+          <a href="#">
+            <span class="glyphicon glyphicon-cog"></span>
+            <span>settings</span>
+          </a>
+          <a href="#">
+            <span class="glyphicon glyphicon-user"></span>
+            <span>logout</span>
+          </a>
         </div>
       </div>
     </div>
@@ -57,7 +64,7 @@
   <section class='filter-bg'>
     <div class='container-fluid'>
       <div class='filter-course row'>
-        <div class='course col-xs-4'>
+        <div class='course col-xs-12 col-md-4'>
           <div class='dropdown'>
             <h4>Course</h4>
             <button id='dropdownMenu1' type='button' data-toggle='dropdown' class='dropdown-toggle'>
@@ -68,7 +75,7 @@
             </ul>
           </div>
         </div>
-        <div class='timeline col-xs-4'>
+        <div class='timeline col-xs-12  col-md-4'>
           <div class='dropdown'>
             <h4>Timeline</h4>
             <button id='dropdownMenu1' type='button' data-toggle='dropdown' class='dropdown-toggle'>
@@ -79,7 +86,7 @@
             </ul>
           </div>
         </div>
-        <div class='week col-xs-4'>
+        <div class='week col-xs-12  col-md-4'>
           <div class='dropdown'>
             <h4>Week</h4>
             <button id='dropdownMenu1' type='button' data-toggle='dropdown' class='dropdown-toggle'>
