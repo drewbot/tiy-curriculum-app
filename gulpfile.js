@@ -68,8 +68,6 @@ gulp.task('images', function () {
 });
 
 gulp.task('fonts', function () {
-    gulp.src('app/bower_components/bootstrap-sass/vendor/assets/fonts/bootstrap/*')
-        .pipe(gulp.dest('dist/bower_components/bootstrap-sass/vendor/assets/fonts/bootstrap'));
 
     return $.bowerFiles()
         .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
