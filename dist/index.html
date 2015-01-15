@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="no-js">
+ 
+<head>
+  <meta charset="utf-8">
+  <title>tiy curriculum app</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="scripts/vendor/modernizr.js"></script>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600|Fjalla+One" rel="stylesheet" type="text/css">
+</head>
+ 
+<body>
+  <!-- [if lt IE 7]> <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p> <![endif]-->
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-xs-12 col-sm-6 col-md-5">
+          <ul class="list-inline">
+            <li><a href="#/goals">GOALS</a>
+            </li>
+            <li><a href="#/resources">RESOURCES</a>
+            </li>
+            <li><a href="#/assignments">ASSIGNMENTS</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="user col-xs-9 col-sm-4 col-md-5">
+          <p>Hello,
+            <span>User Name</span>
+          </p>
+        </div>
+        <div class="logout col-xs-3 col-sm-2">
+          <button>logout</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="filter-bg">
+    <div class="container-fluid">
+      <div class="filter-course row">
+        <div class="course col-xs-4">
+          <div class="dropdown">
+            <h4>Course</h4>
+            <button id="dropdownMenu1" type="button" data-toggle="dropdown" class="dropdown-toggle">choose
+              <span class="caret"></span>
+            </button>
+            <ul role="menu" aria-labelledby="dropdownMenu1" class="dropdown-menu">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a>
+              </li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a>
+              </li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here boom shakka lakka!</a>
+              </li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline col-xs-4">
+          <div class="dropdown">
+            <h4>Timeline</h4>
+            <button id="dropdownMenu1" type="button" data-toggle="dropdown" class="dropdown-toggle">choose
+              <span class="caret"></span>
+            </button>
+            <ul role="menu" aria-labelledby="dropdownMenu1" class="dropdown-menu">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a>
+              </li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a>
+              </li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here boom shakka lakka!</a>
+              </li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="week col-xs-4">
+          <div class="dropdown">
+            <h4>Week</h4>
+            <button id="dropdownMenu1" type="button" data-toggle="dropdown" class="dropdown-toggle">choose
+              <span class="caret"></span>
+            </button>
+            <ul role="menu" aria-labelledby="dropdownMenu1" class="dropdown-menu">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a>
+              </li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a>
+              </li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here boom shakka lakka!</a>
+              </li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="goals-bg">
+    <div class="container-fluid">
+      <div class="section-head row">
+        <div class="section-title col-xs-12">
+          <h1>GOALS</h1>
+          <p>After this week students can:</p>
+        </div>
+        <div class="input-box col-xs-9 col-sm-7">
+          <input type="text" placeholder="add a new goal" class="input-goal">
+        </div>
+        <div class="button-box col-xs-3 col-sm-1">
+          <button class="save-goal">
+            <span class="glyphicon glyphicon-plus"></span>
+          </button>
+        </div>
+      </div>
+      <div class="list">
+        <ol>
+          <div class="item goal-item row"></div>
+        </ol>
+      </div>
+      <div class="see-all"><a href="#/goals">See All</a>
+      </div>
+    </div>
+  </section>
+  <section class="resources-bg">
+    <div class="container-fluid">
+      <div class="section-head row">
+        <div class="section-title col-xs-12">
+          <h1>RESOURCES</h1>
+          <p>These resources were helpful to students:</p>
+        </div>
+        <div class="input-box col-xs-9 col-sm-7">
+          <input type="text" placeholder="add a new url" class="input-resource-url">
+          <textarea placeholder="description" class="input-resource-description"></textarea>
+        </div>
+        <div class="button-box col-xs-3 col-sm-1">
+          <button class="save-resource">
+            <span class="glyphicon glyphicon-plus"></span>
+          </button>
+        </div>
+      </div>
+      <div class="list">
+        <ol>
+          <div class="item resource-item row"></div>
+        </ol>
+      </div>
+      <div class="see-all"><a href="#/resources">See All</a>
+      </div>
+    </div>
+  </section>
+  <section class="assignments-bg">
+    <div class="container-fluid">
+      <div class="section-head row">
+        <div class="section-title col-xs-12">
+          <h1>ASSIGNMENTS</h1>
+          <p>Students were given:</p>
+        </div>
+        <div class="input-box col-xs-9 col-sm-7">
+          <textarea placeholder="add a new assignment" class="input-assignment"></textarea>
+        </div>
+        <div class="button-box col-xs-3 col-sm-1">
+          <button class="save-assignment">
+            <span class="glyphicon glyphicon-plus"></span>
+          </button>
+        </div>
+      </div>
+      <div class="list">
+        <ol>
+          <div class="item assignment-item row"></div>
+        </ol>
+      </div>
+      <div class="see-all"><a href="#/assignments">See All</a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <p>copyright 2014 The Iron Yard</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- templates-->
+  <script type="text/template" class="goal-template">
+    <li class="col-xs-12 col-sm-8">
+      <p><%=item%></p>
+    </li>
+    <div class="date col-xs-6 col-sm-2">
+      <p><%=time%></p>
+    </div>
+    <div class="edit-button col-xs-3 col-sm-1">
+      <button>
+        <span class="glyphicon glyphicon-pencil"></span>
+      </button>
+    </div>
+    <div class="delete-button col-xs-3 col-sm-1">
+      <button>
+        <span class="glyphicon glyphicon-remove"></span>
+      </button>
+    </div>
+  </script>
+  <script type="text/template" class="resource-template">
+    <li class="col-xs-12 col-sm-8">
+      <a href="#"><%=itemUrl%></a>
+      <p><%=item%></p>
+    </li>
+    <div class="date col-xs-6 col-sm-2">
+      <p><%=time%></p>
+    </div>
+    <div class="edit-button col-xs-3 col-sm-1">
+      <button>
+        <span class="glyphicon glyphicon-pencil"></span>
+      </button>
+    </div>
+    <div class="delete-button col-xs-3 col-sm-1">
+      <button>
+        <span class="glyphicon glyphicon-remove"></span>
+      </button>
+    </div>
+  </script>
+  <script type="text/template" class="assignment-template">
+    <li class="col-xs-12 col-sm-8">
+      <p><%=item%></p>
+    </li>
+    <div class="date col-xs-6 col-sm-2">
+      <p><%=time%></p>
+    </div>
+    <div class="edit-button col-xs-3 col-sm-1">
+      <button>
+        <span class="glyphicon glyphicon-pencil"></span>
+      </button>
+    </div>
+    <div class="delete-button col-xs-3 col-sm-1">
+      <button>
+        <span class="glyphicon glyphicon-remove"></span>
+      </button>
+    </div>
+  </script>
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+  (function(b, o, i, l, e, r) {
+    b.GoogleAnalyticsObject = l;
+    b[l] || (b[l] =
+      function() {
+        (b[l].q = b[l].q || []).push(arguments)
+      });
+    b[l].l = +new Date;
+    e = o.createElement(i);
+    r = o.getElementsByTagName(i)[0];
+    e.src = '//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e, r)
+  }(window, document, 'script', 'ga'));
+  ga('create', 'UA-XXXXX-X');
+  ga('send', 'pageview');
+  </script>
+  <script src="scripts/vendor.js"></script>
+  <script src="scripts/plugins.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+ 
+</html>
