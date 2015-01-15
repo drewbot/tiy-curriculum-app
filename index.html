@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html class='no-js'>
+ 
+<head>
+  <meta charset='utf-8'>
+  <title>tiy curriculum app</title>
+  <meta name='description' content=''>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="scripts/vendor/modernizr.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+</head>
+ 
+<body>
+  <!-- [if lt IE 7]> <p class='browsehappy'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p> <![endif]-->
+  <header>
+    <div class='container-fluid'>
+      <div class='row clearfix'>
+        <nav class='col-xs-12 col-sm-8'>
+          <ul>
+            <li><a href='#/' class="active">DASHBOARD</a>
+            </li>
+            <li><a href='#/'>COLLECTOR</a>
+            </li>
+            <li><a href='#/'>PLANNER</a>
+            </li>
+            <li><a href='#/'>GRADER</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="menu-button visible-xs-inline-block col-xs-4">
+          <button><span class="glyphicon glyphicon-th-list"></span>MENU</button>
+        </div>
+        <div class='logout pull-right col-xs-8 col-sm-4'>
+          <a href="#">
+            <span class="glyphicon glyphicon-cog"></span>
+            <span>settings</span>
+          </a>
+          <a href="#">
+            <span class="glyphicon glyphicon-user"></span>
+            <span>logout</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="intro">
+    <div class="container-fluid">
+      <div class="row">
+        <div class='intro-copy col-xs-10 col-xs-offset-1'>
+          <p>Select the course, timeline and week to which you would like to add items.</p>
+          <p>Add new goals, resources and assignments.</p>
+          <p>Review existing items, dates they were added and their contributors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class='filter-bg'>
+    <div class='container-fluid'>
+      <div class='filter-course row'>
+        <div class='course col-xs-12 col-md-4'>
+          <div class='dropdown'>
+            <h4>Course</h4>
+            <button id='dropdownMenu1' type='button' data-toggle='dropdown' class='dropdown-toggle'>
+              <span class='button-text'>choose</span>
+              <span class='caret'></span>
+            </button>
+            <ul role='menu' aria-labelledby='dropdownMenu1' class='dropdown-menu' id='course-list-dropdown'>
+            </ul>
+          </div>
+        </div>
+        <div class='timeline col-xs-12  col-md-4'>
+          <div class='dropdown'>
+            <h4>Timeline</h4>
+            <button id='dropdownMenu1' type='button' data-toggle='dropdown' class='dropdown-toggle'>
+              <span class='button-text'>choose</span>
+              <span class='caret'></span>
+            </button>
+            <ul role='menu' aria-labelledby='dropdownMenu1' class='dropdown-menu' id='timeline-list-dropdown'>
+            </ul>
+          </div>
+        </div>
+        <div class='week col-xs-12  col-md-4'>
+          <div class='dropdown'>
+            <h4>Week</h4>
+            <button id='dropdownMenu1' type='button' data-toggle='dropdown' class='dropdown-toggle'>
+              <span class='button-text'>choose</span>
+              <span class='caret'></span>
+            </button>
+            <ul role='menu' aria-labelledby='dropdownMenu1' class='dropdown-menu' id='week-list-dropdown'>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="week-container"></div>
+  
+  <footer>
+    <div class='container-fluid'>
+      <div class='row'>
+        <div class='col-xs-12'>
+          <p>copyright 2015 The Iron Yard</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- templates-->
+
+  <script type='text/template' class='week-template'>
+    <section class='goals-bg'>
+      <div class='container-fluid'>
+        <div class='section-head row'>
+          <div class='section-title col-xs-12'>
+            <h1>GOALS</h1>
+            <p>After this week students can:</p>
+          </div>
+          <div class='input-box col-xs-9 col-sm-7'>
+            <input type='text' placeholder='add a new goal' class='input-goal'>
+          </div>
+          <div class='button-box col-xs-3 col-sm-1'>
+            <button class='save-goal'>
+              <span class='glyphicon glyphicon-plus'></span>
+            </button>
+          </div>
+        </div>
+        <div class='list goal-items row'>
+          <ol>
+          </ol>
+        </div>
+        <div class='see-all'><a href='#/goals'>See All</a>
+        </div>
+      </div>
+    </section>
+
+    <section class='resources-bg'>
+      <div class='container-fluid'>
+        <div class='section-head row'>
+          <div class='section-title col-xs-12'>
+            <h1>RESOURCES</h1>
+            <p>These resources were helpful to students:</p>
+          </div>
+          <div class='input-box col-xs-9 col-sm-7'>
+            <input type='text' placeholder='add a new url' class='input-resource-url'>
+            <textarea placeholder='description' class='input-resource-description'></textarea>
+          </div>
+          <div class='button-box col-xs-3 col-sm-1'>
+            <button class='save-resource'>
+              <span class='glyphicon glyphicon-plus'></span>
+            </button>
+          </div>
+        </div>
+        <div class='list resource-items row'>
+          <ol>
+          </ol>
+        </div>
+        <div class='see-all'><a href='#/resources'>See All</a>
+        </div>
+      </div>
+    </section>
+
+    <section class='assignments-bg'>
+      <div class='container-fluid'>
+        <div class='section-head row'>
+          <div class='section-title col-xs-12'>
+            <h1>ASSIGNMENTS</h1>
+            <p>Students were given:</p>
+          </div>
+          <div class='input-box col-xs-9 col-sm-7'>
+            <textarea placeholder='add a new assignment' class='input-assignment'></textarea>
+          </div>
+          <div class='button-box col-xs-3 col-sm-1'>
+            <button class='save-assignment'>
+              <span class='glyphicon glyphicon-plus'></span>
+            </button>
+          </div>
+        </div>
+        <div class='list assignment-items row'>
+          <ol>
+          </ol>
+        </div>
+        <div class='see-all'><a href='#/assignments'>See All</a>
+        </div>
+      </div>
+    </section>
+  </script>
+
+  <script type='text/template' class='goal-template'>
+    <div class='col-xs-12 col-sm-8 description'>
+      <p><%= description %></p>
+    </div>
+    <div class='date col-xs-6 col-sm-2'>
+      <p><%= Date.now() %></p>
+      <p> Contributor </p>
+    </div>
+    <div class='edit-button col-xs-3 col-sm-1'>
+      <button>
+        <span class='glyphicon glyphicon-pencil'></span>
+      </button>
+    </div>
+    <div class='delete-button col-xs-3 col-sm-1'>
+      <button>
+        <span class='glyphicon glyphicon-remove'></span>
+      </button>
+    </div> 
+  </script>
+
+
+  <script type='text/template' class='resource-template'>
+    <div class='col-xs-12 col-sm-8 description'>
+      <a href='<%= url %>' target="_blank"><%= url %></a>
+      <p><%= description %></p>
+    </div>
+    <div class='date col-xs-6 col-sm-2'>
+      <p><%= Date.now() %></p>
+      <p> Contributor </p>
+    </div>
+    <div class='edit-button col-xs-3 col-sm-1'>
+      <button>
+        <span class='glyphicon glyphicon-pencil'></span>
+      </button>
+    </div>
+    <div class='delete-button col-xs-3 col-sm-1'>
+      <button>
+        <span class='glyphicon glyphicon-remove'></span>
+      </button>
+    </div>
+  </script>
+
+
+  <script type='text/template' class='assignment-template'>
+    <div class='col-xs-12 col-sm-8 description'>
+      <p><%= description %></p>
+    </div>
+    <div class='date col-xs-6 col-sm-2'>
+      <p><%= Date.now() %></p>
+      <p> Contributor </p>
+    </div>
+    <div class='edit-button col-xs-3 col-sm-1'>
+      <button>
+        <span class='glyphicon glyphicon-pencil'></span>
+      </button>
+    </div>
+    <div class='delete-button col-xs-3 col-sm-1'>
+      <button>
+        <span class='glyphicon glyphicon-remove'></span>
+      </button>
+    </div>
+  </script>
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+  (function(b, o, i, l, e, r) {
+    b.GoogleAnalyticsObject = l;
+    b[l] || (b[l] =
+      function() {
+        (b[l].q = b[l].q || []).push(arguments)
+      });
+    b[l].l = +new Date;
+    e = o.createElement(i);
+    r = o.getElementsByTagName(i)[0];
+    e.src = '//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e, r)
+  }(window, document, 'script', 'ga'));
+  ga('create', 'UA-XXXXX-X');
+  ga('send', 'pageview');
+  </script>
+  <script src="scripts/vendor.js"></script>
+  <script src="scripts/plugins.js"></script>
+
+  <script src="scripts/main.js"></script>
+</body>
+ 
+</html>
