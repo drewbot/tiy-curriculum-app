@@ -1,0 +1,48 @@
+// ------------------------ Filter --------------------------
+.filter-course {
+  height: 172px;
+
+  .dropdown{
+    h4 {
+      padding: 25px 0 25px 0;
+      width: 100%;
+      text-align: center;
+      @include primary-text(1.4em, 300, normal, $primary-text-color);
+    }
+
+    ul {
+      padding: 12px 0 12px 0;
+      width: 100%;
+
+      li {
+        padding: 3px 10px 3px 10px;
+        text-align: center;
+
+        a {
+          @include primary-text(1.4em, 200, normal, $primary-text-color);
+          width: 100%;
+          height: 100%;
+          outline: none;
+
+          &:hover {
+            // text-decoration: none;
+          }
+        }
+
+        &:hover {
+          background-color: $bluegreen;
+          // cursor: pointer;
+          a {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    button {
+      @include primary-button($primary-button-color, $primary-button-text-color, 0px, 0px);
+      font-weight: 200;
+      font-size: 1.2em;
+    }
+  }
+}

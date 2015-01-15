@@ -1,10 +1,16 @@
 "use strict";
 
 Demi.Models.Timeline = Backbone.Model.extend({
-  idAttribute: "_id"
+  type: 'timeline',
+
+  generateURI: function () {
+    return '#/courses/' + Demi.current.course.id + '/timelines/' + this.id
+  }
 });
 
-Demi.Collections.TimelinesCollection = Backbone.Collection.extend({
+Demi.Collections.timelines = Backbone.Collection.extend({
   model: Demi.Models.Timeline,
-  url: 'http://normalizer.herokuapp.com/timelines'
+  url: function(){
+    return 'http://normalizer.herokuapp.com/courses/' + Demi.current.course.id + '/timelines'
+  }
 });

@@ -1,0 +1,87 @@
+// ------ Mixins ------
+
+// Text
+@mixin primary-text($size, $weight, $style, $color) {
+    font-family: $primary-typeface;
+    font-size: $size;
+    font-weight: $weight;
+    font-style: $style;
+    color: $color;
+}
+
+@mixin secondary-text($size, $color) {
+    font-family: $secondary-typeface;
+    font-size: $size;
+    color: $color;
+}
+
+// Button
+@mixin primary-button($bg-color, $color, $padding-t, $padding-b) {
+    padding: $padding-t 0 $padding-b 0;
+    height: 40px;
+    width: 100%;
+    background-color: $bg-color;
+    color: $color;
+    text-align: center;
+    letter-spacing: 0.04em;
+    border: 1px solid darken($bg-color, 7%);
+    border-bottom: 3px solid darken($bg-color, 10%);
+    outline: none;
+    @include transition(all 80ms ease-in);
+    &:hover {
+        background-color: lighten($bg-color, 5%);
+        border-color: darken($bg-color, 10%);
+        border-bottom-color: darken($bg-color, 15%);
+    }
+    &:active {
+        margin-top: 2px;
+        border-width: 1px;
+        height: 38px;
+    }
+}
+
+// Header button
+@mixin header-button($bg-color, $color) {
+    padding: 36px 10px 36px 10px;
+    height: 110px;
+    // width: 100%;
+    background-color: $bg-color;
+    @include secondary-text(1.1em, $color);
+    text-align: center;
+    border: none;
+    outline: none;
+    @include transition(all 100ms ease-in);
+    &:hover {
+        background-color: darken($bg-color, 15%);
+        color: $bluegreen;
+        border-bottom: 3px solid $bluegreen;
+    }
+    &:active {
+
+    }
+    span {
+        margin-right: 10px;
+    }
+}
+
+// input mixin
+@mixin primary-input() {
+    padding: 10px;
+    width: 100%;
+    background-color: darken(#FFFFFF, 1%);
+    font-weight: 300;
+    @include placeholder(lighten($primary-text-color, 10%));
+    font-size: 1.2em;
+    color: $primary-text-color;
+    border: 1px solid darken($input-box-color, 4%);
+    @include box-shadow( 0px -2px darken($input-box-color, 10%));
+    outline: none;
+    z-index: 9999;
+    @include transition(all 80ms ease-in);
+    &:hover {
+        background-color: #FFFFFF;
+        border: 1px solid darken($input-box-color, 20%);
+        @include box-shadow( 0px -2px darken($input-box-color, 25%));
+        @include placeholder(darken($primary-text-color, 5%));
+    }
+}

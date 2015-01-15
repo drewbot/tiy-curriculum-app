@@ -1,0 +1,47 @@
+// ------ Variables ------
+
+// primary color
+$blue: #4C5763;
+$bluegreen: #2FD3BF;
+$green: #3EC173;
+$yellow: #E5BD41;
+$orange: #E0813B;
+$red: #C64C46;
+
+// secondary color
+$darkblue: darken($blue, 14%);
+$bluegrey: #485561; // (grader directory)
+$lightblue: #DFE9ED; // (light version bg color)
+$lightbluegrey: #F0F7F6; // (vanilla button color)
+$white: #FFFFFF; // (standard white for backgrounds and whatnots)
+
+// type
+$primary-typeface: 'Source Sans Pro', sans-serif;
+$secondary-typeface: 'Fjalla One', sans-serif;
+
+// ------- bg color variables ---------
+
+$primary-bg-color: $white;
+$section-bg-color: lighten($lightblue, 4%);
+$header-footer-bg-color: $blue;
+
+// ----------- Type ----------------
+
+$primary-text-color: $blue;
+$secondary-text-color: $white;
+$header-footer-text-color: $white;
+
+$link-hover-color: $bluegreen;
+
+// ------ Buttons ------------------
+// button variables
+
+$primary-button-color: $blue;
+$input-button-color: $green;
+$edit-button-color: $bluegreen;
+$logout-delete-button-color: $red;
+
+$primary-button-text-color: $white;
+
+// input field variables
+$input-box-color: $lightblue;

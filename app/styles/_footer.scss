@@ -1,0 +1,6 @@
+// ------------------- footer -------------------------
+
+footer {
+    padding: 35px 0 28px 0;
+    @include primary-text(1em, 300, normal, $header-footer-text-color);
+}

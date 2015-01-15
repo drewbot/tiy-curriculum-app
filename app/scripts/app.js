@@ -13,49 +13,14 @@ Backbone.sync = function(method, model, options) {
   return Backbone._sync(method, model, options);
 };
 
-Demi.Views.AppView = Backbone.View.extend({
-	// create, fetch and listenTo all of the collections instances
-	initialize: function () {
-		// Instantiate the collections
-		Demi.collections.coursesCollection = new Demi.Collections.CoursesCollection();
-		Demi.collections.timelinesCollection = new Demi.Collections.TimelinesCollection();
-		Demi.collections.weeksCollection = new Demi.Collections.WeeksCollection();
-		Demi.collections.goalsCollection = new Demi.Collections.GoalsCollection();
-		Demi.collections.resourcesCollection = new Demi.Collections.ResourcesCollection();
-		Demi.collections.assignmentsCollection = new Demi.Collections.AssignmentsCollection();
-		
-		// fetch them
-		Demi.collections.coursesCollection.fetch();
-		Demi.collections.timelinesCollection.fetch();
-		Demi.collections.weeksCollection.fetch();
-		Demi.collections.goalsCollection.fetch();
-		Demi.collections.resourcesCollection.fetch();
-		Demi.collections.assignmentsCollection.fetch();
-		// this App view will listen to each collection and add then pass it's model into a function
-		this.listenTo(Demi.collections.coursesCollection, 'add', function (course) {
-			// instantiate a new view and pass in the model instance
-			// Demi.views.viewOne = new Demi.Views.ViewOne({model: course});
-		});
-		this.listenTo(Demi.collections.timelinesCollection, 'add', function (timeline) {
 
-		});
-		this.listenTo(Demi.collections.weeksCollection, 'add', function (week) {
 
-		});
-		this.listenTo(Demi.collections.goalsCollection, 'add', function (goal) {
+var router = new Demi.Routers.AppRouter()
 
-		});
-		this.listenTo(Demi.collections.resourcesCollection, 'add', function (resource) {
+Backbone.history.start()
 
-		});
-		this.listenTo(Demi.collections.assignmentsCollection, 'add', function (assignment) {
-
-		});
-	},
-});
 
 new Demi.Views.AppView();
-
 
 
 // Save new model instances
@@ -125,3 +90,5 @@ $(document).ready(function(){
 		hideText: ' Hide text'
 	});	
 });
+
+

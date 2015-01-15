@@ -1,10 +1,21 @@
 "use strict";
 
 Demi.Models.Assignment = Backbone.Model.extend({
-  idAttribute: "_id"
+  url: function(){
+    return 'http://normalizer.herokuapp.com/assignments/' + this.id
+  },
+
+  toJSON: function () {
+    return JSON.stringify({assignment: this.attributes})
+  }
 });
 
-Demi.Collections.AssignmentsCollection = Backbone.Collection.extend({
+Demi.Collections.Assignments = Backbone.Collection.extend({
   model: Demi.Models.Assignment,
-  url: 'http://normalizer.herokuapp.com/assignments'
-});
+  url: function(){
+    return 'http://normalizer.herokuapp.com/timelines/' +
+            Demi.current.timeline.id +
+            '/weeks/' +
+            Demi.current.week.id +
+            '/assignments' 
+  }});

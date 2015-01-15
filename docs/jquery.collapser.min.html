@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>jquery.collapser.min.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="jquery.collapser.html">
+                jquery.collapser.js
+              </a>
+            
+              
+              <a class="source" href="jquery.collapser.min.html">
+                jquery.collapser.min.js
+              </a>
+            
+              
+              <a class="source" href="assignment.html">
+                assignment.js
+              </a>
+            
+              
+              <a class="source" href="course.html">
+                course.js
+              </a>
+            
+              
+              <a class="source" href="goal.html">
+                goal.js
+              </a>
+            
+              
+              <a class="source" href="resource.html">
+                resource.js
+              </a>
+            
+              
+              <a class="source" href="timeline.html">
+                timeline.js
+              </a>
+            
+              
+              <a class="source" href="week.html">
+                week.js
+              </a>
+            
+              
+              <a class="source" href="app-router.html">
+                app-router.js
+              </a>
+            
+              
+              <a class="source" href="assignment.html">
+                assignment.js
+              </a>
+            
+              
+              <a class="source" href="dropdown-item.html">
+                dropdown-item.js
+              </a>
+            
+              
+              <a class="source" href="goal.html">
+                goal.js
+              </a>
+            
+              
+              <a class="source" href="resource.html">
+                resource.js
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>jquery.collapser.min.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-comment">/* jQuery - Collapser - Plugin v2.0 www.aakashweb.com (c) 2014 Aakash Chakravarthy MIT License. */</span>
+(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e,m,p,q)</span></span>{<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">l</span><span class="hljs-params">(b,f)</span></span>{<span class="hljs-keyword">this</span>.o=e.extend({},n,f);<span class="hljs-keyword">this</span>.e=e(b);<span class="hljs-keyword">this</span>.init()}<span class="hljs-keyword">var</span> n={target:<span class="hljs-string">"next"</span>,mode:<span class="hljs-string">"words"</span>,speed:<span class="hljs-string">"slow"</span>,truncate:<span class="hljs-number">10</span>,ellipsis:<span class="hljs-string">"..."</span>,effect:<span class="hljs-string">"fade"</span>,controlBtn:<span class="hljs-string">""</span>,showText:<span class="hljs-string">"Show more"</span>,hideText:<span class="hljs-string">"Hide text"</span>,showClass:<span class="hljs-string">"show-class"</span>,hideClass:<span class="hljs-string">"hide-class"</span>,atStart:<span class="hljs-string">"hide"</span>,lockHide:!<span class="hljs-number">1</span>,dynamic:!<span class="hljs-number">1</span>,changeText:!<span class="hljs-number">1</span>,beforeShow:<span class="hljs-literal">null</span>,afterShow:<span class="hljs-literal">null</span>,beforeHide:<span class="hljs-literal">null</span>,afterHide:<span class="hljs-literal">null</span>};l.prototype={init:<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{<span class="hljs-keyword">var</span> b=<span class="hljs-keyword">this</span>;b.mode=b.o.mode;b.remaining={};b.ctrlHtml=<span class="hljs-string">' &lt;a href="#" data-ctrl class="'</span>+
+(e.isFunction(b.o.controlBtn)?<span class="hljs-string">""</span>:b.o.controlBtn)+<span class="hljs-string">'"&gt;&lt;/a&gt;'</span>;e(b.e).each(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{e(<span class="hljs-keyword">this</span>).data(<span class="hljs-string">"oCnt"</span>,b.e.html());<span class="hljs-keyword">var</span> a=e.isFunction(b.o.atStart)?b.o.atStart.call(b.e):b.o.atStart,a=<span class="hljs-string">"undefined"</span>!==<span class="hljs-keyword">typeof</span> b.e.attr(<span class="hljs-string">"data-start"</span>)?b.e.attr(<span class="hljs-string">"data-start"</span>):a;<span class="hljs-string">"hide"</span>==a?b.hide(b.e,<span class="hljs-number">0</span>):b.show(b.e,<span class="hljs-number">0</span>)});<span class="hljs-keyword">var</span> f;e(m).on(<span class="hljs-string">"resize"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{b.o.dynamic&amp;&amp;<span class="hljs-string">"lines"</span>==b.mode&amp;&amp;(clearTimeout(f),f=setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{b.reInit(b.e)},<span class="hljs-number">100</span>))})},show:<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(b,f)</span></span>{<span class="hljs-keyword">var</span> a=<span class="hljs-keyword">this</span>,c=e(b);<span class="hljs-string">"undefined"</span>===<span class="hljs-keyword">typeof</span> f&amp;&amp;(f=a.o.speed);<span class="hljs-keyword">var</span> g=<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{e.isFunction(a.o.afterShow)&amp;&amp;
+a.o.afterShow.call(a.e,a)};e.isFunction(a.o.beforeShow)&amp;&amp;a.o.beforeShow.call(a.e,a);<span class="hljs-keyword">switch</span>(a.mode){<span class="hljs-keyword">case</span> <span class="hljs-string">"chars"</span>:<span class="hljs-keyword">case</span> <span class="hljs-string">"words"</span>:<span class="hljs-keyword">var</span> d=c.height();c.html(c.data(<span class="hljs-string">"tHTML"</span>));<span class="hljs-keyword">var</span> h=c.height();c.height(d);c.animate({height:h},f,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{c.height(<span class="hljs-string">"auto"</span>);g()}).removeClass(a.o.hideClass).addClass(a.o.showClass);c.data(<span class="hljs-string">"tHTML"</span>,c.html());<span class="hljs-keyword">break</span>;<span class="hljs-keyword">case</span> <span class="hljs-string">"lines"</span>:<span class="hljs-number">0</span>==c.children(<span class="hljs-string">"div"</span>).length&amp;&amp;c.wrapInner(<span class="hljs-string">"&lt;div&gt;"</span>);<span class="hljs-keyword">var</span> k=c.children(<span class="hljs-string">"div"</span>),d=k.height(),h=k.html(c.data(<span class="hljs-string">"oCnt"</span>)).css(<span class="hljs-string">"height"</span>,<span class="hljs-string">""</span>).height();k.css(<span class="hljs-string">"height"</span>,d);
+k.animate({height:h},f,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{k.height(<span class="hljs-string">"auto"</span>);g()});c.removeClass(a.o.hideClass).addClass(a.o.showClass);<span class="hljs-keyword">break</span>;<span class="hljs-keyword">case</span> <span class="hljs-string">"block"</span>:a.blockMode(c,<span class="hljs-string">"show"</span>,f,g)}a.status=<span class="hljs-number">1</span>;<span class="hljs-keyword">if</span>(!<span class="hljs-number">0</span>==a.o.lockHide)<span class="hljs-keyword">return</span> c.find(<span class="hljs-string">"[data-ctrl]"</span>).remove(),<span class="hljs-string">""</span>;<span class="hljs-keyword">if</span>(<span class="hljs-string">"block"</span>==a.mode)c.off(<span class="hljs-string">"click.coll"</span>).on(<span class="hljs-string">"click.coll"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(b)</span></span>{b.preventDefault();a.hide(c)});<span class="hljs-keyword">else</span> <span class="hljs-number">0</span>!=c.find(<span class="hljs-string">"[data-ctrl]"</span>).length||e.isFunction(a.o.controlBtn)||c.append(a.ctrlHtml),a.ctrlBtn=e.isFunction(a.o.controlBtn)?a.o.controlBtn.call(a.e):e(c.find(<span class="hljs-string">"[data-ctrl]"</span>)),
+a.ctrlBtn.off(<span class="hljs-string">"click.coll"</span>).on(<span class="hljs-string">"click.coll"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(b)</span></span>{b.preventDefault();a.hide(c)}).html(a.o.hideText)},hide:<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(b,f)</span></span>{<span class="hljs-keyword">var</span> a=<span class="hljs-keyword">this</span>,c=e(b);<span class="hljs-string">"undefined"</span>===<span class="hljs-keyword">typeof</span> f&amp;&amp;(f=a.o.speed);<span class="hljs-keyword">var</span> g=<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{e.isFunction(a.o.afterHide)&amp;&amp;a.o.afterHide.call(a.e,a)};e.isFunction(a.o.beforeHide)&amp;&amp;a.o.beforeHide.call(a.e,a);c.find(<span class="hljs-string">"[data-ctrl]"</span>).remove();<span class="hljs-keyword">switch</span>(a.mode){<span class="hljs-keyword">case</span> <span class="hljs-string">"chars"</span>:<span class="hljs-keyword">var</span> d=e.trim(c.text());a.remaining.chars=d.length-a.o.truncate;d.length&gt;a.o.truncate&amp;&amp;(c.data(<span class="hljs-string">"tHTML"</span>,c.html()),d=a.pad(d.slice(<span class="hljs-number">0</span>,
+a.o.truncate),d.slice(a.o.truncate,d.length)),c.html(d).removeClass(a.o.showClass).addClass(a.o.hideClass),g());<span class="hljs-keyword">break</span>;<span class="hljs-keyword">case</span> <span class="hljs-string">"words"</span>:d=e.trim(c.text());d=d.split(<span class="hljs-string">" "</span>);a.remaining.words=d.length-a.o.truncate;d.length&gt;a.o.truncate&amp;&amp;(c.data(<span class="hljs-string">"tHTML"</span>,c.html()),d=a.pad(d.slice(<span class="hljs-number">0</span>,a.o.truncate).join(<span class="hljs-string">" "</span>),d.slice(a.o.truncate,d.length).join(<span class="hljs-string">" "</span>)),c.html(d).removeClass(a.o.showClass).addClass(a.o.hideClass),g());<span class="hljs-keyword">break</span>;<span class="hljs-keyword">case</span> <span class="hljs-string">"lines"</span>:<span class="hljs-number">0</span>==c.children(<span class="hljs-string">"div"</span>).length&amp;&amp;c.wrapInner(<span class="hljs-string">"&lt;div&gt;"</span>);d=c.children(<span class="hljs-string">"div"</span>).css(<span class="hljs-string">"height"</span>,
+<span class="hljs-string">""</span>);d.html(d.text());<span class="hljs-keyword">var</span> h=d.height();<span class="hljs-string">"undefined"</span>===<span class="hljs-keyword">typeof</span> c.data(<span class="hljs-string">"lHeight"</span>)?(temp=d.clone(),lHeight=temp.text(<span class="hljs-string">"a"</span>).insertAfter(d).height(),c.data(<span class="hljs-string">"lHeight"</span>,lHeight),d.next().remove()):lHeight=c.data(<span class="hljs-string">"lHeight"</span>);lines=h/lHeight;a.remaining.lines=lines-a.o.truncate;<span class="hljs-number">0</span>&lt;a.remaining.lines&amp;&amp;(d.css(<span class="hljs-string">"overflow"</span>,<span class="hljs-string">"hidden"</span>),d.animate({height:lHeight*a.o.truncate},f).data(<span class="hljs-string">"tHeight"</span>,h),c.removeClass(a.o.showClass).addClass(a.o.hideClass),<span class="hljs-number">0</span>!=c.find(<span class="hljs-string">"[data-ctrl]"</span>).length||e.isFunction(a.o.controlBtn)||c.append(a.ctrlHtml),
+g());<span class="hljs-keyword">break</span>;<span class="hljs-keyword">case</span> <span class="hljs-string">"block"</span>:a.blockMode(c,<span class="hljs-string">"hide"</span>,f,g)}a.status=<span class="hljs-number">0</span>;<span class="hljs-string">"block"</span>==a.mode?c.unbind(<span class="hljs-string">"click.coll"</span>).bind(<span class="hljs-string">"click.coll"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(b)</span></span>{b.preventDefault();a.show(c)}):(a.ctrlBtn=e.isFunction(a.o.controlBtn)?a.o.controlBtn.call(a.e):e(c.find(<span class="hljs-string">"[data-ctrl]"</span>)),a.ctrlBtn.off(<span class="hljs-string">"click.coll"</span>).on(<span class="hljs-string">"click.coll"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(b)</span></span>{b.preventDefault();a.show(c)}).html(a.o.showText),g=a.o.showText,d={chars:[<span class="hljs-string">"character"</span>,<span class="hljs-string">"characters"</span>],words:[<span class="hljs-string">"word"</span>,<span class="hljs-string">"words"</span>],lines:[<span class="hljs-string">"lines"</span>,<span class="hljs-string">"lines"</span>]},g=g.replace(<span class="hljs-string">"%s"</span>,a.remaining[a.mode]+(<span class="hljs-number">1</span>==a.remaining[a.mode]?
+<span class="hljs-string">" "</span>+d[a.mode][<span class="hljs-number">0</span>]:<span class="hljs-string">" "</span>+d[a.mode][<span class="hljs-number">1</span>])),a.ctrlBtn.html(g))},pad:<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(b,f)</span></span>{<span class="hljs-keyword">return</span> b+<span class="hljs-string">'&lt;span class="coll-ellipsis"&gt;'</span>+<span class="hljs-keyword">this</span>.o.ellipsis+<span class="hljs-string">"&lt;/span&gt;"</span>+(e.isFunction(<span class="hljs-keyword">this</span>.o.ctrlBtn)?<span class="hljs-string">""</span>:<span class="hljs-keyword">this</span>.ctrlHtml)+<span class="hljs-string">'&lt;span class="coll-hidden" style="display:none"&gt;'</span>+f+<span class="hljs-string">"&lt;/span&gt;"</span>},blockMode:<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(b,f,a,c)</span></span>{<span class="hljs-keyword">var</span> g=[<span class="hljs-string">"fadeOut"</span>,<span class="hljs-string">"slideUp"</span>,<span class="hljs-string">"fadeIn"</span>,<span class="hljs-string">"slideDown"</span>],d=<span class="hljs-string">"fade"</span>==<span class="hljs-keyword">this</span>.o.effect?<span class="hljs-number">0</span>:<span class="hljs-number">1</span>,g=<span class="hljs-string">"hide"</span>==f?g[d]:g[d+<span class="hljs-number">2</span>];<span class="hljs-keyword">if</span>(e.isFunction(<span class="hljs-keyword">this</span>.o.target))<span class="hljs-keyword">this</span>.o.target.call(<span class="hljs-keyword">this</span>.e)[g](a,c);<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(e.fn[<span class="hljs-keyword">this</span>.o.target])e(b)[<span class="hljs-keyword">this</span>.o.target]()[g](a,
+c);<span class="hljs-string">"show"</span>==f?(b.removeClass(<span class="hljs-keyword">this</span>.o.showClass).addClass(<span class="hljs-keyword">this</span>.o.hideClass),<span class="hljs-keyword">this</span>.o.changeText&amp;&amp;b.text(<span class="hljs-keyword">this</span>.o.hideText)):(b.removeClass(<span class="hljs-keyword">this</span>.o.hideClass).addClass(<span class="hljs-keyword">this</span>.o.showClass),<span class="hljs-keyword">this</span>.o.changeText&amp;&amp;b.text(<span class="hljs-keyword">this</span>.o.showText))},reInit:<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(b)</span></span>{b.find(<span class="hljs-string">"[data-ctrl]"</span>).remove();b.html(<span class="hljs-keyword">this</span>.e.data(<span class="hljs-string">"oCnt"</span>));<span class="hljs-number">0</span>==<span class="hljs-keyword">this</span>.status?<span class="hljs-keyword">this</span>.hide(b,<span class="hljs-number">0</span>):<span class="hljs-keyword">this</span>.show(b,<span class="hljs-number">0</span>)}};e.fn.collapser=<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(b)</span></span>{<span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.each(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{e.data(<span class="hljs-keyword">this</span>,<span class="hljs-string">"collapser"</span>)||e.data(<span class="hljs-keyword">this</span>,<span class="hljs-string">"collapser"</span>,<span class="hljs-keyword">new</span> l(<span class="hljs-keyword">this</span>,b))})}})(jQuery,<span class="hljs-built_in">window</span>,<span class="hljs-built_in">document</span>);</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

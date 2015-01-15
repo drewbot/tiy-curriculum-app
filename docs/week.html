@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>week.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="assignment.html">
+                assignment.js
+              </a>
+            
+              
+              <a class="source" href="course.html">
+                course.js
+              </a>
+            
+              
+              <a class="source" href="goal.html">
+                goal.js
+              </a>
+            
+              
+              <a class="source" href="resource.html">
+                resource.js
+              </a>
+            
+              
+              <a class="source" href="timeline.html">
+                timeline.js
+              </a>
+            
+              
+              <a class="source" href="week.html">
+                week.js
+              </a>
+            
+              
+              <a class="source" href="app-router.html">
+                app-router.js
+              </a>
+            
+              
+              <a class="source" href="assignment.html">
+                assignment.js
+              </a>
+            
+              
+              <a class="source" href="dropdown-item.html">
+                dropdown-item.js
+              </a>
+            
+              
+              <a class="source" href="goal.html">
+                goal.js
+              </a>
+            
+              
+              <a class="source" href="resource.html">
+                resource.js
+              </a>
+            
+              
+              <a class="source" href="week.html">
+                week.js
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>week.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-pi">"use strict"</span>;
+
+Demi.Views.Week = Backbone.View.extend({
+
+  events: {
+    <span class="hljs-string">'click .save-assignment'</span>  : <span class="hljs-string">'saveAssignment'</span>,
+    <span class="hljs-string">'click .save-resource'</span>    : <span class="hljs-string">'saveResource'</span>,
+    <span class="hljs-string">'click .save-goal'</span>        : <span class="hljs-string">'saveGoal'</span>,
+  },
+
+  template: _.template($(<span class="hljs-string">'.week-template'</span>).text()),
+
+  initialize: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    $(<span class="hljs-string">'.week-container'</span>).append(<span class="hljs-keyword">this</span>.el);
+    <span class="hljs-keyword">this</span>.render();
+  },
+
+  render: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">this</span>.$el.html(<span class="hljs-keyword">this</span>.template())
+  },
+
+  saveAssignment: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    Demi.collections.assignments.add({assignment: {description: $(<span class="hljs-string">'.input-assignment'</span>).val()}}).save()
+  },
+
+  saveResource: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    Demi.collections.resources.add({resource: {
+      description: $(<span class="hljs-string">'.input-resource-url'</span>).val(),
+      url:         $(<span class="hljs-string">'.input-resource-description'</span>).val()
+    }}).save()
+  },
+
+  saveGoal: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    Demi.collections.goals.add({goal: {description: $(<span class="hljs-string">'.input-goal'</span>).val()}}).save()
+  },
+
+})</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

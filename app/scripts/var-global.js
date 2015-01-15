@@ -12,4 +12,11 @@ var Demi = {
 	collections: {},
 	views: {},
 	routers: {},
+
+	// currently selected
+	current: {},
+
+	// global promises
+	promises: {}
+
 };

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>app-router.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="assignment.html">
+                assignment.js
+              </a>
+            
+              
+              <a class="source" href="course.html">
+                course.js
+              </a>
+            
+              
+              <a class="source" href="goal.html">
+                goal.js
+              </a>
+            
+              
+              <a class="source" href="resource.html">
+                resource.js
+              </a>
+            
+              
+              <a class="source" href="timeline.html">
+                timeline.js
+              </a>
+            
+              
+              <a class="source" href="week.html">
+                week.js
+              </a>
+            
+              
+              <a class="source" href="app-router.html">
+                app-router.js
+              </a>
+            
+              
+              <a class="source" href="assignment.html">
+                assignment.js
+              </a>
+            
+              
+              <a class="source" href="dropdown-item.html">
+                dropdown-item.js
+              </a>
+            
+              
+              <a class="source" href="goal.html">
+                goal.js
+              </a>
+            
+              
+              <a class="source" href="resource.html">
+                resource.js
+              </a>
+            
+              
+              <a class="source" href="week.html">
+                week.js
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>app-router.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-pi">"use strict"</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>AppRouter controls the bulk of Demi’s uppder dropdown area, and
+the url-based navigation. Its complexity is due to the fact that each
+dropdown depends on the previous dropdown, but each dropdowns values
+based on separate API endpoints.</p>
+<p>Enjooy!</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>Demi.Routers.AppRouter = Backbone.Router.extend({
+
+  routes: {
+    <span class="hljs-string">''</span>                                                          : <span class="hljs-string">'loadCourses'</span>,
+    <span class="hljs-string">'courses/:courseId'</span>                                         : <span class="hljs-string">'loadTimelines'</span>,
+    <span class="hljs-string">'courses/:courseId/timelines/:timelineId'</span>                   : <span class="hljs-string">'loadWeeks'</span>,
+    <span class="hljs-string">'courses/:courseId/timelines/:timelineId/weeks/:weekNumber'</span> : <span class="hljs-string">'loadWeek'</span>,
+  },
+
+  initialize: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">new</span> Demi.Views.Week();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Initialize the courses, timelines, and weeks collection</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    Demi.collections.courses = <span class="hljs-keyword">new</span> Demi.Collections.courses();
+    Demi.collections.timelines = <span class="hljs-keyword">new</span> Demi.Collections.timelines();
+    Demi.collections.weeks = <span class="hljs-keyword">new</span> Demi.Collections.weeks();
+
+    Demi.collections.goals = <span class="hljs-keyword">new</span> Demi.Collections.Goals();
+    Demi.collections.resources = <span class="hljs-keyword">new</span> Demi.Collections.Resources();
+    Demi.collections.assignments = <span class="hljs-keyword">new</span> Demi.Collections.Assignments();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Each collection should send newly added model instances to a
+<code>Demi.Views.DropdownItem</code> constructor</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.listenTo(Demi.collections.courses, <span class="hljs-string">'add'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(course)</span> </span>{
+      <span class="hljs-keyword">new</span> Demi.Views.DropdownItem({model: course});
+    });
+
+    <span class="hljs-keyword">this</span>.listenTo(Demi.collections.timelines, <span class="hljs-string">'add'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(timeline)</span> </span>{
+      <span class="hljs-keyword">new</span> Demi.Views.DropdownItem({model: timeline});
+    });
+
+    <span class="hljs-keyword">this</span>.listenTo(Demi.collections.weeks, <span class="hljs-string">'add'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(week)</span> </span>{
+      <span class="hljs-keyword">new</span> Demi.Views.DropdownItem({model: week});
+    });
+
+    <span class="hljs-keyword">this</span>.listenTo(Demi.collections.goals, <span class="hljs-string">'add'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(goal)</span> </span>{
+      <span class="hljs-keyword">new</span> Demi.Views.Goal({model: goal})
+    });
+
+    <span class="hljs-keyword">this</span>.listenTo(Demi.collections.resources, <span class="hljs-string">'add'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(resource)</span> </span>{
+      <span class="hljs-keyword">new</span> Demi.Views.Resource({model: resource})
+    });
+
+    <span class="hljs-keyword">this</span>.listenTo(Demi.collections.assignments, <span class="hljs-string">'add'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(assignment)</span> </span>{
+      <span class="hljs-keyword">new</span> Demi.Views.Assignment({model: assignment})
+    });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>We’ll always need the courses collection, so let’s just go ahead
+and fetch it now.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    Demi.promises.coursePromise = Demi.collections.courses.fetch();
+  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Override Backbone.Router.execute to also call <code>this.assumeAndPrefetch</code>,
+before we run each route’s method</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  execute: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(callback, args)</span> </span>{
+    <span class="hljs-keyword">this</span>.assumeAndPrefetch();
+    <span class="hljs-keyword">if</span> (callback) callback.apply(<span class="hljs-keyword">this</span>, args);
+  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>The purpose of <code>assumeAndPretch</code> is to look at the url, determine
+the IDs of each segment, use (or create) models with those IDs as the
+“current” models (which are stored in <code>Demi.current</code>), and fetch the
+collections that they belong to.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  assumeAndPrefetch: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> hashSplit = <span class="hljs-built_in">window</span>.location.hash.split(<span class="hljs-string">'/'</span>),
+        courseIndex,
+        timelineIndex,
+        weekIndex;
+
+    <span class="hljs-keyword">if</span> (courseIndex = <span class="hljs-keyword">this</span>.urlHas(hashSplit, <span class="hljs-string">'courses'</span>)) {
+      Demi.current.course = Demi.collections.courses.add({id: hashSplit[courseIndex]});
+      Demi.promises.timelinePromise = Demi.collections.timelines.fetch();
+    } <span class="hljs-keyword">else</span> { Demi.current.course = <span class="hljs-literal">undefined</span>; }
+
+    <span class="hljs-keyword">if</span> (timelineIndex = <span class="hljs-keyword">this</span>.urlHas(hashSplit, <span class="hljs-string">'timelines'</span>)) {
+      Demi.current.timeline = Demi.collections.timelines.add({id: hashSplit[timelineIndex]});
+      Demi.promises.weekPromise = Demi.collections.weeks.fetch();
+    } <span class="hljs-keyword">else</span> { Demi.current.timeline = <span class="hljs-literal">undefined</span>; }
+
+    <span class="hljs-keyword">if</span> (weekIndex = <span class="hljs-keyword">this</span>.urlHas(hashSplit, <span class="hljs-string">'weeks'</span>)) {
+      Demi.current.week = Demi.collections.weeks.add({number: hashSplit[weekIndex]});
+    } <span class="hljs-keyword">else</span> { Demi.current.week = <span class="hljs-literal">undefined</span>; }
+
+  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>When there are no route segments, we still need to wait for the courses promise
+to resolve (<code>this.promises(1).done()</code>). Upon resolution, set the dropdowns, and
+erase the timelines and weeks collections, and their respective dropdowns</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  loadCourses: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(erase)</span> </span>{
+    <span class="hljs-keyword">this</span>.promises(<span class="hljs-number">1</span>).done(<span class="hljs-keyword">this</span>.setDropdowns);
+    <span class="hljs-keyword">if</span> (erase) <span class="hljs-keyword">this</span>.erase([<span class="hljs-string">'timelines'</span>, <span class="hljs-string">'weeks'</span>])
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;  
+  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>When routes match <code>courses/:courseId</code>, wait for the first two promises resolve,
+and erase the timelines and weeks collections, and their respective dropdowns.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  loadTimelines: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(erase)</span> </span>{
+    <span class="hljs-keyword">this</span>.promises(<span class="hljs-number">2</span>).done(<span class="hljs-keyword">this</span>.setDropdowns);
+    <span class="hljs-keyword">if</span> (erase) <span class="hljs-keyword">this</span>.erase([<span class="hljs-string">'timelines'</span>, <span class="hljs-string">'weeks'</span>])
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;  
+  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>When routes match <code>courses/:courseId/timelines/:timelineId</code>, wait for the first 
+three promises resolve, and erase the timelines and weeks collections, and their 
+respective dropdowns.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  loadWeeks: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(erase)</span> </span>{
+    <span class="hljs-keyword">this</span>.promises(<span class="hljs-number">3</span>).done(<span class="hljs-keyword">this</span>.setDropdowns);
+    <span class="hljs-keyword">if</span> (erase) <span class="hljs-keyword">this</span>.erase([<span class="hljs-string">'weeks'</span>])
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <p>When routes match <code>courses/:courseId/timelines/:timelineId/weeks/:weekNumber</code>, 
+wait for the first three promises resolve, and erase the timelines and weeks<br>collections, and their respective dropdowns.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  loadWeek: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(erase)</span> </span>{
+    $(<span class="hljs-string">'.assignment-items ol, .resource-items ol, .goal-items ol'</span>).html(<span class="hljs-string">''</span>);
+    <span class="hljs-keyword">this</span>.promises(<span class="hljs-number">3</span>).done(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+      <span class="hljs-keyword">this</span>.setDropdowns();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <p>Iterate over the current week’s resources and create views and models.
+Note: these should probably be in a collection?</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      _.each(Demi.current.week.get(<span class="hljs-string">'resources'</span>), <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(resource)</span></span>{
+        Demi.collections.resources.add(resource);
+      })
+
+      _.each(Demi.current.week.get(<span class="hljs-string">'goals'</span>), <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(goal)</span></span>{
+        Demi.collections.goals.add(goal);
+      })
+
+      _.each(Demi.current.week.get(<span class="hljs-string">'assignments'</span>), <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(assignment)</span></span>{
+        Demi.collections.assignments.add(assignment);
+      })
+
+    }.bind(<span class="hljs-keyword">this</span>));
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <p>a quick utitlity for resetting multiple collections at once
+this is generally called when you’ve change the courses or
+timelines dropdowns, and need to reset the dropdowns to
+the right (the dependent collections).</p>
+<p>This now clears out the existing views below the nav. That part
+of this method should move elsewhere.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  erase: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(collections)</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'erasing'</span>, collections);
+    _.each(collections, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(collection)</span></span>{
+      Demi.collections[collection].reset();
+    });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-14">&#182;</a>
+              </div>
+              <p>clear the <ol>s for the week.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    $(<span class="hljs-string">'.assignment-items ol, .resource-items ol, .goal-items ol'</span>).html(<span class="hljs-string">''</span>);
+    <span class="hljs-keyword">this</span>.setDropdowns();
+  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <p>Reports the index of the id/slug of the segment you’re requesting.
+The <code>hash</code> argument should be the return value of <code>location.hash.split(&#39;/&#39;)</code></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  urlHas: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(hash, segmentName)</span></span>{
+    <span class="hljs-keyword">return</span> _.indexOf(hash, segmentName) + <span class="hljs-number">1</span>;
+  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-16">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-16">&#182;</a>
+              </div>
+              <p>Sets the dropdowns text to match the selected item, or “choose” if it’s
+been reset.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  setDropdowns: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    _.each([<span class="hljs-string">'course'</span>,<span class="hljs-string">'timeline'</span>,<span class="hljs-string">'week'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(type)</span></span>{
+      <span class="hljs-keyword">if</span> (Demi.current[type]) {
+        $(<span class="hljs-string">'#'</span> + type + <span class="hljs-string">'-list-dropdown'</span>).prev().find(<span class="hljs-string">'.button-text'</span>).text(Demi.current[type].get(<span class="hljs-string">'name'</span>));
+      } <span class="hljs-keyword">else</span> {
+        $(<span class="hljs-string">'#'</span> + type + <span class="hljs-string">'-list-dropdown'</span>).prev().find(<span class="hljs-string">'.button-text'</span>).text(<span class="hljs-string">'choose'</span>);
+      }
+    });
+  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-17">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-17">&#182;</a>
+              </div>
+              <p>This strange little function will let you know when one or more promises
+have been resolved. The <code>howMany</code> argument should how many you want from
+ordered list.</p>
+<p>For example, <code>this.promises(2).done(callback)</code> would run your callback
+after the both <code>Demi.promises.coursePromise</code> and <code>Demi.promises.timelinePromise</code>
+have been resolved. Bear in mind, this doesn’t cause a <code>fetch</code>. It assumed these
+deferreds have already been (re)defined elsewhere.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  promises: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(howMany)</span></span>{
+    <span class="hljs-keyword">return</span> $.when.apply(<span class="hljs-keyword">this</span>, [
+      Demi.promises.coursePromise, 
+      Demi.promises.timelinePromise,
+      Demi.promises.weekPromise].slice(<span class="hljs-number">0</span>, howMany));
+  }
+
+
+})</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
